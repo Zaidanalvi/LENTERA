@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Konfigurasi Firebase, diambil dari app/google-services.json (project lentera-29cee).
+     Firebase membaca nilai ini otomatis saat aplikasi dibuka. -->
+<resources>
+    <string name="google_app_id" translatable="false">1:355290320977:android:86a743c1735ed66fa1e870</string>
+    <string name="google_api_key" translatable="false">AIzaSyCQs9geCs-Ww-NpI4v_7YGwz7a4UG2XwSE</string>
+    <string name="project_id" translatable="false">lentera-29cee</string>
+    <string name="gcm_defaultSenderId" translatable="false">355290320977</string>
+    <string name="google_storage_bucket" translatable="false">lentera-29cee.firebasestorage.app</string>
+</resources>
