@@ -6,16 +6,18 @@ import androidx.compose.runtime.Composable
 
 // Aplikasi selalu pakai tema gelap biru tua, jadi tidak ikut dynamic color HP
 private val LenteraColorScheme = darkColorScheme(
-    primary = LenteraPurple,
-    secondary = LenteraPink,
+    primary = LenteraPink,
+    secondary = LenteraLime,
     tertiary = LenteraGreen,
-    background = NavyDark,
+    background = NavyDeep,
     surface = NavySurface,
+    surfaceVariant = FieldBlue,
     onPrimary = TextLight,
-    onSecondary = TextLight,
+    onSecondary = NavyDeep,
     onTertiary = TextLight,
     onBackground = TextLight,
-    onSurface = TextLight
+    onSurface = TextLight,
+    onSurfaceVariant = TextLight
 )
 
 @Composable

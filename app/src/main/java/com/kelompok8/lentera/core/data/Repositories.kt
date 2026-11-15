@@ -15,8 +15,16 @@ import com.kelompok8.lentera.core.model.User
 // PJ: Zulfan
 interface AuthRepository {
     suspend fun login(email: String, password: String): Result<User>
-    suspend fun register(name: String, email: String, password: String, school: String): Result<User>
-    fun currentUser(): User?
+    suspend fun register(
+        email: String,
+        password: String,
+        name: String,
+        gender: String,
+        location: String,
+        avatarId: Int
+    ): Result<User>
+    fun currentUser(): User?                 // cepat, tapi hanya berisi uid, nama, dan email
+    suspend fun getProfile(): User?          // profil lengkap dari Firestore
     fun logout()
 }
 

@@ -7,7 +7,10 @@ data class User(
     val uid: String,
     val name: String,
     val email: String,
-    val school: String = ""
+    val gender: String = "",
+    val location: String = "",
+    val avatarId: Int = 0,      // 0..3, urutan sama dengan pilihan avatar di halaman Register
+    val level: String = "Pemula"
 )
 
 enum class Island(val displayName: String) {

@@ -1,6 +1,8 @@
 package com.kelompok8.lentera.core.navigation
 
 object Routes {
+    const val WELCOME = "welcome"
+    const val ABOUT = "about"
     const val LOGIN = "login"
     const val REGISTER = "register"
 

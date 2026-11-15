@@ -1,13 +1,13 @@
 package com.kelompok8.lentera.core.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import com.kelompok8.lentera.core.ui.LenteraBackground
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -17,6 +17,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.kelompok8.lentera.auth.LoginScreen
 import com.kelompok8.lentera.auth.RegisterScreen
+import com.kelompok8.lentera.auth.WelcomeScreen
+import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.game.GameScreen
 import com.kelompok8.lentera.home.HomeScreen
 import com.kelompok8.lentera.leaderboard.LeaderboardScreen
@@ -24,9 +26,8 @@ import com.kelompok8.lentera.learn.LearnScreen
 import com.kelompok8.lentera.map.ChapterSelectScreen
 import com.kelompok8.lentera.map.PlayScreen
 import com.kelompok8.lentera.score.ScoreScreen
+import com.kelompok8.lentera.settings.AboutScreen
 import com.kelompok8.lentera.settings.SettingsScreen
-
-private data class BottomItem(val route: String, val label: String, val icon: String)
 
 private val bottomItems = listOf(
     BottomItem(Routes.HOME, "Beranda", "🏠"),
@@ -44,23 +45,26 @@ fun LenteraApp() {
     // Bottom bar cuma muncul di 4 halaman utama, bukan di login atau saat main
     val showBottomBar = bottomItems.any { it.route == currentRoute }
 
-    Scaffold(
-        bottomBar = {
-            if (showBottomBar) {
-                NavigationBar {
-                    bottomItems.forEach { item ->
-                        NavigationBarItem(
-                            selected = currentRoute == item.route,
-                            onClick = { navController.navigateToTab(item.route) },
-                            icon = { Text(item.icon) },
-                            label = { Text(item.label) }
-                        )
-                    }
+    // Kalau sesi login masih tersimpan, langsung buka Beranda tanpa login ulang
+    val startDestination = remember {
+        if (AppContainer.authRepository.currentUser() != null) Routes.HOME else Routes.WELCOME
+    }
+
+    LenteraBackground {
+        Scaffold(
+            containerColor = Color.Transparent,
+            bottomBar = {
+                if (showBottomBar) {
+                    LenteraBottomBar(
+                        items = bottomItems,
+                        currentRoute = currentRoute,
+                        onItemClick = { navController.navigateToTab(it) }
+                    )
                 }
             }
+        ) { innerPadding ->
+            LenteraNavHost(navController, startDestination, Modifier.padding(innerPadding))
         }
-    ) { innerPadding ->
-        LenteraNavHost(navController, Modifier.padding(innerPadding))
     }
 }
 
@@ -72,31 +76,45 @@ private fun NavHostController.navigateToTab(route: String) {
     }
 }
 
+// Setelah login/daftar, halaman Pengenalan, Login, dan Register dibuang dari riwayat
+// supaya tombol back tidak kembali ke sana
+private fun NavHostController.goHomeAfterAuth() {
+    navigate(Routes.HOME) {
+        popUpTo(graph.id) { inclusive = true }
+    }
+}
+
 @Composable
-private fun LenteraNavHost(navController: NavHostController, modifier: Modifier) {
+private fun LenteraNavHost(
+    navController: NavHostController,
+    startDestination: String,
+    modifier: Modifier
+) {
     NavHost(
         navController = navController,
-        startDestination = Routes.LOGIN,
+        startDestination = startDestination,
         modifier = modifier
     ) {
+        composable(Routes.WELCOME) {
+            WelcomeScreen(
+                onStart = { navController.navigate(Routes.LOGIN) },
+                onAbout = { navController.navigate(Routes.ABOUT) }
+            )
+        }
+        composable(Routes.ABOUT) {
+            AboutScreen(onBack = { navController.popBackStack() })
+        }
         composable(Routes.LOGIN) {
             LoginScreen(
-                onLoginSuccess = {
-                    navController.navigate(Routes.HOME) {
-                        popUpTo(Routes.LOGIN) { inclusive = true }
-                    }
-                },
-                onGoToRegister = { navController.navigate(Routes.REGISTER) }
+                onLoginSuccess = { navController.goHomeAfterAuth() },
+                onGoToRegister = { navController.navigate(Routes.REGISTER) },
+                onBackToMenu = { navController.popBackStack(Routes.WELCOME, inclusive = false) }
             )
         }
         composable(Routes.REGISTER) {
             RegisterScreen(
-                onRegisterSuccess = {
-                    navController.navigate(Routes.HOME) {
-                        popUpTo(Routes.LOGIN) { inclusive = true }
-                    }
-                },
-                onBack = { navController.popBackStack() }
+                onRegisterSuccess = { navController.goHomeAfterAuth() },
+                onBackToMenu = { navController.popBackStack(Routes.WELCOME, inclusive = false) }
             )
         }
 
@@ -112,9 +130,10 @@ private fun LenteraNavHost(navController: NavHostController, modifier: Modifier)
         composable(Routes.LEARN) { LearnScreen() }
         composable(Routes.SETTINGS) {
             SettingsScreen(
+                onAbout = { navController.navigate(Routes.ABOUT) },
                 onLogout = {
-                    navController.navigate(Routes.LOGIN) {
-                        popUpTo(0) { inclusive = true }
+                    navController.navigate(Routes.WELCOME) {
+                        popUpTo(navController.graph.id) { inclusive = true }
                     }
                 }
             )
