@@ -1,0 +1,95 @@
+package com.kelompok8.lentera.core.model
+
+// File ini adalah "kontrak" data bersama. Kalau mau ubah, diskusikan dulu di grup
+// karena dipakai oleh hampir semua fitur.
+
+data class User(
+    val uid: String,
+    val name: String,
+    val email: String,
+    val school: String = ""
+)
+
+enum class Island(val displayName: String) {
+    JAWA("Jawa"),
+    SUMATRA("Sumatra"),
+    KALIMANTAN("Kalimantan")
+}
+
+data class Chapter(
+    val id: String,          // format: "jawa_1" sampai "kalimantan_5"
+    val island: Island,
+    val number: Int,         // 1..5
+    val title: String
+)
+
+// Tiap chapter isinya 10 soal: 4 pilihan ganda, 3 blok kata, 3 susun huruf
+sealed class Question {
+    abstract val id: String
+    abstract val prompt: String
+    abstract val imageName: String?   // nama file gambar di drawable/assets, boleh null
+
+    data class MultipleChoice(
+        override val id: String,
+        override val prompt: String,
+        override val imageName: String? = null,
+        val options: List<String>,
+        val correctIndex: Int
+    ) : Question()
+
+    data class WordBlock(
+        override val id: String,
+        override val prompt: String,
+        override val imageName: String? = null,
+        val blocks: List<String>,        // blok kata yang ditampilkan (sudah termasuk pengecoh)
+        val answer: List<String>         // urutan blok yang benar
+    ) : Question()
+
+    data class LetterArrange(
+        override val id: String,
+        override val prompt: String,
+        override val imageName: String? = null,
+        val letters: List<Char>,         // huruf acak yang ditampilkan
+        val answer: String
+    ) : Question()
+}
+
+// Hasil satu kali main chapter, dikirim dari fitur game ke fitur skor
+data class ChapterResult(
+    val chapterId: String,
+    val correctCount: Int,
+    val totalQuestions: Int = 10
+) {
+    val score: Int get() = correctCount * 10
+}
+
+// Nilai terbaik per chapter yang disimpan untuk progres, medali, dan leaderboard
+data class BestScore(
+    val uid: String,
+    val chapterId: String,
+    val bestScore: Int
+)
+
+data class LeaderboardEntry(
+    val uid: String,
+    val name: String,
+    val totalScore: Int
+)
+
+enum class GlossaryCategory(val displayName: String) {
+    PAKAIAN_ADAT("Pakaian Adat"),
+    RUMAH_ADAT("Rumah Adat"),
+    MAKANAN("Makanan Tradisional"),
+    TARIAN("Tarian Adat"),
+    LAGU("Lagu Daerah")
+}
+
+data class GlossaryItem(
+    val id: String,
+    val province: String,
+    val island: Island,
+    val category: GlossaryCategory,
+    val name: String,
+    val description: String,
+    val imageName: String? = null
+)
