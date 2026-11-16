@@ -28,3 +28,4 @@ val SaveGreen = Color(0xFF14BF8E)
 val DarkButton = Color(0xFF14196B)
 val AboutCard = Color(0xFF1A2A9C)
 val SwitchBlue = Color(0xFF3D6BF5)
+

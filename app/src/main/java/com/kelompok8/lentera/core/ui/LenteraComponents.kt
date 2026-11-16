@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -20,7 +21,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
@@ -34,9 +37,6 @@ import com.kelompok8.lentera.ui.theme.FieldBorder
 import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.LenteraPink
 import com.kelompok8.lentera.ui.theme.NuesoModerno
-import com.kelompok8.lentera.ui.theme.NavyDeep
-import com.kelompok8.lentera.ui.theme.NavyLight
-import com.kelompok8.lentera.ui.theme.NavyMid
 import com.kelompok8.lentera.ui.theme.TextLight
 
 // Komponen visual bersama sesuai Figma. Silakan dipakai di halaman masing-masing
@@ -45,11 +45,60 @@ import com.kelompok8.lentera.ui.theme.TextLight
 @Composable
 fun LenteraBackground(modifier: Modifier = Modifier, content: @Composable BoxScope.() -> Unit) {
     Box(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Brush.radialGradient(listOf(NavyDeep, NavyMid, NavyLight))),
-        content = content
-    )
+        modifier = modifier.fillMaxSize()
+    ) {
+        Box(
+            modifier = Modifier
+                .background(color = Color(0xFF0C126B))
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Box(
+                modifier = Modifier
+                    .requiredSize(870.dp)
+                    .drawBehind {
+                        drawCircle(
+                            color = Color(0xFF0A1059),
+                            radius = size.minDimension / 2
+                        )
+                    }
+            )
+            Box(
+                modifier = Modifier
+                    .requiredSize(774.dp)
+                    .drawBehind {
+                        drawCircle(
+                            color = Color(0xFF070B4A),
+                            radius = size.minDimension / 2
+                        )
+                    }
+            )
+            Box(
+                modifier = Modifier
+                    .requiredSize(644.dp)
+                    .drawBehind {
+                        drawCircle(
+                            color = Color(0xFF060A3F),
+                            radius = size.minDimension / 2
+                        )
+                    }
+            )
+            Box(
+                modifier = Modifier
+                    .requiredSize(498.dp)
+                    .drawBehind {
+                        drawCircle(
+                            color = Color(0xFF050938),
+                            radius = size.minDimension / 2
+                        )
+                    }
+            )
+        }
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            content = content
+        )
+    }
 }
 
 // Sementara masih teks. Kalau logo PNG dari Figma sudah ada, ganti Text pertama dengan Image

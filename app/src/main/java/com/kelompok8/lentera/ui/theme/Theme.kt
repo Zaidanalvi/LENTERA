@@ -28,3 +28,8 @@ fun LENTERATheme(content: @Composable () -> Unit) {
         content = content
     )
 }
+
+@Composable
+fun LenteraTheme(content: @Composable () -> Unit) = LENTERATheme(content)
+
+
