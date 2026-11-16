@@ -33,6 +33,7 @@ import com.kelompok8.lentera.ui.theme.FieldBlue
 import com.kelompok8.lentera.ui.theme.FieldBorder
 import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.LenteraPink
+import com.kelompok8.lentera.ui.theme.NuesoModerno
 import com.kelompok8.lentera.ui.theme.NavyDeep
 import com.kelompok8.lentera.ui.theme.NavyLight
 import com.kelompok8.lentera.ui.theme.NavyMid
@@ -59,7 +60,8 @@ fun LenteraLogo(modifier: Modifier = Modifier) {
             text = "LENTERA",
             color = LenteraLime,
             fontSize = 52.sp,
-            fontWeight = FontWeight.Black,
+            fontFamily = NuesoModerno,
+            fontWeight = FontWeight.Bold,
             letterSpacing = 1.sp
         )
         Text(
