@@ -1,14 +1,17 @@
 package com.kelompok8.lentera.core.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
@@ -25,19 +28,22 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kelompok8.lentera.R
 import com.kelompok8.lentera.ui.theme.AvatarPink
 import com.kelompok8.lentera.ui.theme.AvatarPurple
 import com.kelompok8.lentera.ui.theme.FieldBlue
 import com.kelompok8.lentera.ui.theme.FieldBorder
 import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.LenteraPink
-import com.kelompok8.lentera.ui.theme.NuesoModerno
+import com.kelompok8.lentera.ui.theme.MuseoModerno
 import com.kelompok8.lentera.ui.theme.TextLight
+import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // Komponen visual bersama sesuai Figma. Silakan dipakai di halaman masing-masing
 // supaya tampilan seluruh aplikasi seragam.
@@ -48,9 +54,7 @@ fun LenteraBackground(modifier: Modifier = Modifier, content: @Composable BoxSco
         modifier = modifier.fillMaxSize()
     ) {
         Box(
-            modifier = Modifier
-                .background(color = Color(0xFF0C126B))
-                .fillMaxSize(),
+            modifier = Modifier.background(color = Color(0xFF0C126B)).fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             Box(
@@ -108,16 +112,18 @@ fun LenteraLogo(modifier: Modifier = Modifier) {
         Text(
             text = "LENTERA",
             color = LenteraLime,
-            fontSize = 52.sp,
-            fontFamily = NuesoModerno,
+            fontSize = 60.sp,
+            fontFamily = MuseoModerno,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.sp
         )
         Text(
+            modifier = Modifier.offset(y = (-20).dp),
             text = "Lestarikan Budaya Nusantara!",
             color = TextLight,
             fontSize = 15.sp,
-            fontWeight = FontWeight.SemiBold
+            fontWeight = FontWeight.SemiBold,
+            fontFamily = mPlus1p
         )
     }
 }
@@ -163,16 +169,21 @@ fun LinkText(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
         fontSize = 16.sp,
         fontWeight = FontWeight.SemiBold,
         textDecoration = TextDecoration.Underline,
+        fontFamily = mPlus1p,
         modifier = modifier
             .clip(RoundedCornerShape(6.dp))
             .clickable(onClick = onClick)
-            .padding(8.dp)
     )
 }
 
 // Avatar masih pakai emoji. Setelah gambar avatar dari Figma di-export ke res/drawable,
 // cukup ubah isi Box di bawah jadi Image(painterResource(...)) sesuai avatarId.
-val avatarEmojis = listOf("😎", "🧔", "🧕", "👧")
+val avatarEmojis = listOf(
+    R.drawable.avatar1png,
+    R.drawable.avatar2png,
+    R.drawable.avatar3png,
+    R.drawable.avatar4png
+)
 
 @Composable
 fun AvatarImage(
@@ -191,6 +202,10 @@ fun AvatarImage(
             .border(1.dp, FieldBorder, shape),
         contentAlignment = Alignment.Center
     ) {
-        Text(avatarEmojis.getOrElse(avatarId) { avatarEmojis[0] }, fontSize = emojiSize)
+        Image(
+            painterResource(avatarEmojis.getOrElse(avatarId) { avatarEmojis[0] }),
+            contentDescription = null,
+            Modifier.size(60.dp)
+        )
     }
 }

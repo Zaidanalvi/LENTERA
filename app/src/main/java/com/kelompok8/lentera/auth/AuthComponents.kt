@@ -1,5 +1,6 @@
 package com.kelompok8.lentera.auth
 
+import android.graphics.drawable.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,6 +24,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -36,6 +39,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -43,6 +49,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.ui.AvatarImage
 import com.kelompok8.lentera.core.ui.LenteraLogo
 import com.kelompok8.lentera.core.ui.avatarEmojis
@@ -50,6 +57,7 @@ import com.kelompok8.lentera.ui.theme.FieldBlue
 import com.kelompok8.lentera.ui.theme.FieldBorder
 import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.TextLight
+import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // Komponen form yang dipakai bareng oleh halaman Login dan Register
 
@@ -80,7 +88,7 @@ fun AuthLayout(heading: String, content: @Composable ColumnScope.() -> Unit) {
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
         LenteraLogo()
-        Spacer(Modifier.height(48.dp))
+        Spacer(Modifier.height(20.dp))
         Text(heading, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = TextLight)
         content()
     }
@@ -104,14 +112,14 @@ fun LenteraTextField(
     value: String,
     onValueChange: (String) -> Unit,
     placeholder: String,
-    icon: String,
+    icon: @Composable () -> Unit,
     keyboardType: KeyboardType = KeyboardType.Text
 ) {
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
         placeholder = { Text(placeholder, style = fieldTextStyle) },
-        leadingIcon = { Text(icon, fontSize = 18.sp) },
+        leadingIcon = icon as @Composable (() -> Unit)?,
         singleLine = true,
         textStyle = fieldTextStyle,
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
@@ -128,7 +136,12 @@ fun LenteraPasswordField(value: String, onValueChange: (String) -> Unit) {
         value = value,
         onValueChange = onValueChange,
         placeholder = { Text("Password", style = fieldTextStyle) },
-        leadingIcon = { Text("🔒", fontSize = 18.sp) },
+        leadingIcon = { Icon(
+            painter = painterResource(R.drawable.outline_passkey_24),
+            contentDescription = "Password",
+            tint = Color(0xFFFFFFFF),
+            modifier = Modifier.size(20.dp))
+        },
         trailingIcon = {
             TextButton(onClick = { visible = !visible }) {
                 Text(if (visible) "Sembunyi" else "Lihat", color = TextLight)
@@ -151,7 +164,7 @@ fun LenteraDropdown(
     options: List<String>,
     onSelected: (String) -> Unit,
     placeholder: String,
-    icon: String
+    icon: Painter,
 ) {
     var expanded by remember { mutableStateOf(false) }
     Box(Modifier.fillMaxWidth()) {
@@ -166,7 +179,12 @@ fun LenteraDropdown(
                 .padding(horizontal = 14.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(icon, fontSize = 18.sp)
+            Icon(
+                painter = icon,
+                contentDescription = null,
+                tint = Color.White,
+                modifier = Modifier.size(20.dp)
+            )
             Spacer(Modifier.width(14.dp))
             Text(
                 text = selected.ifEmpty { placeholder },
@@ -174,16 +192,23 @@ fun LenteraDropdown(
                 color = if (selected.isEmpty()) TextLight.copy(alpha = 0.7f) else TextLight,
                 modifier = Modifier.weight(1f)
             )
-            Text("▾", fontSize = 22.sp, color = TextLight)
+            Icon(
+                painter = painterResource(R.drawable.baseline_arrow_drop_down_24),
+                contentDescription = null,
+                tint = Color.White,
+                modifier = Modifier.size(24.dp)
+            )
         }
         DropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false },
-            modifier = Modifier.heightIn(max = 320.dp)
+            modifier = Modifier
+                .background(Color(0xFF1E1B4B))
+                .width(347.dp)
         ) {
             options.forEach { option ->
                 DropdownMenuItem(
-                    text = { Text(option) },
+                    text = { Text(option, color = Color(0xFFFFFFFF), fontFamily = mPlus1p) },
                     onClick = {
                         onSelected(option)
                         expanded = false

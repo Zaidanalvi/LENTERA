@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -23,11 +24,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.model.User
 import com.kelompok8.lentera.core.ui.AvatarImage
 import com.kelompok8.lentera.core.ui.LinkText
@@ -71,11 +75,17 @@ private fun RegisterForm(
     var avatarId by rememberSaveable { mutableIntStateOf(0) }
 
     AuthLayout(heading = "Ayo Buat Akun Terlebih Dahulu!") {
+        Spacer(Modifier.height(5.dp))
         LenteraTextField(
             value = email,
             onValueChange = { email = it; viewModel.clearError() },
             placeholder = "Email",
-            icon = "✉️",
+            icon = { Icon(
+                painter = painterResource(R.drawable.baseline_email_24),
+                contentDescription = "Password",
+                tint = Color(0xFFFFFFFF),
+                modifier = Modifier.size(20.dp))
+            },
             keyboardType = KeyboardType.Email
         )
         LenteraPasswordField(
@@ -86,21 +96,26 @@ private fun RegisterForm(
             value = name,
             onValueChange = { name = it; viewModel.clearError() },
             placeholder = "Nama",
-            icon = "✏️"
+            icon = { Icon(
+                painter = painterResource(R.drawable.baseline_person_24),
+                contentDescription = "Password",
+                tint = Color(0xFFFFFFFF),
+                modifier = Modifier.size(20.dp))
+            }
         )
         LenteraDropdown(
             selected = gender,
             options = genderOptions,
             onSelected = { gender = it; viewModel.clearError() },
             placeholder = "Gender",
-            icon = "👤"
+            icon = if (gender == "Wanita") painterResource(R.drawable.outline_female_24) else painterResource(R.drawable.outline_male_24)
         )
         LenteraDropdown(
             selected = location,
             options = provinceOptions,
             onSelected = { location = it; viewModel.clearError() },
             placeholder = "Asal Provinsi",
-            icon = "📍"
+            icon = painterResource(R.drawable.baseline_location_on_24)
         )
         AvatarPicker(selectedId = avatarId, onSelect = { avatarId = it })
         ErrorText(errorMessage)
@@ -109,7 +124,6 @@ private fun RegisterForm(
             isLoading = isLoading,
             onClick = { viewModel.register(email, password, name, gender, location, avatarId) }
         )
-        Spacer(Modifier.height(8.dp))
         LinkText(text = "Kembali ke Menu Utama", onClick = onBackToMenu)
     }
 }
