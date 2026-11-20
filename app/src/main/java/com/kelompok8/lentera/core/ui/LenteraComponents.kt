@@ -1,12 +1,15 @@
 package com.kelompok8.lentera.core.ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,10 +18,12 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,6 +36,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -208,4 +214,117 @@ fun AvatarImage(
             Modifier.size(60.dp)
         )
     }
+}
+
+@Composable
+fun Header(
+    title: String,
+    countCoin: Int,
+    pfp: Int
+) {
+    Row(
+        modifier = Modifier.width(347.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .background(Color(0xFF1620A7), shape = RoundedCornerShape(20.dp))
+                .border(1.dp, color = Color(0x38FFFFFF), shape = RoundedCornerShape(20.dp))
+                .padding(vertical = 3.dp, horizontal = 10.dp)
+        ) {
+            Image(painterResource(R.drawable.coin), contentDescription = "Coin", modifier = Modifier.size(20.dp))
+            Spacer(Modifier.width(10.dp))
+            Text(text = countCoin.toString(), color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
+        }
+        Text(text = title, color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 20.sp)
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .size(40.dp)
+                .background(Color(0xFF1620A7), shape = RoundedCornerShape(100.dp))
+                .border(1.dp, color = Color(0x38FFFFFF), shape = RoundedCornerShape(100.dp))
+        ) {
+            Image(painterResource(
+                pfp),
+                contentDescription = "Profile",
+                modifier = Modifier
+                    .size(31.dp)
+                    .clip(RoundedCornerShape(100.dp))
+            )
+        }
+    }
+}
+
+@Composable
+fun IslandCard(
+    islandName: String,
+    coin: Int,
+    onIslandClick: () -> Unit
+) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .width(174.35.dp)
+            .height(168.01.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .border(1.dp, Color(0xFFa568e3), RoundedCornerShape(16.dp))
+            .background(Brush.linearGradient(listOf(Color(0xFF8A1DDE), Color(0xFF4B1078))))
+            .padding(15.dp)
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Text("Pulau $islandName",
+                fontFamily = mPlus1p,
+                fontSize = if (islandName.length <= 5) 20.sp else 15.sp,
+                color = Color(0xFFFFFFFF)
+            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.width(100.dp)
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.coin),
+                    contentDescription = "Coin",
+                    modifier = Modifier.size(41.dp)
+                )
+                Text("$coin",
+                    fontFamily = mPlus1p,
+                    fontSize = 40.sp,
+                    color = Color(0xFFFFFFFF)
+                )
+            }
+            ElevatedButton(
+                onClick = onIslandClick,
+                shape = RoundedCornerShape(7.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF60149B)),
+                border = BorderStroke(1.dp, Color(0xFF8951b5)),
+                modifier = Modifier
+                    .width(150.58.dp)
+                    .height(36.46.dp)
+            ) {
+                Text("PLAY",
+                    fontFamily = mPlus1p,
+                    fontSize = 16.sp,
+                    color = Color(0xFFFFFFFF),
+                )
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun IslandCardPreview() {
+    IslandCard(
+        "Jawa",
+        50,
+        onIslandClick = {}
+    )
 }

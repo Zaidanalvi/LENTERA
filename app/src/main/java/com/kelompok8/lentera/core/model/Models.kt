@@ -13,10 +13,10 @@ data class User(
     val level: String = "Pemula"
 )
 
-enum class Island(val displayName: String) {
-    JAWA("Jawa"),
-    SUMATRA("Sumatra"),
-    KALIMANTAN("Kalimantan")
+enum class Island(val displayName: String, val coin: Int) {
+    JAWA("Jawa", 50),
+    SUMATRA("Sumatra", 50),
+    KALIMANTAN("Kalimantan", 50)
 }
 
 data class Chapter(

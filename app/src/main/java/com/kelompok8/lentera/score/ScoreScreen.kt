@@ -30,9 +30,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.model.ChapterResult
 import com.kelompok8.lentera.core.ui.AvatarImage
+import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import com.kelompok8.lentera.ui.theme.LENTERATheme
 import com.kelompok8.lentera.ui.theme.MuseoModerno
@@ -55,14 +57,13 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
         modifier = Modifier.fillMaxSize()
     ) {
         // --- TOP BAR ---
-        Row(
+        Box(
+            contentAlignment = Alignment.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 20.dp, vertical = 24.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
+                .offset(y = 30.dp)
         ) {
-
+            Header("Skor Akhir", 50, R.drawable.avatar1png)
         }
 
         // --- CENTER CARD ---

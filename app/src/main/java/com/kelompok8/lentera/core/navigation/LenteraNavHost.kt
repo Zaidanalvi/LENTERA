@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.kelompok8.lentera.R
 import com.kelompok8.lentera.auth.LoginScreen
 import com.kelompok8.lentera.auth.RegisterScreen
 import com.kelompok8.lentera.auth.WelcomeScreen
@@ -30,10 +31,10 @@ import com.kelompok8.lentera.settings.AboutScreen
 import com.kelompok8.lentera.settings.SettingsScreen
 
 private val bottomItems = listOf(
-    BottomItem(Routes.HOME, "Beranda", "🏠"),
-    BottomItem(Routes.PLAY, "Bermain", "🎮"),
-    BottomItem(Routes.LEARN, "Belajar", "📖"),
-    BottomItem(Routes.SETTINGS, "Pengaturan", "⚙️")
+    BottomItem(Routes.HOME, "Beranda", R.drawable.home),
+    BottomItem(Routes.PLAY, "Bermain", R.drawable.game),
+    BottomItem(Routes.LEARN, "Belajar", R.drawable.study),
+    BottomItem(Routes.SETTINGS, "Pengaturan", R.drawable.settings)
 )
 
 @Composable
