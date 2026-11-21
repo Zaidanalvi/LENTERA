@@ -3,10 +3,12 @@ package com.kelompok8.lentera.core.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -23,6 +25,7 @@ import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.game.GameScreen
 import com.kelompok8.lentera.home.HomeScreen
 import com.kelompok8.lentera.leaderboard.LeaderboardScreen
+import com.kelompok8.lentera.leaderboard.LeaderboardViewModel
 import com.kelompok8.lentera.learn.LearnScreen
 import com.kelompok8.lentera.map.ChapterSelectScreen
 import com.kelompok8.lentera.map.PlayScreen
@@ -176,6 +179,19 @@ private fun LenteraNavHost(
                 onDone = { navController.popBackStack() }
             )
         }
-        composable(Routes.LEADERBOARD) { LeaderboardScreen() }
+        composable(Routes.LEADERBOARD) {
+            val leaderBoardViewModel: LeaderboardViewModel = viewModel()
+            val leaderBoardUiState by leaderBoardViewModel.uiState.collectAsState()
+            LeaderboardScreen(
+                entries = leaderBoardUiState.entries,
+                isLoading = leaderBoardUiState.isLoading,
+                currentPage = leaderBoardUiState.currentPage,
+                canGoPrev = leaderBoardUiState.canGoPrev,
+                canGoNext = leaderBoardUiState.canGoNext,
+                onPrevPage = { leaderBoardViewModel.prevPage() },
+                onNextPage = { leaderBoardViewModel.nextPage() },
+                onBack = { navController.popBackStack() }
+            )
+        }
     }
 }

@@ -6,4 +6,5 @@ import com.kelompok8.lentera.auth.FirebaseAuthRepository
 // Kalau repository punyamu sudah jadi, daftarkan di sini juga.
 object AppContainer {
     val authRepository: AuthRepository by lazy { FirebaseAuthRepository() }
+    val leaderboardRepository: LeaderboardRepository by lazy { LeaderboardRepositoryImpl() }
 }

@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -59,9 +60,8 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
                     lineHeight = 28.sp,
                     color = Color(0xFFDDFF00),
                 )
-                Button(
+                IconButton(
                     onClick = onLeaderboardClick,
-                    colors = ButtonDefaults.buttonColors(Color.Transparent)
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.baseline_leaderboard_24),

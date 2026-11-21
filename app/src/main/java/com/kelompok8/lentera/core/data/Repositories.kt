@@ -40,10 +40,14 @@ interface ScoreRepository {
     suspend fun hasMedal(uid: String, island: Island): Boolean
 }
 
+data class LeaderboardResult(
+    val entries: List<LeaderboardEntry>,
+    val totalCount: Int
+)
+
 // PJ: Hilal
 interface LeaderboardRepository {
-    suspend fun getIslandLeaderboard(island: Island): List<LeaderboardEntry>
-    suspend fun getOverallLeaderboard(): List<LeaderboardEntry>
+    suspend fun getOverallLeaderboard(page: Int = 1, pageSize: Int = 10): LeaderboardResult
 }
 
 // PJ: Noya

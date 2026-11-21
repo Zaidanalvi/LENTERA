@@ -6,6 +6,7 @@ package com.kelompok8.lentera.core.model
 data class User(
     val uid: String,
     val name: String,
+    val coin: Int = 0,
     val email: String,
     val gender: String = "",
     val location: String = "",
@@ -75,9 +76,21 @@ data class BestScore(
 
 data class LeaderboardEntry(
     val uid: String,
+    val rank: Int,
     val name: String,
-    val totalScore: Int
-)
+    val totalScore: Int,
+    val avatarId: Int = 0
+) {
+    val points: Int get() = totalScore
+    val avatarRes: Int get() = when (Math.abs(avatarId) % 4) {
+        0 -> com.kelompok8.lentera.R.drawable.avatar1png
+        1 -> com.kelompok8.lentera.R.drawable.avatar2png
+        2 -> com.kelompok8.lentera.R.drawable.avatar3png
+        else -> com.kelompok8.lentera.R.drawable.avatar4png
+    }
+    val flagRes: Int get() = com.kelompok8.lentera.R.drawable.avatar1png
+    val badgeRes: Int get() = com.kelompok8.lentera.R.drawable.coin
+}
 
 enum class GlossaryCategory(val displayName: String) {
     PAKAIAN_ADAT("Pakaian Adat"),

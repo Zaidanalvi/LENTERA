@@ -43,6 +43,7 @@ class FirebaseAuthRepository(
         val user = User(
             uid = firebaseUser.uid,
             name = name,
+            coin = 0,
             email = email,
             gender = gender,
             location = location,
@@ -52,6 +53,7 @@ class FirebaseAuthRepository(
             mapOf(
                 "name" to user.name,
                 "email" to user.email,
+                "coin" to user.coin,
                 "gender" to user.gender,
                 "location" to user.location,
                 "avatarId" to user.avatarId,
@@ -80,6 +82,7 @@ class FirebaseAuthRepository(
     private fun DocumentSnapshot.toUser(uid: String, email: String, fallbackName: String) = User(
         uid = uid,
         name = getString("name") ?: fallbackName,
+        coin = getLong("coin")?.toInt() ?: 0,
         email = email,
         gender = getString("gender").orEmpty(),
         location = getString("location").orEmpty(),
