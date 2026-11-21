@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -47,7 +48,7 @@ import com.kelompok8.lentera.ui.theme.FieldBlue
 import com.kelompok8.lentera.ui.theme.FieldBorder
 import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.LenteraPink
-import com.kelompok8.lentera.ui.theme.MuseoModerno
+import com.kelompok8.lentera.ui.theme.museoModerno
 import com.kelompok8.lentera.ui.theme.TextLight
 import com.kelompok8.lentera.ui.theme.mPlus1p
 
@@ -119,7 +120,7 @@ fun LenteraLogo(modifier: Modifier = Modifier) {
             text = "LENTERA",
             color = LenteraLime,
             fontSize = 60.sp,
-            fontFamily = MuseoModerno,
+            fontFamily = museoModerno,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.sp
         )
@@ -303,23 +304,31 @@ fun IslandCard(
             ElevatedButton(
                 onClick = onIslandClick,
                 shape = RoundedCornerShape(7.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF60149B)),
+                contentPadding = PaddingValues(0.dp),
+                colors = ButtonDefaults.buttonColors(Color.Transparent),
                 border = BorderStroke(1.dp, Color(0xFF8951b5)),
                 modifier = Modifier
                     .width(150.58.dp)
                     .height(36.46.dp)
             ) {
-                Text("PLAY",
-                    fontFamily = mPlus1p,
-                    fontSize = 16.sp,
-                    color = Color(0xFFFFFFFF),
-                )
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Brush.linearGradient(listOf(Color(0xFF9f56d8), Color(0xFF57019A)))),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("PLAY",
+                        fontFamily = mPlus1p,
+                        fontSize = 16.sp,
+                        color = Color(0xFFFFFFFF),
+                    )
+                }
             }
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview
 @Composable
 fun IslandCardPreview() {
     IslandCard(

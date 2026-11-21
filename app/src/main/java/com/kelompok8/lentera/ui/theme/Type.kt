@@ -35,7 +35,7 @@ val Typography = Typography(
     */
 )
 
-val MuseoModerno = FontFamily(
+val museoModerno = FontFamily(
     Font(R.font.museomodernobold, FontWeight.Bold)
 )
 

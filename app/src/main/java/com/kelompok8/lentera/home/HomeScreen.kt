@@ -64,7 +64,8 @@ fun HomeScreen(onIslandClick: (String) -> Unit) {
                     fontSize = 20.sp,
                     color = Color(0xFFFFFFFF),
                     modifier = Modifier
-                        .align(Alignment.Start))
+                        .align(Alignment.Start)
+                )
             }
             Spacer(Modifier.height(20.dp))
             Row(
@@ -99,9 +100,6 @@ fun HomeScreen(onIslandClick: (String) -> Unit) {
                 )
             }
         }
-//        Island.entries.forEach { island ->
-//            Button(onClick = { onIslandClick(island.name) }) { Text(island.displayName) }
-//        }
     }
 }
 

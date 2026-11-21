@@ -37,7 +37,7 @@ import com.kelompok8.lentera.core.ui.AvatarImage
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import com.kelompok8.lentera.ui.theme.LENTERATheme
-import com.kelompok8.lentera.ui.theme.MuseoModerno
+import com.kelompok8.lentera.ui.theme.museoModerno
 import com.kelompok8.lentera.ui.theme.TextLight
 import com.kelompok8.lentera.ui.theme.mPlus1p
 
