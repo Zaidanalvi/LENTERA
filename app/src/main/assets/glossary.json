@@ -1,0 +1,3954 @@
+{
+  "items": [
+    {
+      "id": "aceh_pakaian_adat_ulee_balang",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Ulee Balang",
+      "description": "Pakaian adat bangsawan Aceh berupa baju dan celana hitam bersulam benang emas, dilengkapi kain songket, rencong, dan penutup kepala meukeutop.",
+      "imageName": "aceh_pakaian_adat_ulee_balang"
+    },
+    {
+      "id": "aceh_pakaian_adat_linto_baro",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Linto Baro",
+      "description": "Pakaian pengantin pria Aceh berupa baju hitam bersulam emas, celana panjang, kain songket, dan meukeutop.",
+      "imageName": "aceh_pakaian_adat_linto_baro"
+    },
+    {
+      "id": "aceh_pakaian_adat_daro_baro",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Daro Baro",
+      "description": "Pakaian pengantin perempuan Aceh dengan baju berwarna cerah, kain songket, dan perhiasan emas yang lengkap.",
+      "imageName": "aceh_pakaian_adat_daro_baro"
+    },
+    {
+      "id": "aceh_pakaian_adat_kerawang_gayo",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kerawang Gayo",
+      "description": "Kain sulam khas suku Gayo dengan motif flora dan fauna, dipakai dalam upacara adat.",
+      "imageName": "aceh_pakaian_adat_kerawang_gayo"
+    },
+    {
+      "id": "aceh_rumah_adat_rumoh_aceh",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumoh Aceh",
+      "description": "Rumah panggung kayu dengan tiang tinggi dan tiga ruang utama. Tangga selalu berjumlah ganjil dan ada ukiran khas di dinding.",
+      "imageName": "aceh_rumah_adat_rumoh_aceh"
+    },
+    {
+      "id": "aceh_rumah_adat_umah_pitu_ruang",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Umah Pitu Ruang",
+      "description": "Rumah adat suku Gayo berbentuk panggung dengan tujuh ruang dan ukiran kerawang di dindingnya.",
+      "imageName": "aceh_rumah_adat_umah_pitu_ruang"
+    },
+    {
+      "id": "aceh_rumah_adat_rumoh_santeut",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumoh Santeut",
+      "description": "Rumah panggung sederhana milik masyarakat umum Aceh dengan ukuran lebih kecil dari Rumoh Aceh.",
+      "imageName": "aceh_rumah_adat_rumoh_santeut",
+      "needsReview": true
+    },
+    {
+      "id": "aceh_makanan_mie_aceh",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Aceh",
+      "description": "Mi kuning tebal dengan bumbu rempah kari yang kuat, disajikan digoreng, direbus, atau berkuah dengan daging sapi, kambing, atau seafood.",
+      "imageName": "aceh_makanan_mie_aceh"
+    },
+    {
+      "id": "aceh_makanan_kuah_pliek_u",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Kuah Pliek U",
+      "description": "Gulai sayur dengan bumbu pliek u (ampas kelapa fermentasi), nangka muda, dan aneka sayuran.",
+      "imageName": "aceh_makanan_kuah_pliek_u"
+    },
+    {
+      "id": "aceh_makanan_ayam_tangkap",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Ayam Tangkap",
+      "description": "Ayam goreng yang disajikan dengan tumpukan daun pandan, daun kari, cabai hijau, dan bumbu rempah yang renyah.",
+      "imageName": "aceh_makanan_ayam_tangkap"
+    },
+    {
+      "id": "aceh_makanan_kuah_beulangong",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Kuah Beulangong",
+      "description": "Gulai daging sapi atau kambing berkuah santan yang dimasak dalam kuali besar pada acara kenduri.",
+      "imageName": "aceh_makanan_kuah_beulangong"
+    },
+    {
+      "id": "aceh_makanan_timphan",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Timphan",
+      "description": "Kue dari pisang dan tepung ketan yang dibungkus daun pisang, diisi serikaya atau kelapa manis.",
+      "imageName": "aceh_makanan_timphan"
+    },
+    {
+      "id": "aceh_makanan_keumamah",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Keumamah",
+      "description": "Ikan tongkol kering (ikan kayu) yang dimasak dengan bumbu rempah dan dikenal tahan lama.",
+      "imageName": "aceh_makanan_keumamah"
+    },
+    {
+      "id": "aceh_tarian_tari_saman",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Saman",
+      "description": "Tarian yang dibawakan banyak penari laki-laki dalam posisi duduk berbaris, dengan gerak tepuk tangan dan dada yang cepat serta serempak. Tarian ini diakui UNESCO.",
+      "imageName": "aceh_tarian_tari_saman"
+    },
+    {
+      "id": "aceh_tarian_tari_seudati",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Seudati",
+      "description": "Tarian laki-laki Aceh yang gagah dengan tepukan dada dan petikan jari, sarat nilai religius.",
+      "imageName": "aceh_tarian_tari_seudati"
+    },
+    {
+      "id": "aceh_tarian_tari_ratoh_jaroe",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Ratoh Jaroe",
+      "description": "Tarian perempuan Aceh dengan gerak tangan yang cepat, kompak, dan diiringi syair.",
+      "imageName": "aceh_tarian_tari_ratoh_jaroe"
+    },
+    {
+      "id": "aceh_tarian_tari_likok_pulo",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Likok Pulo",
+      "description": "Tarian dari Pulau Aceh yang dibawakan beramai-ramai sambil duduk dan berdiri secara bergantian.",
+      "imageName": "aceh_tarian_tari_likok_pulo"
+    },
+    {
+      "id": "aceh_tarian_tari_ranup_lampuan",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Ranup Lampuan",
+      "description": "Tarian penyambutan tamu dengan sirih (ranup) yang dipersembahkan sebagai penghormatan.",
+      "imageName": "aceh_tarian_tari_ranup_lampuan"
+    },
+    {
+      "id": "aceh_tarian_tari_guel",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Guel",
+      "description": "Tarian suku Gayo yang menggambarkan kisah seekor gajah putih dan dibawakan dalam upacara adat.",
+      "imageName": "aceh_tarian_tari_guel"
+    },
+    {
+      "id": "aceh_lagu_daerah_bungong_jeumpa",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Bungong Jeumpa",
+      "description": "Lagu tentang bunga jeumpa (cempaka) yang harum dan indah, dikenal sebagai lambang keanggunan Aceh.",
+      "imageName": "aceh_lagu_daerah_bungong_jeumpa"
+    },
+    {
+      "id": "aceh_lagu_daerah_piso_surit",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Piso Surit",
+      "description": "Lagu tentang burung piso surit yang bernyanyi sedih, menggambarkan kerinduan akan orang tercinta.",
+      "imageName": "aceh_lagu_daerah_piso_surit"
+    },
+    {
+      "id": "aceh_lagu_daerah_aneuk_yatim",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Aneuk Yatim",
+      "description": "Lagu Aceh yang menceritakan nasib anak yatim dengan nada menyentuh.",
+      "imageName": "aceh_lagu_daerah_aneuk_yatim"
+    },
+    {
+      "id": "aceh_lagu_daerah_lembah_alas",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Lembah Alas",
+      "description": "Lagu daerah Aceh Tenggara yang memuji keindahan Lembah Alas.",
+      "imageName": "aceh_lagu_daerah_lembah_alas",
+      "needsReview": true
+    },
+    {
+      "id": "aceh_lagu_daerah_tawar_sedenge",
+      "province": "Aceh",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Tawar Sedenge",
+      "description": "Lagu suku Gayo tentang nasihat dan kehidupan sehari-hari.",
+      "imageName": "aceh_lagu_daerah_tawar_sedenge",
+      "needsReview": true
+    },
+    {
+      "id": "sumatera_utara_pakaian_adat_ulos",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Ulos",
+      "description": "Kain tenun tradisional Batak yang dipakai sebagai selendang, sarung, atau penutup kepala dalam upacara adat. Setiap motifnya punya makna dan fungsi tertentu.",
+      "imageName": "sumatera_utara_pakaian_adat_ulos"
+    },
+    {
+      "id": "sumatera_utara_pakaian_adat_uis_gara",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Uis Gara",
+      "description": "Kain adat Karo berwarna merah yang dipakai dalam upacara adat dan pernikahan.",
+      "imageName": "sumatera_utara_pakaian_adat_uis_gara"
+    },
+    {
+      "id": "sumatera_utara_pakaian_adat_pakaian_adat_melayu_deli",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Melayu Deli",
+      "description": "Busana Melayu Deli berupa baju teluk belanga dengan kain songket dan tanjak.",
+      "imageName": "sumatera_utara_pakaian_adat_pakaian_adat_melayu_deli"
+    },
+    {
+      "id": "sumatera_utara_pakaian_adat_baru_oroba",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baru Oroba",
+      "description": "Pakaian adat Nias berwarna keemasan dengan mahkota dan kalung besar bagi pengantin.",
+      "imageName": "sumatera_utara_pakaian_adat_baru_oroba"
+    },
+    {
+      "id": "sumatera_utara_pakaian_adat_gotong_dan_bulang",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Gotong dan Bulang",
+      "description": "Hiasan kepala adat Simalungun: gotong untuk laki-laki dan bulang untuk perempuan.",
+      "imageName": "sumatera_utara_pakaian_adat_gotong_dan_bulang"
+    },
+    {
+      "id": "sumatera_utara_rumah_adat_rumah_bolon",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Bolon",
+      "description": "Rumah adat Batak Toba berbentuk panggung dengan atap melengkung dan hiasan gorga di dinding, dihuni beberapa keluarga sekaligus.",
+      "imageName": "sumatera_utara_rumah_adat_rumah_bolon"
+    },
+    {
+      "id": "sumatera_utara_rumah_adat_rumah_siwaluh_jabu",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Siwaluh Jabu",
+      "description": "Rumah panjang adat Karo yang dihuni delapan keluarga dalam satu atap.",
+      "imageName": "sumatera_utara_rumah_adat_rumah_siwaluh_jabu"
+    },
+    {
+      "id": "sumatera_utara_rumah_adat_bagas_godang",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Bagas Godang",
+      "description": "Rumah adat Mandailing dengan atap bertingkat yang menjadi pusat kekuasaan adat.",
+      "imageName": "sumatera_utara_rumah_adat_bagas_godang"
+    },
+    {
+      "id": "sumatera_utara_rumah_adat_omo_hada",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Omo Hada",
+      "description": "Rumah adat Nias yang kokoh dan tahan gempa, dengan tiang kayu besar dan atap tinggi.",
+      "imageName": "sumatera_utara_rumah_adat_omo_hada"
+    },
+    {
+      "id": "sumatera_utara_rumah_adat_rumah_bolon_simalungun",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Bolon Simalungun",
+      "description": "Rumah adat Simalungun, contohnya di Pematang Purba, berupa rumah panggung berukir.",
+      "imageName": "sumatera_utara_rumah_adat_rumah_bolon_simalungun"
+    },
+    {
+      "id": "sumatera_utara_makanan_arsik",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Arsik",
+      "description": "Ikan mas bumbu andaliman khas Batak yang dimasak dengan rempah hingga bumbunya meresap dan terasa segar pedas.",
+      "imageName": "sumatera_utara_makanan_arsik"
+    },
+    {
+      "id": "sumatera_utara_makanan_naniura",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Naniura",
+      "description": "Ikan mas yang dimatangkan dengan jeruk asam dan bumbu tanpa dimasak dengan api.",
+      "imageName": "sumatera_utara_makanan_naniura"
+    },
+    {
+      "id": "sumatera_utara_makanan_saksang",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Saksang",
+      "description": "Daging babi atau anjing yang dimasak dengan bumbu rempah dan darah, hidangan adat Batak.",
+      "imageName": "sumatera_utara_makanan_saksang"
+    },
+    {
+      "id": "sumatera_utara_makanan_mie_gomak",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Gomak",
+      "description": "Mi lidi Batak berukuran besar dengan kuah santan atau bumbu andaliman yang pedas.",
+      "imageName": "sumatera_utara_makanan_mie_gomak"
+    },
+    {
+      "id": "sumatera_utara_makanan_bika_ambon",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Bika Ambon",
+      "description": "Kue berongga dengan aroma santan dan pandan, oleh-oleh khas Medan.",
+      "imageName": "sumatera_utara_makanan_bika_ambon"
+    },
+    {
+      "id": "sumatera_utara_makanan_dali_ni_horbo",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Dali ni Horbo",
+      "description": "Olahan susu kerbau yang dimasak hingga mengental dan dikenal sebagai keju Batak.",
+      "imageName": "sumatera_utara_makanan_dali_ni_horbo"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_tor_tor",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Tor-Tor",
+      "description": "Tarian Batak yang diiringi musik gondang sabangunan, dibawakan dalam upacara adat untuk mengungkapkan rasa syukur dan penghormatan.",
+      "imageName": "sumatera_utara_tarian_tari_tor_tor"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_serampang_dua_belas",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Serampang Dua Belas",
+      "description": "Tarian Melayu pesisir yang lincah dengan dua belas ragam gerak yang bercerita tentang cinta.",
+      "imageName": "sumatera_utara_tarian_tari_serampang_dua_belas"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_sigale_gale",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Sigale-gale",
+      "description": "Tarian boneka kayu dari Samosir yang digerakkan dengan tali dalam upacara adat.",
+      "imageName": "sumatera_utara_tarian_tari_sigale_gale"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_guro_guro_aron",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Guro-Guro Aron",
+      "description": "Tarian muda-mudi Karo yang digelar saat pesta tahunan atau pesta panen.",
+      "imageName": "sumatera_utara_tarian_tari_guro_guro_aron"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_maena",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Maena",
+      "description": "Tarian Nias yang dibawakan beramai-ramai dalam pesta pernikahan dan perayaan.",
+      "imageName": "sumatera_utara_tarian_tari_maena"
+    },
+    {
+      "id": "sumatera_utara_tarian_tari_baluse",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Baluse",
+      "description": "Tarian perang Nias yang dibawakan dengan perisai, tombak, dan baju besi tradisional.",
+      "imageName": "sumatera_utara_tarian_tari_baluse"
+    },
+    {
+      "id": "sumatera_utara_lagu_daerah_sinanggar_tullo",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Sinanggar Tullo",
+      "description": "Lagu daerah Batak Toba yang bernuansa ceria dan sering dibawakan dalam acara adat maupun hiburan.",
+      "imageName": "sumatera_utara_lagu_daerah_sinanggar_tullo",
+      "needsReview": true
+    },
+    {
+      "id": "sumatera_utara_lagu_daerah_o_tano_batak",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "O Tano Batak",
+      "description": "Lagu pujian bagi tanah Batak dan kampung halaman, dinyanyikan para perantau.",
+      "imageName": "sumatera_utara_lagu_daerah_o_tano_batak"
+    },
+    {
+      "id": "sumatera_utara_lagu_daerah_butet",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Butet",
+      "description": "Lagu Batak tentang kasih sayang seorang ibu kepada anak perempuannya.",
+      "imageName": "sumatera_utara_lagu_daerah_butet"
+    },
+    {
+      "id": "sumatera_utara_lagu_daerah_lisoi",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Lisoi",
+      "description": "Lagu Batak Toba yang riang dan dikenal luas sebagai lagu pengiring tari.",
+      "imageName": "sumatera_utara_lagu_daerah_lisoi"
+    },
+    {
+      "id": "sumatera_utara_lagu_daerah_anju_ahu",
+      "province": "Sumatera Utara",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Anju Ahu",
+      "description": "Lagu Batak Toba yang menggambarkan rasa rindu dan perasaan terhadap sesama.",
+      "imageName": "sumatera_utara_lagu_daerah_anju_ahu",
+      "needsReview": true
+    },
+    {
+      "id": "sumatera_barat_pakaian_adat_bundo_kanduang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Bundo Kanduang",
+      "description": "Pakaian adat perempuan Minangkabau dengan baju kurung beludru bersulam benang emas, kain songket, dan tengkuluk bertanduk.",
+      "imageName": "sumatera_barat_pakaian_adat_bundo_kanduang"
+    },
+    {
+      "id": "sumatera_barat_pakaian_adat_pakaian_penghulu",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Penghulu",
+      "description": "Pakaian pemimpin adat Minangkabau berupa baju hitam, sarung, deta di kepala, dan tongkat.",
+      "imageName": "sumatera_barat_pakaian_adat_pakaian_penghulu"
+    },
+    {
+      "id": "sumatera_barat_pakaian_adat_baju_kurung_basiba",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kurung Basiba",
+      "description": "Baju kurung Minang yang longgar dan panjang, dipakai perempuan dalam kegiatan adat.",
+      "imageName": "sumatera_barat_pakaian_adat_baju_kurung_basiba"
+    },
+    {
+      "id": "sumatera_barat_pakaian_adat_suntiang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Suntiang",
+      "description": "Mahkota emas yang bertingkat banyak untuk pengantin perempuan Minangkabau.",
+      "imageName": "sumatera_barat_pakaian_adat_suntiang"
+    },
+    {
+      "id": "sumatera_barat_rumah_adat_rumah_gadang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Gadang",
+      "description": "Rumah panggung Minangkabau dengan atap bergonjong menyerupai tanduk kerbau, dihuni keluarga besar menurut garis ibu.",
+      "imageName": "sumatera_barat_rumah_adat_rumah_gadang"
+    },
+    {
+      "id": "sumatera_barat_rumah_adat_rumah_baanjuang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Baanjuang",
+      "description": "Rumah Gadang gaya Koto Piliang dengan anjungan di kedua ujung lantainya.",
+      "imageName": "sumatera_barat_rumah_adat_rumah_baanjuang"
+    },
+    {
+      "id": "sumatera_barat_rumah_adat_rumah_surambi_papek",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Surambi Papek",
+      "description": "Rumah Gadang gaya Bodi Caniago yang lantainya rata tanpa anjungan.",
+      "imageName": "sumatera_barat_rumah_adat_rumah_surambi_papek"
+    },
+    {
+      "id": "sumatera_barat_rumah_adat_rangkiang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rangkiang",
+      "description": "Lumbung padi Minangkabau berbentuk panggung dengan atap bergonjong.",
+      "imageName": "sumatera_barat_rumah_adat_rangkiang"
+    },
+    {
+      "id": "sumatera_barat_rumah_adat_uma_mentawai",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Uma Mentawai",
+      "description": "Rumah panjang suku Mentawai berbentuk panggung, tempat tinggal dan upacara adat.",
+      "imageName": "sumatera_barat_rumah_adat_uma_mentawai"
+    },
+    {
+      "id": "sumatera_barat_makanan_rendang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Rendang",
+      "description": "Daging sapi yang dimasak lama dengan santan dan rempah hingga kering dan berbumbu pekat. Rendang menjadi hidangan utama upacara adat Minang.",
+      "imageName": "sumatera_barat_makanan_rendang"
+    },
+    {
+      "id": "sumatera_barat_makanan_sate_padang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Sate Padang",
+      "description": "Sate daging sapi dan jeroan dengan kuah kental berbumbu rempah yang pedas.",
+      "imageName": "sumatera_barat_makanan_sate_padang"
+    },
+    {
+      "id": "sumatera_barat_makanan_dendeng_balado",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Dendeng Balado",
+      "description": "Daging sapi tipis yang digoreng garing dan disiram sambal cabai merah.",
+      "imageName": "sumatera_barat_makanan_dendeng_balado"
+    },
+    {
+      "id": "sumatera_barat_makanan_soto_padang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Soto Padang",
+      "description": "Soto berkuah bening berempah dengan daging goreng, perkedel, dan bihun.",
+      "imageName": "sumatera_barat_makanan_soto_padang"
+    },
+    {
+      "id": "sumatera_barat_makanan_itiak_lado_mudo",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Itiak Lado Mudo",
+      "description": "Bebek yang dimasak dengan cabai hijau muda yang pedas dan gurih.",
+      "imageName": "sumatera_barat_makanan_itiak_lado_mudo"
+    },
+    {
+      "id": "sumatera_barat_makanan_lamang_tapai",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lamang Tapai",
+      "description": "Ketan bakar dalam bambu yang dimakan bersama tapai ketan hitam.",
+      "imageName": "sumatera_barat_makanan_lamang_tapai"
+    },
+    {
+      "id": "sumatera_barat_makanan_ayam_pop",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Ayam Pop",
+      "description": "Ayam rebus bumbu rempah yang digoreng sebentar, berwarna pucat dan lembut.",
+      "imageName": "sumatera_barat_makanan_ayam_pop"
+    },
+    {
+      "id": "sumatera_barat_tarian_tari_piring",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Piring",
+      "description": "Tarian dengan piring di kedua telapak tangan yang diayunkan cepat mengikuti irama, menggambarkan rasa syukur atas hasil panen.",
+      "imageName": "sumatera_barat_tarian_tari_piring"
+    },
+    {
+      "id": "sumatera_barat_tarian_tari_pasambahan",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Pasambahan",
+      "description": "Tarian penyambutan tamu dengan persembahan sirih dalam upacara adat Minangkabau.",
+      "imageName": "sumatera_barat_tarian_tari_pasambahan"
+    },
+    {
+      "id": "sumatera_barat_tarian_tari_indang",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Indang",
+      "description": "Tarian berkelompok dengan syair bernuansa Islami yang diiringi rebana.",
+      "imageName": "sumatera_barat_tarian_tari_indang"
+    },
+    {
+      "id": "sumatera_barat_tarian_tari_payung",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Payung",
+      "description": "Tarian muda-mudi Minang yang menggunakan payung, menggambarkan kasih sayang.",
+      "imageName": "sumatera_barat_tarian_tari_payung"
+    },
+    {
+      "id": "sumatera_barat_tarian_randai",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Randai",
+      "description": "Seni pertunjukan Minang yang memadukan silat, tari, musik, dan cerita rakyat.",
+      "imageName": "sumatera_barat_tarian_randai"
+    },
+    {
+      "id": "sumatera_barat_tarian_tari_lilin",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Lilin",
+      "description": "Tarian dengan lilin di piring pada telapak tangan yang menunjukkan kelincahan penari.",
+      "imageName": "sumatera_barat_tarian_tari_lilin"
+    },
+    {
+      "id": "sumatera_barat_lagu_daerah_kampuang_nan_jauh_di_mato",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Kampuang Nan Jauh di Mato",
+      "description": "Lagu bernuansa rindu tentang kampung halaman yang jauh, populer di kalangan perantau Minang.",
+      "imageName": "sumatera_barat_lagu_daerah_kampuang_nan_jauh_di_mato"
+    },
+    {
+      "id": "sumatera_barat_lagu_daerah_ayam_den_lapeh",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Ayam Den Lapeh",
+      "description": "Lagu Minang yang jenaka tentang seorang pemuda yang kehilangan ayamnya.",
+      "imageName": "sumatera_barat_lagu_daerah_ayam_den_lapeh"
+    },
+    {
+      "id": "sumatera_barat_lagu_daerah_bareh_solok",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Bareh Solok",
+      "description": "Lagu tentang beras Solok yang terkenal pulen dan harum.",
+      "imageName": "sumatera_barat_lagu_daerah_bareh_solok"
+    },
+    {
+      "id": "sumatera_barat_lagu_daerah_kambanglah_bungo",
+      "province": "Sumatera Barat",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Kambanglah Bungo",
+      "description": "Lagu Minang tentang bunga yang mekar, menggambarkan keindahan alam.",
+      "imageName": "sumatera_barat_lagu_daerah_kambanglah_bungo",
+      "needsReview": true
+    },
+    {
+      "id": "riau_pakaian_adat_baju_kurung_teluk_belanga",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kurung Teluk Belanga",
+      "description": "Pakaian adat Melayu Riau berupa baju kurung longgar dengan kain songket, serta tanjak atau tengkolok untuk laki-laki.",
+      "imageName": "riau_pakaian_adat_baju_kurung_teluk_belanga"
+    },
+    {
+      "id": "riau_pakaian_adat_tanjak",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Tanjak",
+      "description": "Penutup kepala laki-laki Melayu dari kain songket yang dilipat dengan bentuk khas.",
+      "imageName": "riau_pakaian_adat_tanjak"
+    },
+    {
+      "id": "riau_pakaian_adat_kebaya_labuh",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya Labuh",
+      "description": "Kebaya panjang Melayu hingga ke lutut atau betis, dipakai dengan kain songket.",
+      "imageName": "riau_pakaian_adat_kebaya_labuh"
+    },
+    {
+      "id": "riau_rumah_adat_rumah_selaso_jatuh_kembar",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Selaso Jatuh Kembar",
+      "description": "Balai adat Melayu Riau berbentuk panggung yang dipakai untuk musyawarah dan pertemuan adat.",
+      "imageName": "riau_rumah_adat_rumah_selaso_jatuh_kembar"
+    },
+    {
+      "id": "riau_rumah_adat_rumah_lontik",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lontik",
+      "description": "Rumah panggung Melayu Riau yang ujung atapnya melengkung ke atas.",
+      "imageName": "riau_rumah_adat_rumah_lontik"
+    },
+    {
+      "id": "riau_rumah_adat_rumah_lancang",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lancang",
+      "description": "Rumah adat Kampar yang bentuk atapnya menyerupai perahu lancang.",
+      "imageName": "riau_rumah_adat_rumah_lancang"
+    },
+    {
+      "id": "riau_rumah_adat_rumah_atap_lipat_kajang",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Atap Lipat Kajang",
+      "description": "Rumah Melayu Riau beratap kajang (anyaman nipah) dengan kerangka kayu panggung.",
+      "imageName": "riau_rumah_adat_rumah_atap_lipat_kajang"
+    },
+    {
+      "id": "riau_makanan_asam_pedas_baung",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Asam Pedas Baung",
+      "description": "Ikan baung yang dimasak dengan kuah asam pedas dari cabai, belimbing wuluh, dan rempah.",
+      "imageName": "riau_makanan_asam_pedas_baung"
+    },
+    {
+      "id": "riau_makanan_gulai_patin_salai",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Gulai Patin Salai",
+      "description": "Ikan patin asap yang dimasak dengan kuah gulai santan dan rempah.",
+      "imageName": "riau_makanan_gulai_patin_salai"
+    },
+    {
+      "id": "riau_makanan_roti_jala",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Roti Jala",
+      "description": "Roti tipis berbentuk jaring yang dimakan dengan kari kambing atau ayam.",
+      "imageName": "riau_makanan_roti_jala"
+    },
+    {
+      "id": "riau_makanan_bolu_kemojo",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Bolu Kemojo",
+      "description": "Kue dari tepung, telur, dan santan yang dibungkus daun pandan, dengan rasa lembut manis.",
+      "imageName": "riau_makanan_bolu_kemojo"
+    },
+    {
+      "id": "riau_makanan_mie_sagu",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Sagu",
+      "description": "Mi dari sagu yang kenyal, biasa diolah dengan kuah atau digoreng.",
+      "imageName": "riau_makanan_mie_sagu"
+    },
+    {
+      "id": "riau_makanan_kue_bangkit",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Kue Bangkit",
+      "description": "Kue kering dari sagu dan santan yang lumer di mulut.",
+      "imageName": "riau_makanan_kue_bangkit"
+    },
+    {
+      "id": "riau_tarian_tari_zapin",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Zapin",
+      "description": "Tarian Melayu dengan langkah lincah yang diiringi gambus dan marwas, dipengaruhi budaya Arab dan Melayu.",
+      "imageName": "riau_tarian_tari_zapin"
+    },
+    {
+      "id": "riau_tarian_tari_persembahan",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Persembahan",
+      "description": "Tarian penyambutan tamu kehormatan dengan sirih sebagai tanda penghormatan.",
+      "imageName": "riau_tarian_tari_persembahan"
+    },
+    {
+      "id": "riau_tarian_tari_joget_lambak",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Joget Lambak",
+      "description": "Tarian pergaulan Melayu yang dibawakan beramai-ramai dengan iringan musik Melayu.",
+      "imageName": "riau_tarian_tari_joget_lambak"
+    },
+    {
+      "id": "riau_tarian_tari_olang_olang",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Olang-Olang",
+      "description": "Tarian Melayu Riau yang bernuansa bahari dan menggambarkan kehidupan di laut.",
+      "imageName": "riau_tarian_tari_olang_olang",
+      "needsReview": true
+    },
+    {
+      "id": "riau_lagu_daerah_soleram",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Soleram",
+      "description": "Lagu Melayu yang lembut dan sering dijadikan nyanyian pengantar tidur anak.",
+      "imageName": "riau_lagu_daerah_soleram"
+    },
+    {
+      "id": "riau_lagu_daerah_lancang_kuning",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Lancang Kuning",
+      "description": "Lagu tentang perahu lancang kuning, simbol kebesaran Melayu Riau.",
+      "imageName": "riau_lagu_daerah_lancang_kuning"
+    },
+    {
+      "id": "riau_lagu_daerah_mak_inang_pulau_kampai",
+      "province": "Riau",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Mak Inang Pulau Kampai",
+      "description": "Lagu Melayu bertempo riang yang sering mengiringi tari Mak Inang.",
+      "imageName": "riau_lagu_daerah_mak_inang_pulau_kampai",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_pakaian_adat_baju_kurung_cekak_musang",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kurung Cekak Musang",
+      "description": "Baju kurung Melayu berkerah tegak (cekak musang) yang dipadukan kain songket dan tanjak.",
+      "imageName": "kepulauan_riau_pakaian_adat_baju_kurung_cekak_musang"
+    },
+    {
+      "id": "kepulauan_riau_pakaian_adat_baju_kurung_teluk_belanga",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kurung Teluk Belanga",
+      "description": "Baju kurung Melayu tanpa kerah yang dipakai laki-laki bersama kain samping dan tanjak.",
+      "imageName": "kepulauan_riau_pakaian_adat_baju_kurung_teluk_belanga"
+    },
+    {
+      "id": "kepulauan_riau_pakaian_adat_tanjak_kepulauan_riau",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Tanjak Kepulauan Riau",
+      "description": "Penutup kepala Melayu dengan lipatan kain yang menandakan status pemakainya.",
+      "imageName": "kepulauan_riau_pakaian_adat_tanjak_kepulauan_riau"
+    },
+    {
+      "id": "kepulauan_riau_rumah_adat_rumah_adat_belah_bubung",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Adat Belah Bubung",
+      "description": "Rumah panggung Melayu pesisir dengan atap berbelah dan tiang tinggi untuk menghadapi pasang laut.",
+      "imageName": "kepulauan_riau_rumah_adat_rumah_adat_belah_bubung"
+    },
+    {
+      "id": "kepulauan_riau_rumah_adat_rumah_limas_potong",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Limas Potong",
+      "description": "Rumah panggung Melayu dengan atap limas yang terpotong di puncaknya.",
+      "imageName": "kepulauan_riau_rumah_adat_rumah_limas_potong"
+    },
+    {
+      "id": "kepulauan_riau_rumah_adat_rumah_lipat_kajang",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lipat Kajang",
+      "description": "Rumah Melayu pesisir beratap kajang dengan tiang tinggi.",
+      "imageName": "kepulauan_riau_rumah_adat_rumah_lipat_kajang",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_rumah_adat_rumah_rakit_suku_laut",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Rakit Suku Laut",
+      "description": "Rumah di atas perahu atau rakit yang dipakai Suku Laut di perairan Kepulauan Riau.",
+      "imageName": "kepulauan_riau_rumah_adat_rumah_rakit_suku_laut",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_makanan_gonggong",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Gonggong",
+      "description": "Siput laut rebus dengan sambal khas, menjadi hidangan ikonik Kepulauan Riau, terutama di Tanjungpinang dan Batam.",
+      "imageName": "kepulauan_riau_makanan_gonggong"
+    },
+    {
+      "id": "kepulauan_riau_makanan_otak_otak",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Otak-Otak",
+      "description": "Ikan tenggiri yang dihaluskan dan dibakar dalam daun kelapa dengan bumbu rempah.",
+      "imageName": "kepulauan_riau_makanan_otak_otak"
+    },
+    {
+      "id": "kepulauan_riau_makanan_mie_lendir",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Lendir",
+      "description": "Mi kuning dengan kuah kental dari kacang dan ikan, khas Tanjungpinang.",
+      "imageName": "kepulauan_riau_makanan_mie_lendir"
+    },
+    {
+      "id": "kepulauan_riau_makanan_sotong_pangkong",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Sotong Pangkong",
+      "description": "Sotong yang dipukul hingga empuk lalu dibakar dan dimakan dengan sambal.",
+      "imageName": "kepulauan_riau_makanan_sotong_pangkong"
+    },
+    {
+      "id": "kepulauan_riau_tarian_tari_mak_inang",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Mak Inang",
+      "description": "Tarian pergaulan Melayu yang halus dan gemulai, ditarikan dengan iringan musik Melayu.",
+      "imageName": "kepulauan_riau_tarian_tari_mak_inang"
+    },
+    {
+      "id": "kepulauan_riau_tarian_joget_dangkung",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Joget Dangkung",
+      "description": "Tarian pergaulan Melayu Kepulauan Riau yang diiringi syair dan musik gambus.",
+      "imageName": "kepulauan_riau_tarian_joget_dangkung"
+    },
+    {
+      "id": "kepulauan_riau_tarian_zapin_penyengat",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Zapin Penyengat",
+      "description": "Tarian zapin khas Pulau Penyengat dengan gerak yang halus dan teratur.",
+      "imageName": "kepulauan_riau_tarian_zapin_penyengat",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_tarian_tari_ghazal",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Ghazal",
+      "description": "Tarian bernuansa Melayu-Arab dengan musik ghazal dan gambus.",
+      "imageName": "kepulauan_riau_tarian_tari_ghazal",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_lagu_daerah_tanjung_katung",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Tanjung Katung",
+      "description": "Lagu Melayu yang menceritakan keindahan Tanjung Katung dan menggambarkan kehidupan masyarakat pesisir.",
+      "imageName": "kepulauan_riau_lagu_daerah_tanjung_katung",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_riau_lagu_daerah_cik_mek_molek",
+      "province": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Cik Mek Molek",
+      "description": "Lagu Melayu tentang gadis cantik yang menawan hati.",
+      "imageName": "kepulauan_riau_lagu_daerah_cik_mek_molek",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_pakaian_adat_baju_kurung_tanjung_pinang",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kurung Tanjung Pinang",
+      "description": "Pakaian adat Melayu Jambi berupa baju kurung dengan kain songket dan perhiasan emas.",
+      "imageName": "jambi_pakaian_adat_baju_kurung_tanjung_pinang"
+    },
+    {
+      "id": "jambi_pakaian_adat_batik_jambi",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Batik Jambi",
+      "description": "Kain batik dengan motif khas Jambi seperti batanghari dan durian pecah.",
+      "imageName": "jambi_pakaian_adat_batik_jambi"
+    },
+    {
+      "id": "jambi_pakaian_adat_songket_jambi",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Songket Jambi",
+      "description": "Kain tenun songket Jambi dengan benang emas yang dipakai pada upacara adat.",
+      "imageName": "jambi_pakaian_adat_songket_jambi"
+    },
+    {
+      "id": "jambi_pakaian_adat_pakaian_adat_kerinci",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Kerinci",
+      "description": "Busana adat suku Kerinci yang dipakai dalam upacara adat dan pernikahan.",
+      "imageName": "jambi_pakaian_adat_pakaian_adat_kerinci",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_rumah_adat_rumah_kajang_lako",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Kajang Lako",
+      "description": "Rumah panggung Jambi berbahan kayu dengan atap bergaya pelana dan ukiran motif flora.",
+      "imageName": "jambi_rumah_adat_rumah_kajang_lako"
+    },
+    {
+      "id": "jambi_rumah_adat_rumah_larik_kerinci",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Larik Kerinci",
+      "description": "Rumah panggung panjang suku Kerinci yang dihuni beberapa keluarga.",
+      "imageName": "jambi_rumah_adat_rumah_larik_kerinci"
+    },
+    {
+      "id": "jambi_rumah_adat_rumah_tuo_rantau_panjang",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Tuo Rantau Panjang",
+      "description": "Rumah tua tradisional di Rantau Panjang, Merangin yang masih terjaga.",
+      "imageName": "jambi_rumah_adat_rumah_tuo_rantau_panjang",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_makanan_gulai_tempoyak_patin",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Gulai Tempoyak Patin",
+      "description": "Gulai ikan patin yang diberi tempoyak (durian fermentasi), berasa asam gurih khas Jambi.",
+      "imageName": "jambi_makanan_gulai_tempoyak_patin"
+    },
+    {
+      "id": "jambi_makanan_pindang_patin",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Pindang Patin",
+      "description": "Ikan patin berkuah asam pedas dengan bumbu khas Jambi.",
+      "imageName": "jambi_makanan_pindang_patin"
+    },
+    {
+      "id": "jambi_makanan_lempok_durian",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lempok Durian",
+      "description": "Dodol dari durian yang dimasak lama sehingga manis dan lengket.",
+      "imageName": "jambi_makanan_lempok_durian"
+    },
+    {
+      "id": "jambi_makanan_nasi_gemuk",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Nasi Gemuk",
+      "description": "Nasi yang dimasak dengan santan dan dimakan bersama lauk khas Jambi.",
+      "imageName": "jambi_makanan_nasi_gemuk"
+    },
+    {
+      "id": "jambi_tarian_tari_sekapur_sirih",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Sekapur Sirih",
+      "description": "Tarian penyambutan tamu kehormatan dengan penari yang membawa sirih sebagai tanda hormat.",
+      "imageName": "jambi_tarian_tari_sekapur_sirih"
+    },
+    {
+      "id": "jambi_tarian_tari_selampit_delapan",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Selampit Delapan",
+      "description": "Tarian Jambi yang menggambarkan kegigihan seorang gadis dalam menenun dan menjaga adat.",
+      "imageName": "jambi_tarian_tari_selampit_delapan",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_tarian_tari_rangguk",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Rangguk",
+      "description": "Tarian pergaulan Jambi yang diiringi rebana dan syair berbalas.",
+      "imageName": "jambi_tarian_tari_rangguk",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_tarian_tari_tauh",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Tauh",
+      "description": "Tarian adat suku Kerinci yang ditarikan dalam upacara adat dan syukuran.",
+      "imageName": "jambi_tarian_tari_tauh",
+      "needsReview": true
+    },
+    {
+      "id": "jambi_lagu_daerah_batanghari",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Batanghari",
+      "description": "Lagu tentang Sungai Batanghari yang menjadi urat nadi kehidupan masyarakat Jambi.",
+      "imageName": "jambi_lagu_daerah_batanghari"
+    },
+    {
+      "id": "jambi_lagu_daerah_selendang_mayang",
+      "province": "Jambi",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Selendang Mayang",
+      "description": "Lagu Melayu Jambi tentang selendang mayang yang indah.",
+      "imageName": "jambi_lagu_daerah_selendang_mayang"
+    },
+    {
+      "id": "sumatera_selatan_pakaian_adat_aesan_gede",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Aesan Gede",
+      "description": "Pakaian pengantin kebesaran Palembang dengan songket bertabur benang emas dan mahkota Aesan Gede.",
+      "imageName": "sumatera_selatan_pakaian_adat_aesan_gede"
+    },
+    {
+      "id": "sumatera_selatan_pakaian_adat_aesan_paksangko",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Aesan Paksangko",
+      "description": "Pakaian pengantin Palembang bergaya Paksangko dengan mahkota bertingkat dan songket.",
+      "imageName": "sumatera_selatan_pakaian_adat_aesan_paksangko"
+    },
+    {
+      "id": "sumatera_selatan_pakaian_adat_songket_palembang",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Songket Palembang",
+      "description": "Kain songket Palembang dengan benang emas, berharga dan dipakai dalam upacara adat.",
+      "imageName": "sumatera_selatan_pakaian_adat_songket_palembang"
+    },
+    {
+      "id": "sumatera_selatan_pakaian_adat_kain_jumputan",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kain Jumputan",
+      "description": "Kain tradisional Palembang dengan teknik ikat celup dan warna cerah.",
+      "imageName": "sumatera_selatan_pakaian_adat_kain_jumputan"
+    },
+    {
+      "id": "sumatera_selatan_rumah_adat_rumah_limas",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Limas",
+      "description": "Rumah panggung bertingkat-tingkat (kekijing) dengan atap limas. Tingkat lantai menunjukkan derajat penghuninya.",
+      "imageName": "sumatera_selatan_rumah_adat_rumah_limas"
+    },
+    {
+      "id": "sumatera_selatan_rumah_adat_rumah_rakit",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Rakit",
+      "description": "Rumah terapung di tepi Sungai Musi yang dibangun di atas rakit bambu.",
+      "imageName": "sumatera_selatan_rumah_adat_rumah_rakit"
+    },
+    {
+      "id": "sumatera_selatan_rumah_adat_rumah_ulu",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Ulu",
+      "description": "Rumah panggung masyarakat pedalaman Sumatera Selatan yang beratap pelana.",
+      "imageName": "sumatera_selatan_rumah_adat_rumah_ulu"
+    },
+    {
+      "id": "sumatera_selatan_rumah_adat_rumah_cara_gudang",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Cara Gudang",
+      "description": "Rumah panggung Palembang dengan bentuk memanjang seperti gudang.",
+      "imageName": "sumatera_selatan_rumah_adat_rumah_cara_gudang"
+    },
+    {
+      "id": "sumatera_selatan_makanan_pempek",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Pempek",
+      "description": "Olahan ikan dan sagu yang dimakan dengan kuah cuko berasa asam, manis, dan pedas.",
+      "imageName": "sumatera_selatan_makanan_pempek"
+    },
+    {
+      "id": "sumatera_selatan_makanan_tekwan",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Tekwan",
+      "description": "Bakso ikan kecil dalam kuah udang dengan jamur dan bengkuang.",
+      "imageName": "sumatera_selatan_makanan_tekwan"
+    },
+    {
+      "id": "sumatera_selatan_makanan_model",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Model",
+      "description": "Pempek isi tahu yang disajikan dengan kuah cuko.",
+      "imageName": "sumatera_selatan_makanan_model"
+    },
+    {
+      "id": "sumatera_selatan_makanan_laksan",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Laksan",
+      "description": "Pempek dalam kuah santan encer berasa gurih manis.",
+      "imageName": "sumatera_selatan_makanan_laksan"
+    },
+    {
+      "id": "sumatera_selatan_makanan_mie_celor",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Celor",
+      "description": "Mi kuning dengan kuah santan dan udang yang kental.",
+      "imageName": "sumatera_selatan_makanan_mie_celor"
+    },
+    {
+      "id": "sumatera_selatan_makanan_pindang_patin_palembang",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Pindang Patin Palembang",
+      "description": "Ikan patin berkuah asam pedas dengan nanas dan tomat.",
+      "imageName": "sumatera_selatan_makanan_pindang_patin_palembang"
+    },
+    {
+      "id": "sumatera_selatan_makanan_burgo",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Burgo",
+      "description": "Gulungan adonan beras dengan kuah santan, disajikan sebagai sarapan.",
+      "imageName": "sumatera_selatan_makanan_burgo"
+    },
+    {
+      "id": "sumatera_selatan_makanan_kue_maksuba",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Kue Maksuba",
+      "description": "Kue lapis dengan banyak lapisan telur yang manis, hidangan acara adat.",
+      "imageName": "sumatera_selatan_makanan_kue_maksuba"
+    },
+    {
+      "id": "sumatera_selatan_tarian_tari_gending_sriwijaya",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Gending Sriwijaya",
+      "description": "Tarian penyambutan tamu agung yang mengambil inspirasi dari kejayaan Kerajaan Sriwijaya.",
+      "imageName": "sumatera_selatan_tarian_tari_gending_sriwijaya"
+    },
+    {
+      "id": "sumatera_selatan_tarian_tari_tanggai",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Tanggai",
+      "description": "Tarian penyambutan tamu dengan jari-jari yang dihiasi tanggai (kuku palsu) emas.",
+      "imageName": "sumatera_selatan_tarian_tari_tanggai"
+    },
+    {
+      "id": "sumatera_selatan_tarian_tari_tepak_keraton",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Tepak Keraton",
+      "description": "Tarian penyambutan tamu keraton dengan tepak sirih sebagai persembahan.",
+      "imageName": "sumatera_selatan_tarian_tari_tepak_keraton"
+    },
+    {
+      "id": "sumatera_selatan_lagu_daerah_dek_sangke",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Dek Sangke",
+      "description": "Lagu daerah Sumatera Selatan yang populer dan sering dinyanyikan dalam berbagai acara.",
+      "imageName": "sumatera_selatan_lagu_daerah_dek_sangke"
+    },
+    {
+      "id": "sumatera_selatan_lagu_daerah_gending_sriwijaya",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Gending Sriwijaya",
+      "description": "Lagu kebanggaan Palembang yang mengiringi tarian penyambutan tamu.",
+      "imageName": "sumatera_selatan_lagu_daerah_gending_sriwijaya"
+    },
+    {
+      "id": "sumatera_selatan_lagu_daerah_cuk_mak_ilang",
+      "province": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Cuk Mak Ilang",
+      "description": "Lagu daerah Sumatera Selatan yang bertema jenaka dan kehidupan sehari-hari.",
+      "imageName": "sumatera_selatan_lagu_daerah_cuk_mak_ilang",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_bangka_belitung_pakaian_adat_paksian",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Paksian",
+      "description": "Pakaian pengantin adat Bangka dengan mahkota bunga dan hiasan logam yang megah.",
+      "imageName": "kepulauan_bangka_belitung_pakaian_adat_paksian"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_pakaian_adat_kain_cual",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kain Cual",
+      "description": "Kain tenun khas Bangka dengan benang emas yang dipakai dalam upacara adat.",
+      "imageName": "kepulauan_bangka_belitung_pakaian_adat_kain_cual"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_pakaian_adat_pakaian_adat_belitung",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Belitung",
+      "description": "Busana adat Belitung dengan kain songket dan hiasan kepala khas Melayu.",
+      "imageName": "kepulauan_bangka_belitung_pakaian_adat_pakaian_adat_belitung",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_bangka_belitung_rumah_adat_rumah_panggung_limas",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Panggung Limas",
+      "description": "Rumah panggung tradisional Bangka Belitung dengan atap limas yang dipengaruhi gaya Melayu.",
+      "imageName": "kepulauan_bangka_belitung_rumah_adat_rumah_panggung_limas",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_bangka_belitung_rumah_adat_rumah_panggung_belitung",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Panggung Belitung",
+      "description": "Rumah panggung Melayu Belitung dari kayu dengan kolong tinggi dan tangga di depan.",
+      "imageName": "kepulauan_bangka_belitung_rumah_adat_rumah_panggung_belitung",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_bangka_belitung_makanan_lempah_kuning",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lempah Kuning",
+      "description": "Sup ikan berkuah kuning dengan kunyit dan nanas yang berasa asam segar.",
+      "imageName": "kepulauan_bangka_belitung_makanan_lempah_kuning"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_makanan_mie_koba",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Mie Koba",
+      "description": "Mi Bangka berkuah ikan dengan rempah yang gurih.",
+      "imageName": "kepulauan_bangka_belitung_makanan_mie_koba"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_makanan_gangan_belitung",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Gangan Belitung",
+      "description": "Masakan ikan berkuah kuning dengan tumbukan kelapa yang gurih.",
+      "imageName": "kepulauan_bangka_belitung_makanan_gangan_belitung"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_makanan_lakso",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lakso",
+      "description": "Mi sagu dengan kuah santan dan ikan, makanan khas Belitung.",
+      "imageName": "kepulauan_bangka_belitung_makanan_lakso"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_makanan_kerupuk_kemplang",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Kerupuk Kemplang",
+      "description": "Kerupuk dari ikan dan sagu yang dibakar atau digoreng hingga renyah.",
+      "imageName": "kepulauan_bangka_belitung_makanan_kerupuk_kemplang"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_tarian_tari_campak",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Campak",
+      "description": "Tarian pergaulan khas Bangka yang berirama ceria dengan pengaruh budaya Melayu dan Portugis.",
+      "imageName": "kepulauan_bangka_belitung_tarian_tari_campak"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_tarian_tari_sepintu_sedulang",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Sepintu Sedulang",
+      "description": "Tarian Bangka yang menggambarkan kebersamaan dengan dulang sebagai properti.",
+      "imageName": "kepulauan_bangka_belitung_tarian_tari_sepintu_sedulang"
+    },
+    {
+      "id": "kepulauan_bangka_belitung_tarian_tari_serimbang",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Serimbang",
+      "description": "Tarian tradisional Bangka Belitung dengan gerak lincah dan iringan musik Melayu.",
+      "imageName": "kepulauan_bangka_belitung_tarian_tari_serimbang",
+      "needsReview": true
+    },
+    {
+      "id": "kepulauan_bangka_belitung_lagu_daerah_dendang_dambus",
+      "province": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Dendang Dambus",
+      "description": "Nyanyian tradisional Bangka Belitung yang diiringi alat musik dambus.",
+      "imageName": "kepulauan_bangka_belitung_lagu_daerah_dendang_dambus",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_pakaian_adat_pakaian_pengantin_bengkulu",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Pengantin Bengkulu",
+      "description": "Pakaian adat dengan kain songket, hiasan emas, dan mahkota berbentuk bunga untuk upacara pernikahan.",
+      "imageName": "bengkulu_pakaian_adat_pakaian_pengantin_bengkulu",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_pakaian_adat_kain_besurek",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kain Besurek",
+      "description": "Kain batik Bengkulu dengan motif kaligrafi Arab dan bunga rafflesia.",
+      "imageName": "bengkulu_pakaian_adat_kain_besurek"
+    },
+    {
+      "id": "bengkulu_pakaian_adat_pakaian_adat_rejang",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Rejang",
+      "description": "Busana adat suku Rejang dengan kain tenun dan hiasan kepala yang dipakai dalam upacara.",
+      "imageName": "bengkulu_pakaian_adat_pakaian_adat_rejang",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_rumah_adat_rumah_bubungan_lima",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Bubungan Lima",
+      "description": "Rumah panggung Bengkulu dengan atap bertingkat lima yang melambangkan musyawarah dan adat.",
+      "imageName": "bengkulu_rumah_adat_rumah_bubungan_lima"
+    },
+    {
+      "id": "bengkulu_rumah_adat_rumah_adat_rejang",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Adat Rejang",
+      "description": "Rumah panggung suku Rejang dari kayu dengan ukiran tradisional.",
+      "imageName": "bengkulu_rumah_adat_rumah_adat_rejang",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_makanan_pendap",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Pendap",
+      "description": "Ikan atau daging yang dicampur kelapa parut dan rempah, dibungkus daun talas lalu dikukus.",
+      "imageName": "bengkulu_makanan_pendap"
+    },
+    {
+      "id": "bengkulu_makanan_bagar_hiu",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Bagar Hiu",
+      "description": "Daging hiu yang dimasak dengan bumbu kuning dan santan.",
+      "imageName": "bengkulu_makanan_bagar_hiu"
+    },
+    {
+      "id": "bengkulu_makanan_lemea",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lemea",
+      "description": "Rebung yang difermentasi dan dimasak dengan ikan, sambal, atau daging.",
+      "imageName": "bengkulu_makanan_lemea"
+    },
+    {
+      "id": "bengkulu_makanan_lempuk_durian",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Lempuk Durian",
+      "description": "Dodol durian khas Bengkulu yang manis dan lengket.",
+      "imageName": "bengkulu_makanan_lempuk_durian"
+    },
+    {
+      "id": "bengkulu_tarian_tari_andun",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Andun",
+      "description": "Tarian muda-mudi dari Bengkulu Selatan yang dibawakan dalam pesta panen atau pernikahan.",
+      "imageName": "bengkulu_tarian_tari_andun"
+    },
+    {
+      "id": "bengkulu_tarian_tari_kejai",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Kejai",
+      "description": "Tarian adat suku Rejang yang dibawakan dalam upacara perkawinan dan pesta adat.",
+      "imageName": "bengkulu_tarian_tari_kejai"
+    },
+    {
+      "id": "bengkulu_tarian_tari_bidadari_teminang_rebung",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Bidadari Teminang Rebung",
+      "description": "Tarian yang menggambarkan bidadari yang meminang seorang pemuda desa.",
+      "imageName": "bengkulu_tarian_tari_bidadari_teminang_rebung",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_tarian_tari_rejang_lebong",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Rejang Lebong",
+      "description": "Tarian tradisional suku Rejang yang menggambarkan keceriaan dan kebersamaan.",
+      "imageName": "bengkulu_tarian_tari_rejang_lebong",
+      "needsReview": true
+    },
+    {
+      "id": "bengkulu_lagu_daerah_lalan_belek",
+      "province": "Bengkulu",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Lalan Belek",
+      "description": "Lagu daerah Bengkulu yang dikenal luas dan menggambarkan suasana kampung halaman.",
+      "imageName": "bengkulu_lagu_daerah_lalan_belek"
+    },
+    {
+      "id": "lampung_pakaian_adat_tapis",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Tapis",
+      "description": "Kain tenun Lampung bersulam benang emas atau perak yang dipakai sebagai sarung dan busana adat.",
+      "imageName": "lampung_pakaian_adat_tapis"
+    },
+    {
+      "id": "lampung_pakaian_adat_siger",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Siger",
+      "description": "Mahkota emas Lampung berbentuk bergerigi, simbol kehormatan bagi pengantin perempuan.",
+      "imageName": "lampung_pakaian_adat_siger"
+    },
+    {
+      "id": "lampung_pakaian_adat_kain_kapal",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kain Kapal",
+      "description": "Kain tenun Lampung bergambar kapal yang melambangkan perjalanan hidup dan status sosial.",
+      "imageName": "lampung_pakaian_adat_kain_kapal"
+    },
+    {
+      "id": "lampung_pakaian_adat_pakaian_adat_pepadun",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Pepadun",
+      "description": "Busana adat Lampung Pepadun untuk upacara adat dan pernikahan.",
+      "imageName": "lampung_pakaian_adat_pakaian_adat_pepadun",
+      "needsReview": true
+    },
+    {
+      "id": "lampung_rumah_adat_nuwo_sesat",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Nuwo Sesat",
+      "description": "Balai adat Lampung berbentuk panggung yang dipakai untuk musyawarah dan upacara adat.",
+      "imageName": "lampung_rumah_adat_nuwo_sesat"
+    },
+    {
+      "id": "lampung_rumah_adat_lamban_pesagi",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Lamban Pesagi",
+      "description": "Rumah panggung adat Lampung Saibatin yang berukir dan beratap pelana.",
+      "imageName": "lampung_rumah_adat_lamban_pesagi"
+    },
+    {
+      "id": "lampung_rumah_adat_lamban_balak",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "RUMAH_ADAT",
+      "name": "Lamban Balak",
+      "description": "Rumah adat Lampung Pepadun yang besar dan dipakai keluarga bangsawan.",
+      "imageName": "lampung_rumah_adat_lamban_balak",
+      "needsReview": true
+    },
+    {
+      "id": "lampung_makanan_seruit",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Seruit",
+      "description": "Sambal ikan bakar yang dicampur terasi, tempoyak, dan cabai, disantap dengan nasi dan lalapan.",
+      "imageName": "lampung_makanan_seruit"
+    },
+    {
+      "id": "lampung_makanan_engkak_ketan",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Engkak Ketan",
+      "description": "Kue ketan manis yang dimasak dengan santan dan gula merah.",
+      "imageName": "lampung_makanan_engkak_ketan"
+    },
+    {
+      "id": "lampung_makanan_gulai_taboh",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Gulai Taboh",
+      "description": "Gulai dari daging atau ikan dengan bumbu khas Lampung yang kental.",
+      "imageName": "lampung_makanan_gulai_taboh"
+    },
+    {
+      "id": "lampung_makanan_pekasam",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "MAKANAN",
+      "name": "Pekasam",
+      "description": "Ikan yang difermentasi dengan garam dan nasi, rasanya asam dan gurih.",
+      "imageName": "lampung_makanan_pekasam"
+    },
+    {
+      "id": "lampung_tarian_tari_sigeh_penguten",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Sigeh Penguten",
+      "description": "Tarian penyambutan tamu dengan penari perempuan yang membawa wadah sirih.",
+      "imageName": "lampung_tarian_tari_sigeh_penguten"
+    },
+    {
+      "id": "lampung_tarian_tari_melinting",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Melinting",
+      "description": "Tarian klasik Lampung yang dahulu dibawakan keluarga kerajaan dengan gerak lembut.",
+      "imageName": "lampung_tarian_tari_melinting"
+    },
+    {
+      "id": "lampung_tarian_tari_bedana",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Bedana",
+      "description": "Tarian pergaulan Lampung dengan pengaruh Melayu yang ditarikan berpasangan.",
+      "imageName": "lampung_tarian_tari_bedana"
+    },
+    {
+      "id": "lampung_tarian_tari_cangget",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "TARIAN",
+      "name": "Tari Cangget",
+      "description": "Tarian adat Lampung yang dibawakan dalam upacara dan penyambutan tamu.",
+      "imageName": "lampung_tarian_tari_cangget"
+    },
+    {
+      "id": "lampung_lagu_daerah_tanoh_lado",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Tanoh Lado",
+      "description": "Lagu yang mengisahkan Lampung, tanah yang subur dan kaya akan hasil bumi.",
+      "imageName": "lampung_lagu_daerah_tanoh_lado",
+      "needsReview": true
+    },
+    {
+      "id": "lampung_lagu_daerah_sang_bumi_ruwa_jurai",
+      "province": "Lampung",
+      "island": "SUMATRA",
+      "category": "LAGU",
+      "name": "Sang Bumi Ruwa Jurai",
+      "description": "Lagu yang menggambarkan semangat persatuan masyarakat Lampung.",
+      "imageName": "lampung_lagu_daerah_sang_bumi_ruwa_jurai",
+      "needsReview": true
+    },
+    {
+      "id": "dki_jakarta_pakaian_adat_pakaian_abang_none",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Abang None",
+      "description": "Busana adat Betawi: kebaya encim dan kain batik untuk perempuan, serta baju sadariah dan peci untuk laki-laki.",
+      "imageName": "dki_jakarta_pakaian_adat_pakaian_abang_none"
+    },
+    {
+      "id": "dki_jakarta_pakaian_adat_baju_sadariah",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Sadariah",
+      "description": "Baju longgar laki-laki Betawi yang dipakai dengan celana pangsi dan peci.",
+      "imageName": "dki_jakarta_pakaian_adat_baju_sadariah"
+    },
+    {
+      "id": "dki_jakarta_pakaian_adat_kebaya_encim",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya Encim",
+      "description": "Kebaya bersulam dari perempuan Betawi dengan pengaruh budaya Tionghoa.",
+      "imageName": "dki_jakarta_pakaian_adat_kebaya_encim"
+    },
+    {
+      "id": "dki_jakarta_pakaian_adat_pakaian_pengantin_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Pengantin Betawi",
+      "description": "Busana pengantin Betawi dengan pengaruh Arab dan Tionghoa dan hiasan kepala yang unik.",
+      "imageName": "dki_jakarta_pakaian_adat_pakaian_pengantin_betawi"
+    },
+    {
+      "id": "dki_jakarta_rumah_adat_rumah_kebaya",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Kebaya",
+      "description": "Rumah tradisional Betawi dengan atap pelana yang berlipat seperti lipatan kebaya dan teras depan yang luas.",
+      "imageName": "dki_jakarta_rumah_adat_rumah_kebaya"
+    },
+    {
+      "id": "dki_jakarta_rumah_adat_rumah_gudang",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Gudang",
+      "description": "Rumah Betang Betawi berbentuk memanjang seperti gudang dengan teras depan.",
+      "imageName": "dki_jakarta_rumah_adat_rumah_gudang"
+    },
+    {
+      "id": "dki_jakarta_rumah_adat_rumah_joglo_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Joglo Betawi",
+      "description": "Rumah Betawi bergaya Jawa dengan atap joglo, dipengaruhi budaya Jawa.",
+      "imageName": "dki_jakarta_rumah_adat_rumah_joglo_betawi"
+    },
+    {
+      "id": "dki_jakarta_rumah_adat_rumah_panggung_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Panggung Betawi",
+      "description": "Rumah panggung Betawi pesisir yang dibangun di atas tiang untuk menghindari banjir.",
+      "imageName": "dki_jakarta_rumah_adat_rumah_panggung_betawi"
+    },
+    {
+      "id": "dki_jakarta_makanan_kerak_telor",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Kerak Telor",
+      "description": "Jajanan dari beras ketan, telur, dan kelapa sangrai yang dimasak di atas bara api tanpa minyak.",
+      "imageName": "dki_jakarta_makanan_kerak_telor"
+    },
+    {
+      "id": "dki_jakarta_makanan_soto_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Soto Betawi",
+      "description": "Soto daging sapi dengan kuah santan atau susu yang gurih.",
+      "imageName": "dki_jakarta_makanan_soto_betawi"
+    },
+    {
+      "id": "dki_jakarta_makanan_gado_gado",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Gado-Gado",
+      "description": "Sayur rebus dengan lontong dan bumbu kacang yang disajikan dengan kerupuk.",
+      "imageName": "dki_jakarta_makanan_gado_gado"
+    },
+    {
+      "id": "dki_jakarta_makanan_nasi_uduk",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Nasi Uduk",
+      "description": "Nasi yang dimasak dengan santan dan rempah, disajikan dengan lauk.",
+      "imageName": "dki_jakarta_makanan_nasi_uduk"
+    },
+    {
+      "id": "dki_jakarta_makanan_ketoprak",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Ketoprak",
+      "description": "Campuran tahu, lontong, tauge, dan mi dengan bumbu kacang.",
+      "imageName": "dki_jakarta_makanan_ketoprak"
+    },
+    {
+      "id": "dki_jakarta_makanan_asinan_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Asinan Betawi",
+      "description": "Sayur dan buah dalam kuah asam manis pedas.",
+      "imageName": "dki_jakarta_makanan_asinan_betawi"
+    },
+    {
+      "id": "dki_jakarta_makanan_dodol_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Dodol Betawi",
+      "description": "Dodol ketan khas Betawi yang dimasak lama dan disajikan saat hari raya.",
+      "imageName": "dki_jakarta_makanan_dodol_betawi"
+    },
+    {
+      "id": "dki_jakarta_makanan_bir_pletok",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Bir Pletok",
+      "description": "Minuman jahe rempah tanpa alkohol dengan warna merah dari secang.",
+      "imageName": "dki_jakarta_makanan_bir_pletok"
+    },
+    {
+      "id": "dki_jakarta_makanan_roti_buaya",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Roti Buaya",
+      "description": "Roti berbentuk buaya yang menjadi bawaan dalam pernikahan Betawi.",
+      "imageName": "dki_jakarta_makanan_roti_buaya"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_yapong",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Yapong",
+      "description": "Tarian Betawi yang energik dan ceria, diciptakan untuk menyambut tamu dan perayaan.",
+      "imageName": "dki_jakarta_tarian_tari_yapong"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_topeng_betawi",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Topeng Betawi",
+      "description": "Tarian dengan topeng yang menceritakan kisah masyarakat dan kehidupan.",
+      "imageName": "dki_jakarta_tarian_tari_topeng_betawi"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_cokek",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Cokek",
+      "description": "Tarian pergaulan Betawi dengan pengaruh Tionghoa dan iringan gambang kromong.",
+      "imageName": "dki_jakarta_tarian_tari_cokek"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_lenggang_nyai",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Lenggang Nyai",
+      "description": "Tarian Betawi yang gemulai menggambarkan perempuan Betawi.",
+      "imageName": "dki_jakarta_tarian_tari_lenggang_nyai"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_ondel_ondel",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Ondel-Ondel",
+      "description": "Pertunjukan boneka raksasa Betawi yang diarak untuk menolak bala.",
+      "imageName": "dki_jakarta_tarian_tari_ondel_ondel"
+    },
+    {
+      "id": "dki_jakarta_tarian_tari_sirih_kuning",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Sirih Kuning",
+      "description": "Tarian penyambutan tamu dengan sirih kuning yang menjadi simbol penghormatan.",
+      "imageName": "dki_jakarta_tarian_tari_sirih_kuning",
+      "needsReview": true
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_kicir_kicir",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Kicir-Kicir",
+      "description": "Lagu Betawi yang riang dengan lirik berbahasa campuran dan irama gambang kromong.",
+      "imageName": "dki_jakarta_lagu_daerah_kicir_kicir"
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_jali_jali",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Jali-Jali",
+      "description": "Lagu Betawi riang berisi pantun yang sering dinyanyikan dalam acara hiburan.",
+      "imageName": "dki_jakarta_lagu_daerah_jali_jali"
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_lenggang_kangkung",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Lenggang Kangkung",
+      "description": "Lagu Betawi yang riang dan menggambarkan keceriaan kehidupan masyarakat.",
+      "imageName": "dki_jakarta_lagu_daerah_lenggang_kangkung"
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_surilang",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Surilang",
+      "description": "Lagu Betawi populer dengan irama ceria dan lirik berpantun.",
+      "imageName": "dki_jakarta_lagu_daerah_surilang"
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_si_jampang",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Si Jampang",
+      "description": "Lagu Betawi yang menceritakan tokoh pendekar Jampang.",
+      "imageName": "dki_jakarta_lagu_daerah_si_jampang"
+    },
+    {
+      "id": "dki_jakarta_lagu_daerah_ondel_ondel",
+      "province": "DKI Jakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Ondel-Ondel",
+      "description": "Lagu Betawi tentang boneka raksasa Ondel-Ondel yang dikenal luas.",
+      "imageName": "dki_jakarta_lagu_daerah_ondel_ondel"
+    },
+    {
+      "id": "jawa_barat_pakaian_adat_kebaya_sunda_dan_pangsi",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya Sunda dan Pangsi",
+      "description": "Kebaya dan kain batik untuk perempuan, serta pangsi dan iket kepala untuk laki-laki.",
+      "imageName": "jawa_barat_pakaian_adat_kebaya_sunda_dan_pangsi"
+    },
+    {
+      "id": "jawa_barat_pakaian_adat_iket_sunda",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Iket Sunda",
+      "description": "Penutup kepala laki-laki Sunda dari kain batik dengan lipatan khas.",
+      "imageName": "jawa_barat_pakaian_adat_iket_sunda"
+    },
+    {
+      "id": "jawa_barat_pakaian_adat_pakaian_pengantin_sunda_putri",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Pengantin Sunda Putri",
+      "description": "Busana pengantin Sunda dengan kebaya, siger, dan hiasan bunga melati.",
+      "imageName": "jawa_barat_pakaian_adat_pakaian_pengantin_sunda_putri"
+    },
+    {
+      "id": "jawa_barat_rumah_adat_rumah_julang_ngapak",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Julang Ngapak",
+      "description": "Rumah panggung Sunda dengan atap seperti sayap burung julang yang terbentang.",
+      "imageName": "jawa_barat_rumah_adat_rumah_julang_ngapak"
+    },
+    {
+      "id": "jawa_barat_rumah_adat_imah_badak_heuay",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Imah Badak Heuay",
+      "description": "Rumah panggung Sunda dengan atap yang menyerupai badak yang sedang menguap.",
+      "imageName": "jawa_barat_rumah_adat_imah_badak_heuay"
+    },
+    {
+      "id": "jawa_barat_rumah_adat_imah_jolopong",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Imah Jolopong",
+      "description": "Rumah Sunda berbentuk panggung dengan atap pelana yang sederhana.",
+      "imageName": "jawa_barat_rumah_adat_imah_jolopong"
+    },
+    {
+      "id": "jawa_barat_rumah_adat_imah_parahu_kumureb",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Imah Parahu Kumureb",
+      "description": "Rumah Sunda beratap seperti perahu terbalik.",
+      "imageName": "jawa_barat_rumah_adat_imah_parahu_kumureb"
+    },
+    {
+      "id": "jawa_barat_rumah_adat_imah_capit_gunting",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Imah Capit Gunting",
+      "description": "Rumah Sunda dengan atap yang ujung bubungannya menyilang seperti gunting.",
+      "imageName": "jawa_barat_rumah_adat_imah_capit_gunting"
+    },
+    {
+      "id": "jawa_barat_makanan_nasi_timbel",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Nasi Timbel",
+      "description": "Nasi yang dibungkus daun pisang, disajikan dengan ayam goreng, tempe, lalapan, dan sambal.",
+      "imageName": "jawa_barat_makanan_nasi_timbel"
+    },
+    {
+      "id": "jawa_barat_makanan_karedok",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Karedok",
+      "description": "Sayuran mentah dengan bumbu kacang yang segar dan pedas.",
+      "imageName": "jawa_barat_makanan_karedok"
+    },
+    {
+      "id": "jawa_barat_makanan_batagor",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Batagor",
+      "description": "Bakso ikan goreng bumbu kacang dari Bandung.",
+      "imageName": "jawa_barat_makanan_batagor"
+    },
+    {
+      "id": "jawa_barat_makanan_colenak",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Colenak",
+      "description": "Peuyeum bakar dengan saus gula merah dan kelapa.",
+      "imageName": "jawa_barat_makanan_colenak"
+    },
+    {
+      "id": "jawa_barat_makanan_nasi_tutug_oncom",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Nasi Tutug Oncom",
+      "description": "Nasi yang dicampur oncom bakar yang gurih dan pedas.",
+      "imageName": "jawa_barat_makanan_nasi_tutug_oncom"
+    },
+    {
+      "id": "jawa_barat_makanan_empal_gentong",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Empal Gentong",
+      "description": "Gulai daging sapi dari Cirebon yang dimasak dalam gentong tanah liat.",
+      "imageName": "jawa_barat_makanan_empal_gentong"
+    },
+    {
+      "id": "jawa_barat_makanan_tahu_sumedang",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Tahu Sumedang",
+      "description": "Tahu goreng khas Sumedang dengan kulit renyah dan isian empuk.",
+      "imageName": "jawa_barat_makanan_tahu_sumedang"
+    },
+    {
+      "id": "jawa_barat_makanan_peuyeum",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Peuyeum",
+      "description": "Tapai singkong yang manis asam dan dimakan sebagai camilan.",
+      "imageName": "jawa_barat_makanan_peuyeum"
+    },
+    {
+      "id": "jawa_barat_makanan_bandrek",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Bandrek",
+      "description": "Minuman jahe hangat dengan gula merah dan rempah.",
+      "imageName": "jawa_barat_makanan_bandrek"
+    },
+    {
+      "id": "jawa_barat_tarian_tari_jaipong",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Jaipong",
+      "description": "Tarian yang dinamis dengan gerak pinggul dan bahu yang energik, diiringi kendang dan gamelan Sunda.",
+      "imageName": "jawa_barat_tarian_tari_jaipong"
+    },
+    {
+      "id": "jawa_barat_tarian_tari_merak",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Merak",
+      "description": "Tarian Sunda yang menirukan gerakan burung merak yang anggun.",
+      "imageName": "jawa_barat_tarian_tari_merak"
+    },
+    {
+      "id": "jawa_barat_tarian_tari_topeng_cirebon",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Topeng Cirebon",
+      "description": "Tarian bertopeng khas Cirebon yang menggambarkan watak manusia.",
+      "imageName": "jawa_barat_tarian_tari_topeng_cirebon"
+    },
+    {
+      "id": "jawa_barat_tarian_tari_ketuk_tilu",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Ketuk Tilu",
+      "description": "Tarian pergaulan rakyat Sunda yang riang dengan iringan musik ketuk tilu.",
+      "imageName": "jawa_barat_tarian_tari_ketuk_tilu"
+    },
+    {
+      "id": "jawa_barat_lagu_daerah_manuk_dadali",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Manuk Dadali",
+      "description": "Lagu bertema semangat dan kebanggaan akan burung garuda yang dikenal luas di Jawa Barat.",
+      "imageName": "jawa_barat_lagu_daerah_manuk_dadali"
+    },
+    {
+      "id": "jawa_barat_lagu_daerah_es_lilin",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Es Lilin",
+      "description": "Lagu Sunda riang tentang penjual es lilin yang sering dinyanyikan sebagai lagu anak.",
+      "imageName": "jawa_barat_lagu_daerah_es_lilin"
+    },
+    {
+      "id": "jawa_barat_lagu_daerah_cing_cangkeling",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Cing Cangkeling",
+      "description": "Lagu anak Sunda yang menirukan bunyi burung cangkeling.",
+      "imageName": "jawa_barat_lagu_daerah_cing_cangkeling"
+    },
+    {
+      "id": "jawa_barat_lagu_daerah_bubuy_bulan",
+      "province": "Jawa Barat",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Bubuy Bulan",
+      "description": "Lagu Sunda yang bernuansa syahdu tentang bulan dan kerinduan.",
+      "imageName": "jawa_barat_lagu_daerah_bubuy_bulan"
+    },
+    {
+      "id": "banten_pakaian_adat_pakaian_adat_baduy",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Baduy",
+      "description": "Busana masyarakat Baduy dengan warna hitam atau putih dan iket kepala, dibuat dengan cara tradisional.",
+      "imageName": "banten_pakaian_adat_pakaian_adat_baduy"
+    },
+    {
+      "id": "banten_pakaian_adat_pangsi_salontreng",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pangsi Salontreng",
+      "description": "Pakaian adat Banten berupa baju dan celana pangsi bagi laki-laki.",
+      "imageName": "banten_pakaian_adat_pangsi_salontreng",
+      "needsReview": true
+    },
+    {
+      "id": "banten_pakaian_adat_pakaian_pengantin_banten",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Pengantin Banten",
+      "description": "Busana pengantin Banten dengan pengaruh budaya Sunda dan Islam.",
+      "imageName": "banten_pakaian_adat_pakaian_pengantin_banten",
+      "needsReview": true
+    },
+    {
+      "id": "banten_rumah_adat_rumah_sulah_nyanda",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Sulah Nyanda",
+      "description": "Rumah panggung masyarakat Baduy dari bambu dan kayu beratap rumbia tanpa paku.",
+      "imageName": "banten_rumah_adat_rumah_sulah_nyanda"
+    },
+    {
+      "id": "banten_makanan_sate_bandeng",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Sate Bandeng",
+      "description": "Daging ikan bandeng yang dihaluskan bersama bumbu, dimasukkan kembali ke kulitnya, lalu dibakar.",
+      "imageName": "banten_makanan_sate_bandeng"
+    },
+    {
+      "id": "banten_makanan_rabeg",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Rabeg",
+      "description": "Daging kambing atau sapi masakan Banten yang berbumbu rempah dan kecap.",
+      "imageName": "banten_makanan_rabeg"
+    },
+    {
+      "id": "banten_makanan_nasi_sumsum",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Nasi Sumsum",
+      "description": "Nasi gurih Banten yang disantap dengan lauk berbumbu kari.",
+      "imageName": "banten_makanan_nasi_sumsum",
+      "needsReview": true
+    },
+    {
+      "id": "banten_makanan_ketan_bintul",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Ketan Bintul",
+      "description": "Ketan dengan kelapa yang dibungkus daun pisang, camilan Banten.",
+      "imageName": "banten_makanan_ketan_bintul"
+    },
+    {
+      "id": "banten_makanan_angeun_lada",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Angeun Lada",
+      "description": "Sayur pedas khas Banten dengan bumbu lada dan kuah gurih.",
+      "imageName": "banten_makanan_angeun_lada"
+    },
+    {
+      "id": "banten_makanan_gipang",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Gipang",
+      "description": "Camilan dari ketan dan gula merah yang dibentuk kotak.",
+      "imageName": "banten_makanan_gipang"
+    },
+    {
+      "id": "banten_tarian_tari_rampak_bedug",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Rampak Bedug",
+      "description": "Pertunjukan menabuh bedug secara serempak dan dinamis oleh banyak pemain.",
+      "imageName": "banten_tarian_tari_rampak_bedug",
+      "needsReview": true
+    },
+    {
+      "id": "banten_tarian_tari_walijamaliha",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Walijamaliha",
+      "description": "Tarian pergaulan Banten yang menggambarkan keceriaan masyarakat.",
+      "imageName": "banten_tarian_tari_walijamaliha"
+    },
+    {
+      "id": "banten_tarian_tari_cokek_tangerang",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Cokek Tangerang",
+      "description": "Tarian pergaulan Tangerang dengan iringan gambang kromong.",
+      "imageName": "banten_tarian_tari_cokek_tangerang",
+      "needsReview": true
+    },
+    {
+      "id": "banten_tarian_debus",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Debus",
+      "description": "Seni pertunjukan Banten yang memamerkan kekebalan tubuh terhadap benda tajam.",
+      "imageName": "banten_tarian_debus"
+    },
+    {
+      "id": "banten_lagu_daerah_dayung_sampan",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Dayung Sampan",
+      "description": "Lagu bertema perahu dan kehidupan di perairan yang dikenal di Banten.",
+      "imageName": "banten_lagu_daerah_dayung_sampan",
+      "needsReview": true
+    },
+    {
+      "id": "banten_lagu_daerah_ayun_ambing",
+      "province": "Banten",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Ayun Ambing",
+      "description": "Lagu Banten pengantar tidur anak yang berirama lembut.",
+      "imageName": "banten_lagu_daerah_ayun_ambing",
+      "needsReview": true
+    },
+    {
+      "id": "jawa_tengah_pakaian_adat_kebaya_dan_beskap",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya dan Beskap",
+      "description": "Kebaya dengan jarik batik untuk perempuan, serta beskap dengan blangkon untuk laki-laki.",
+      "imageName": "jawa_tengah_pakaian_adat_kebaya_dan_beskap"
+    },
+    {
+      "id": "jawa_tengah_pakaian_adat_paes_ageng_surakarta",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Paes Ageng Surakarta",
+      "description": "Pakaian pengantin kebesaran Surakarta dengan paes hitam di dahi dan hiasan emas.",
+      "imageName": "jawa_tengah_pakaian_adat_paes_ageng_surakarta"
+    },
+    {
+      "id": "jawa_tengah_pakaian_adat_solo_basahan",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Solo Basahan",
+      "description": "Busana pengantin Solo dengan kain dodot dan hiasan kepala.",
+      "imageName": "jawa_tengah_pakaian_adat_solo_basahan"
+    },
+    {
+      "id": "jawa_tengah_pakaian_adat_kebaya_kartini",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya Kartini",
+      "description": "Kebaya sederhana dengan bentuk khas yang diberi nama sesuai pahlawan emansipasi Kartini.",
+      "imageName": "jawa_tengah_pakaian_adat_kebaya_kartini"
+    },
+    {
+      "id": "jawa_tengah_pakaian_adat_batik_pekalongan",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Batik Pekalongan",
+      "description": "Batik pesisir Jawa Tengah dengan motif flora dan warna cerah.",
+      "imageName": "jawa_tengah_pakaian_adat_batik_pekalongan"
+    },
+    {
+      "id": "jawa_tengah_rumah_adat_rumah_joglo",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Joglo",
+      "description": "Rumah Jawa dengan atap tumpang bersusun dan empat tiang utama (saka guru) di tengah bangunan.",
+      "imageName": "jawa_tengah_rumah_adat_rumah_joglo"
+    },
+    {
+      "id": "jawa_tengah_rumah_adat_rumah_limasan",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Limasan",
+      "description": "Rumah Jawa beratap limasan dengan empat sisi miring.",
+      "imageName": "jawa_tengah_rumah_adat_rumah_limasan"
+    },
+    {
+      "id": "jawa_tengah_rumah_adat_rumah_panggang_pe",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Panggang Pe",
+      "description": "Rumah Jawa sederhana yang atapnya miring ke satu sisi.",
+      "imageName": "jawa_tengah_rumah_adat_rumah_panggang_pe"
+    },
+    {
+      "id": "jawa_tengah_rumah_adat_rumah_kampung",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Kampung",
+      "description": "Rumah Jawa beratap pelana, bentuk rumah yang paling umum.",
+      "imageName": "jawa_tengah_rumah_adat_rumah_kampung"
+    },
+    {
+      "id": "jawa_tengah_rumah_adat_rumah_tajug",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Tajug",
+      "description": "Rumah beratap piramida yang biasa dipakai untuk bangunan ibadah.",
+      "imageName": "jawa_tengah_rumah_adat_rumah_tajug"
+    },
+    {
+      "id": "jawa_tengah_makanan_lumpia_semarang",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Lumpia Semarang",
+      "description": "Kulit lumpia berisi rebung, udang, dan ayam, disajikan dengan saus kental yang manis gurih.",
+      "imageName": "jawa_tengah_makanan_lumpia_semarang"
+    },
+    {
+      "id": "jawa_tengah_makanan_soto_kudus",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Soto Kudus",
+      "description": "Soto ayam atau kerbau berkuah bening dalam mangkuk kecil.",
+      "imageName": "jawa_tengah_makanan_soto_kudus"
+    },
+    {
+      "id": "jawa_tengah_makanan_tahu_gimbal",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Tahu Gimbal",
+      "description": "Tahu goreng, lontong, dan gimbal udang dengan bumbu kacang.",
+      "imageName": "jawa_tengah_makanan_tahu_gimbal"
+    },
+    {
+      "id": "jawa_tengah_makanan_nasi_liwet_solo",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Nasi Liwet Solo",
+      "description": "Nasi gurih dari Solo dengan suwiran ayam, telur, dan santan.",
+      "imageName": "jawa_tengah_makanan_nasi_liwet_solo"
+    },
+    {
+      "id": "jawa_tengah_makanan_timlo_solo",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Timlo Solo",
+      "description": "Sup bening dengan ayam, telur pindang, dan sosis solo.",
+      "imageName": "jawa_tengah_makanan_timlo_solo"
+    },
+    {
+      "id": "jawa_tengah_makanan_garang_asem",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Garang Asem",
+      "description": "Ayam atau daging yang dikukus dengan bumbu asam segar dalam daun pisang.",
+      "imageName": "jawa_tengah_makanan_garang_asem"
+    },
+    {
+      "id": "jawa_tengah_makanan_wingko_babat",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Wingko Babat",
+      "description": "Kue kelapa dan ketan panggang khas Semarang.",
+      "imageName": "jawa_tengah_makanan_wingko_babat"
+    },
+    {
+      "id": "jawa_tengah_makanan_mendoan",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Mendoan",
+      "description": "Tempe tipis yang digoreng setengah matang dalam adonan tepung berbumbu.",
+      "imageName": "jawa_tengah_makanan_mendoan"
+    },
+    {
+      "id": "jawa_tengah_makanan_selat_solo",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Selat Solo",
+      "description": "Hidangan Solo dengan sayur rebus, daging, dan kuah manis asam.",
+      "imageName": "jawa_tengah_makanan_selat_solo"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_gambyong",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Gambyong",
+      "description": "Tarian klasik gaya Surakarta yang halus dan lemah gemulai, biasa dibawakan penari perempuan.",
+      "imageName": "jawa_tengah_tarian_tari_gambyong"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_bedhaya_ketawang",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Bedhaya Ketawang",
+      "description": "Tarian sakral Keraton Surakarta yang dibawakan sembilan penari perempuan.",
+      "imageName": "jawa_tengah_tarian_tari_bedhaya_ketawang"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_kuda_lumping",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Kuda Lumping",
+      "description": "Tarian rakyat dengan anyaman bambu berbentuk kuda yang menampilkan kesurupan.",
+      "imageName": "jawa_tengah_tarian_tari_kuda_lumping"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_sintren",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Sintren",
+      "description": "Tarian mistis Pantura yang menampilkan perempuan dalam keadaan trans.",
+      "imageName": "jawa_tengah_tarian_tari_sintren"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_lengger_banyumas",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Lengger Banyumas",
+      "description": "Tarian pergaulan Banyumas yang dibawakan penari dengan gerak gesit.",
+      "imageName": "jawa_tengah_tarian_tari_lengger_banyumas"
+    },
+    {
+      "id": "jawa_tengah_tarian_tari_topeng_ireng",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Topeng Ireng",
+      "description": "Tarian Magelang dengan hiasan bulu dan gerak yang energik.",
+      "imageName": "jawa_tengah_tarian_tari_topeng_ireng",
+      "needsReview": true
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_gambang_suling",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Gambang Suling",
+      "description": "Lagu Jawa yang mengalun lembut, menggambarkan keindahan alam dan suasana desa.",
+      "imageName": "jawa_tengah_lagu_daerah_gambang_suling"
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_lir_ilir",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Lir-Ilir",
+      "description": "Lagu ciptaan Sunan Kalijaga yang berisi ajakan untuk bersyukur dan beribadah.",
+      "imageName": "jawa_tengah_lagu_daerah_lir_ilir"
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_gundul_gundul_pacul",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Gundul-Gundul Pacul",
+      "description": "Lagu Jawa yang berisi nasihat tentang tanggung jawab seorang pemimpin.",
+      "imageName": "jawa_tengah_lagu_daerah_gundul_gundul_pacul"
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_cublak_cublak_suweng",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Cublak-Cublak Suweng",
+      "description": "Lagu dolanan anak Jawa yang dinyanyikan sambil bermain.",
+      "imageName": "jawa_tengah_lagu_daerah_cublak_cublak_suweng"
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_sluku_sluku_bathok",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Sluku-Sluku Bathok",
+      "description": "Lagu Jawa dengan nasihat untuk hidup menjalani hidup yang bermakna.",
+      "imageName": "jawa_tengah_lagu_daerah_sluku_sluku_bathok"
+    },
+    {
+      "id": "jawa_tengah_lagu_daerah_jamuran",
+      "province": "Jawa Tengah",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Jamuran",
+      "description": "Lagu dolanan anak Jawa yang menggambarkan permainan jamur.",
+      "imageName": "jawa_tengah_lagu_daerah_jamuran"
+    },
+    {
+      "id": "di_yogyakarta_pakaian_adat_surjan",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Surjan",
+      "description": "Busana laki-laki Jawa gaya Yogyakarta berupa baju bermotif lurik dengan jarik, blangkon, dan keris.",
+      "imageName": "di_yogyakarta_pakaian_adat_surjan"
+    },
+    {
+      "id": "di_yogyakarta_pakaian_adat_paes_ageng_yogyakarta",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Paes Ageng Yogyakarta",
+      "description": "Pakaian pengantin kebesaran Keraton Yogyakarta dengan paes, kain dodot, dan perhiasan.",
+      "imageName": "di_yogyakarta_pakaian_adat_paes_ageng_yogyakarta"
+    },
+    {
+      "id": "di_yogyakarta_pakaian_adat_kebaya_kutubaru",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kebaya Kutubaru",
+      "description": "Kebaya Jawa dengan potongan kutu baru yang bagian depannya disambung kain tengah.",
+      "imageName": "di_yogyakarta_pakaian_adat_kebaya_kutubaru"
+    },
+    {
+      "id": "di_yogyakarta_pakaian_adat_pakaian_peranakan",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Peranakan",
+      "description": "Busana peranakan Yogyakarta berupa beskap dengan blangkon dan jarik batik.",
+      "imageName": "di_yogyakarta_pakaian_adat_pakaian_peranakan",
+      "needsReview": true
+    },
+    {
+      "id": "di_yogyakarta_rumah_adat_bangsal_kencono",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Bangsal Kencono",
+      "description": "Bangunan utama Keraton Yogyakarta bergaya joglo yang dipakai untuk upacara kerajaan.",
+      "imageName": "di_yogyakarta_rumah_adat_bangsal_kencono"
+    },
+    {
+      "id": "di_yogyakarta_rumah_adat_rumah_joglo_pencu",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Joglo Pencu",
+      "description": "Rumah Joglo Yogyakarta dengan atap berpuncak seperti gunung.",
+      "imageName": "di_yogyakarta_rumah_adat_rumah_joglo_pencu"
+    },
+    {
+      "id": "di_yogyakarta_rumah_adat_rumah_limasan_yogyakarta",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Limasan Yogyakarta",
+      "description": "Rumah Jawa beratap limasan khas Yogyakarta.",
+      "imageName": "di_yogyakarta_rumah_adat_rumah_limasan_yogyakarta"
+    },
+    {
+      "id": "di_yogyakarta_makanan_gudeg",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Gudeg",
+      "description": "Nangka muda yang dimasak lama dengan santan dan gula jawa, disajikan dengan ayam, telur, dan krecek.",
+      "imageName": "di_yogyakarta_makanan_gudeg"
+    },
+    {
+      "id": "di_yogyakarta_makanan_bakpia_pathok",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Bakpia Pathok",
+      "description": "Kue berisi kacang hijau dari kawasan Pathuk yang dikenal sebagai oleh-oleh.",
+      "imageName": "di_yogyakarta_makanan_bakpia_pathok"
+    },
+    {
+      "id": "di_yogyakarta_makanan_sate_klathak",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Sate Klathak",
+      "description": "Sate kambing dengan tusuk besi dan bumbu garam yang sederhana.",
+      "imageName": "di_yogyakarta_makanan_sate_klathak"
+    },
+    {
+      "id": "di_yogyakarta_makanan_wedang_uwuh",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Wedang Uwuh",
+      "description": "Minuman rempah dengan jahe, secang, dan cengkeh yang berwarna merah.",
+      "imageName": "di_yogyakarta_makanan_wedang_uwuh"
+    },
+    {
+      "id": "di_yogyakarta_makanan_yangko",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Yangko",
+      "description": "Kue mochi Jawa dari ketan dan gula, berisi kacang atau kelapa.",
+      "imageName": "di_yogyakarta_makanan_yangko"
+    },
+    {
+      "id": "di_yogyakarta_makanan_mangut_lele",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Mangut Lele",
+      "description": "Ikan lele asap dalam kuah santan pedas.",
+      "imageName": "di_yogyakarta_makanan_mangut_lele"
+    },
+    {
+      "id": "di_yogyakarta_makanan_geplak",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Geplak",
+      "description": "Kue manis dari kelapa parut dan gula yang berwarna-warni.",
+      "imageName": "di_yogyakarta_makanan_geplak"
+    },
+    {
+      "id": "di_yogyakarta_makanan_tiwul",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Tiwul",
+      "description": "Makanan pengganti nasi dari singkong yang dikukus dengan gula merah.",
+      "imageName": "di_yogyakarta_makanan_tiwul"
+    },
+    {
+      "id": "di_yogyakarta_makanan_oseng_oseng_mercon",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Oseng-Oseng Mercon",
+      "description": "Daging sapi dengan cabai rawit yang sangat pedas.",
+      "imageName": "di_yogyakarta_makanan_oseng_oseng_mercon"
+    },
+    {
+      "id": "di_yogyakarta_tarian_tari_serimpi",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Serimpi",
+      "description": "Tarian keraton yang dibawakan empat penari perempuan dengan gerak halus yang sangat teratur.",
+      "imageName": "di_yogyakarta_tarian_tari_serimpi"
+    },
+    {
+      "id": "di_yogyakarta_tarian_beksan_lawung",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Beksan Lawung",
+      "description": "Tarian keraton yang menggambarkan para prajurit dengan tombak pendek (lawung).",
+      "imageName": "di_yogyakarta_tarian_beksan_lawung"
+    },
+    {
+      "id": "di_yogyakarta_tarian_tari_golek_menak",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Golek Menak",
+      "description": "Tarian wayang golek Yogyakarta dengan gerak yang menirukan wayang golek.",
+      "imageName": "di_yogyakarta_tarian_tari_golek_menak"
+    },
+    {
+      "id": "di_yogyakarta_tarian_tari_bedhaya_semang",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Bedhaya Semang",
+      "description": "Tarian sakral keraton Yogyakarta yang dibawakan perempuan.",
+      "imageName": "di_yogyakarta_tarian_tari_bedhaya_semang",
+      "needsReview": true
+    },
+    {
+      "id": "di_yogyakarta_tarian_tari_angguk",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Angguk",
+      "description": "Tarian rakyat Kulonprogo yang diiringi musik terbang dan syair berbahasa Jawa.",
+      "imageName": "di_yogyakarta_tarian_tari_angguk"
+    },
+    {
+      "id": "di_yogyakarta_tarian_tari_jathilan",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Jathilan",
+      "description": "Tarian kuda lumping khas Yogyakarta yang menampilkan kesurupan.",
+      "imageName": "di_yogyakarta_tarian_tari_jathilan"
+    },
+    {
+      "id": "di_yogyakarta_lagu_daerah_suwe_ora_jamu",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Suwe Ora Jamu",
+      "description": "Lagu Jawa tentang penantian dan rasa rindu, dibawakan dengan irama ringan.",
+      "imageName": "di_yogyakarta_lagu_daerah_suwe_ora_jamu"
+    },
+    {
+      "id": "di_yogyakarta_lagu_daerah_pitik_tukung",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Pitik Tukung",
+      "description": "Lagu dolanan anak Jawa tentang ayam yang tidak berekor.",
+      "imageName": "di_yogyakarta_lagu_daerah_pitik_tukung",
+      "needsReview": true
+    },
+    {
+      "id": "di_yogyakarta_lagu_daerah_tak_lelo_ledhung",
+      "province": "DI Yogyakarta",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Tak Lelo Ledhung",
+      "description": "Lagu pengantar tidur Jawa dengan nada lembut dan penuh kasih.",
+      "imageName": "di_yogyakarta_lagu_daerah_tak_lelo_ledhung"
+    },
+    {
+      "id": "jawa_timur_pakaian_adat_pesaan_madura",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pesa'an Madura",
+      "description": "Pakaian adat Madura: baju longgar bergaris merah-putih dengan celana gombor dan odheng di kepala.",
+      "imageName": "jawa_timur_pakaian_adat_pesaan_madura"
+    },
+    {
+      "id": "jawa_timur_pakaian_adat_pakaian_pengantin_surabaya",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Pengantin Surabaya",
+      "description": "Busana pengantin Surabaya dengan hiasan kepala dan kain yang megah.",
+      "imageName": "jawa_timur_pakaian_adat_pakaian_pengantin_surabaya",
+      "needsReview": true
+    },
+    {
+      "id": "jawa_timur_pakaian_adat_pakaian_adat_osing",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Osing",
+      "description": "Busana masyarakat Osing Banyuwangi yang dipakai dalam upacara adat.",
+      "imageName": "jawa_timur_pakaian_adat_pakaian_adat_osing",
+      "needsReview": true
+    },
+    {
+      "id": "jawa_timur_pakaian_adat_pakaian_adat_tengger",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Tengger",
+      "description": "Busana masyarakat Tengger berupa sarung dan udeng yang dipakai dalam upacara adat.",
+      "imageName": "jawa_timur_pakaian_adat_pakaian_adat_tengger"
+    },
+    {
+      "id": "jawa_timur_rumah_adat_rumah_joglo_jawa_timur",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Joglo Jawa Timur",
+      "description": "Rumah tradisional beratap joglo dengan ciri khas ruangan terbuka dan pendopo.",
+      "imageName": "jawa_timur_rumah_adat_rumah_joglo_jawa_timur",
+      "needsReview": true
+    },
+    {
+      "id": "jawa_timur_rumah_adat_rumah_osing",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Osing",
+      "description": "Rumah adat Osing Banyuwangi dengan atap bertingkat dan teras kecil.",
+      "imageName": "jawa_timur_rumah_adat_rumah_osing"
+    },
+    {
+      "id": "jawa_timur_rumah_adat_tanean_lanjhang",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "RUMAH_ADAT",
+      "name": "Tanean Lanjhang",
+      "description": "Permukiman keluarga Madura yang tertata memanjang dengan halaman bersama.",
+      "imageName": "jawa_timur_rumah_adat_tanean_lanjhang"
+    },
+    {
+      "id": "jawa_timur_makanan_rujak_cingur",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Rujak Cingur",
+      "description": "Campuran sayur, buah, dan cingur (moncong sapi) dengan bumbu petis, kacang, dan cabai.",
+      "imageName": "jawa_timur_makanan_rujak_cingur"
+    },
+    {
+      "id": "jawa_timur_makanan_rawon",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Rawon",
+      "description": "Sup daging sapi berkuah hitam dari kluwek yang disantap dengan tauge dan sambal.",
+      "imageName": "jawa_timur_makanan_rawon"
+    },
+    {
+      "id": "jawa_timur_makanan_soto_lamongan",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Soto Lamongan",
+      "description": "Soto ayam kuning dengan taburan koya dan sambal.",
+      "imageName": "jawa_timur_makanan_soto_lamongan"
+    },
+    {
+      "id": "jawa_timur_makanan_lontong_balap",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Lontong Balap",
+      "description": "Lontong dengan tauge, tahu, lentho, dan kuah petis yang khas Surabaya.",
+      "imageName": "jawa_timur_makanan_lontong_balap"
+    },
+    {
+      "id": "jawa_timur_makanan_tahu_tek",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Tahu Tek",
+      "description": "Tahu goreng dan lontong dengan bumbu petis dan kacang.",
+      "imageName": "jawa_timur_makanan_tahu_tek"
+    },
+    {
+      "id": "jawa_timur_makanan_pecel_madiun",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Pecel Madiun",
+      "description": "Sayur rebus dengan sambal pecel kacang yang pedas.",
+      "imageName": "jawa_timur_makanan_pecel_madiun"
+    },
+    {
+      "id": "jawa_timur_makanan_bakso_malang",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Bakso Malang",
+      "description": "Bakso dengan pangsit, tahu, dan mi dalam kuah kaldu.",
+      "imageName": "jawa_timur_makanan_bakso_malang"
+    },
+    {
+      "id": "jawa_timur_makanan_sate_madura",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Sate Madura",
+      "description": "Sate ayam atau kambing dengan bumbu kacang atau kecap manis.",
+      "imageName": "jawa_timur_makanan_sate_madura"
+    },
+    {
+      "id": "jawa_timur_makanan_lontong_kupang",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "MAKANAN",
+      "name": "Lontong Kupang",
+      "description": "Lontong dengan kupang rebus dan petis khas Sidoarjo dan Surabaya.",
+      "imageName": "jawa_timur_makanan_lontong_kupang"
+    },
+    {
+      "id": "jawa_timur_tarian_reog_ponorogo",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Reog Ponorogo",
+      "description": "Pertunjukan dengan topeng singa raksasa berhiasan merak yang dibawa penari, diiringi gamelan.",
+      "imageName": "jawa_timur_tarian_reog_ponorogo"
+    },
+    {
+      "id": "jawa_timur_tarian_tari_remo",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Remo",
+      "description": "Tarian pembuka pertunjukan ludruk yang gagah dan lincah.",
+      "imageName": "jawa_timur_tarian_tari_remo"
+    },
+    {
+      "id": "jawa_timur_tarian_tari_jaranan",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Jaranan",
+      "description": "Tarian kuda lumping Jawa Timur dengan musik gamelan dan trance.",
+      "imageName": "jawa_timur_tarian_tari_jaranan"
+    },
+    {
+      "id": "jawa_timur_tarian_tari_gandrung_banyuwangi",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Gandrung Banyuwangi",
+      "description": "Tarian penyambutan Banyuwangi yang ditarikan perempuan dengan penonton.",
+      "imageName": "jawa_timur_tarian_tari_gandrung_banyuwangi"
+    },
+    {
+      "id": "jawa_timur_tarian_tari_topeng_malangan",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "TARIAN",
+      "name": "Tari Topeng Malangan",
+      "description": "Tarian bertopeng Malang yang menceritakan kisah Panji.",
+      "imageName": "jawa_timur_tarian_tari_topeng_malangan"
+    },
+    {
+      "id": "jawa_timur_lagu_daerah_rek_ayo_rek",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Rek Ayo Rek",
+      "description": "Lagu Surabaya yang riang, berisi ajakan untuk bersama-sama menikmati suasana kota.",
+      "imageName": "jawa_timur_lagu_daerah_rek_ayo_rek"
+    },
+    {
+      "id": "jawa_timur_lagu_daerah_tanduk_majeng",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Tanduk Majeng",
+      "description": "Lagu Madura yang bernada riang dan menceritakan kehidupan masyarakat setempat.",
+      "imageName": "jawa_timur_lagu_daerah_tanduk_majeng"
+    },
+    {
+      "id": "jawa_timur_lagu_daerah_jula_juli_suroboyoan",
+      "province": "Jawa Timur",
+      "island": "JAWA",
+      "category": "LAGU",
+      "name": "Jula-Juli Suroboyoan",
+      "description": "Lagu Surabaya berisi pantun jenaka tentang kehidupan sehari-hari.",
+      "imageName": "jawa_timur_lagu_daerah_jula_juli_suroboyoan",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_barat_pakaian_adat_king_baba_dan_king_bibinge",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "King Baba dan King Bibinge",
+      "description": "Pakaian adat Dayak berbahan kulit kayu atau kain bermanik dengan hiasan bulu enggang.",
+      "imageName": "kalimantan_barat_pakaian_adat_king_baba_dan_king_bibinge"
+    },
+    {
+      "id": "kalimantan_barat_pakaian_adat_baju_telok_belanga_pontianak",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Telok Belanga Pontianak",
+      "description": "Busana Melayu Pontianak dengan baju teluk belanga dan kain songket.",
+      "imageName": "kalimantan_barat_pakaian_adat_baju_telok_belanga_pontianak"
+    },
+    {
+      "id": "kalimantan_barat_pakaian_adat_pakaian_adat_dayak_iban",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Dayak Iban",
+      "description": "Busana Dayak Iban dengan kain tenun, manik-manik, dan hiasan bulu.",
+      "imageName": "kalimantan_barat_pakaian_adat_pakaian_adat_dayak_iban",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_barat_pakaian_adat_pakaian_adat_tionghoa_singkawang",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Tionghoa Singkawang",
+      "description": "Busana tradisional Tionghoa Singkawang yang dipakai dalam perayaan.",
+      "imageName": "kalimantan_barat_pakaian_adat_pakaian_adat_tionghoa_singkawang",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_barat_rumah_adat_rumah_radakng",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Radakng",
+      "description": "Rumah panjang suku Dayak berbentuk panggung yang dihuni banyak keluarga dalam satu atap.",
+      "imageName": "kalimantan_barat_rumah_adat_rumah_radakng"
+    },
+    {
+      "id": "kalimantan_barat_rumah_adat_rumah_panjai",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Panjai",
+      "description": "Rumah panjang suku Dayak Iban yang dihuni banyak keluarga dengan satu atap.",
+      "imageName": "kalimantan_barat_rumah_adat_rumah_panjai"
+    },
+    {
+      "id": "kalimantan_barat_rumah_adat_rumah_melayu_pontianak",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Melayu Pontianak",
+      "description": "Rumah panggung Melayu Pontianak dari kayu belian di tepi sungai.",
+      "imageName": "kalimantan_barat_rumah_adat_rumah_melayu_pontianak"
+    },
+    {
+      "id": "kalimantan_barat_rumah_adat_rumah_baluk",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Baluk",
+      "description": "Rumah adat suku Dayak Bidayuh berbentuk bulat dan bertingkat.",
+      "imageName": "kalimantan_barat_rumah_adat_rumah_baluk"
+    },
+    {
+      "id": "kalimantan_barat_makanan_chai_kue",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Chai Kue",
+      "description": "Pangsit kukus khas Pontianak dengan kulit bening dan isian bengkuang atau kucai.",
+      "imageName": "kalimantan_barat_makanan_chai_kue"
+    },
+    {
+      "id": "kalimantan_barat_makanan_bubur_pedas_sambas",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Bubur Pedas Sambas",
+      "description": "Bubur nasi dengan aneka sayuran dan rempah khas Sambas.",
+      "imageName": "kalimantan_barat_makanan_bubur_pedas_sambas"
+    },
+    {
+      "id": "kalimantan_barat_makanan_pengkang",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Pengkang",
+      "description": "Ketan berisi ebi yang dibungkus daun pisang lalu dibakar.",
+      "imageName": "kalimantan_barat_makanan_pengkang"
+    },
+    {
+      "id": "kalimantan_barat_makanan_choipan",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Choipan",
+      "description": "Kue kukus berisi bengkuang dan ebi khas Pontianak, bertekstur kenyal.",
+      "imageName": "kalimantan_barat_makanan_choipan"
+    },
+    {
+      "id": "kalimantan_barat_makanan_lemang_pontianak",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Lemang Pontianak",
+      "description": "Ketan yang dibakar dalam bambu dan disantap dengan lauk.",
+      "imageName": "kalimantan_barat_makanan_lemang_pontianak"
+    },
+    {
+      "id": "kalimantan_barat_tarian_tari_monong",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Monong",
+      "description": "Tarian ritual penyembuhan suku Dayak yang dibawakan dukun dengan iringan musik tradisional.",
+      "imageName": "kalimantan_barat_tarian_tari_monong",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_barat_tarian_tari_jepin_lembut",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Jepin Lembut",
+      "description": "Tarian Melayu Kalimantan Barat yang halus dan diiringi musik gambus.",
+      "imageName": "kalimantan_barat_tarian_tari_jepin_lembut"
+    },
+    {
+      "id": "kalimantan_barat_tarian_tari_ngajat",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Ngajat",
+      "description": "Tarian suku Dayak yang gagah, dibawakan dalam upacara penyambutan atau ritual.",
+      "imageName": "kalimantan_barat_tarian_tari_ngajat"
+    },
+    {
+      "id": "kalimantan_barat_lagu_daerah_cik_cik_periok",
+      "province": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Cik Cik Periok",
+      "description": "Lagu Kalimantan Barat yang berirama riang dan mengajak orang menikmati kebersamaan.",
+      "imageName": "kalimantan_barat_lagu_daerah_cik_cik_periok"
+    },
+    {
+      "id": "kalimantan_tengah_pakaian_adat_baju_sangkarut",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Sangkarut",
+      "description": "Pakaian adat Dayak Ngaju berhias manik-manik, bulu enggang, dan kain tenun.",
+      "imageName": "kalimantan_tengah_pakaian_adat_baju_sangkarut"
+    },
+    {
+      "id": "kalimantan_tengah_pakaian_adat_baju_pengantin_dayak_ngaju",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Pengantin Dayak Ngaju",
+      "description": "Busana pengantin Dayak Ngaju dengan kain bermanik dan hiasan kepala.",
+      "imageName": "kalimantan_tengah_pakaian_adat_baju_pengantin_dayak_ngaju",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_tengah_rumah_adat_rumah_betang",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Betang",
+      "description": "Rumah panjang panggung suku Dayak yang dihuni banyak keluarga dan menjadi pusat kehidupan komunal.",
+      "imageName": "kalimantan_tengah_rumah_adat_rumah_betang"
+    },
+    {
+      "id": "kalimantan_tengah_rumah_adat_rumah_lanting",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lanting",
+      "description": "Rumah terapung di sungai yang dipakai masyarakat Kalimantan Tengah.",
+      "imageName": "kalimantan_tengah_rumah_adat_rumah_lanting",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_tengah_makanan_juhu_singkah",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Juhu Singkah",
+      "description": "Sayur umbut rotan muda yang dimasak dengan ikan atau daging berkuah gurih.",
+      "imageName": "kalimantan_tengah_makanan_juhu_singkah"
+    },
+    {
+      "id": "kalimantan_tengah_makanan_wadi",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Wadi",
+      "description": "Ikan atau daging yang difermentasi dengan garam dan nasi, rasanya asam gurih.",
+      "imageName": "kalimantan_tengah_makanan_wadi"
+    },
+    {
+      "id": "kalimantan_tengah_makanan_kalumpe",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Kalumpe",
+      "description": "Sayur daun singkong yang dimasak dengan santan dan bumbu khas Dayak.",
+      "imageName": "kalimantan_tengah_makanan_kalumpe"
+    },
+    {
+      "id": "kalimantan_tengah_tarian_tari_manasai",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Manasai",
+      "description": "Tarian pergaulan Dayak Ngaju yang dibawakan beramai-ramai dalam lingkaran.",
+      "imageName": "kalimantan_tengah_tarian_tari_manasai"
+    },
+    {
+      "id": "kalimantan_tengah_tarian_tari_giring_giring",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Giring-Giring",
+      "description": "Tarian Dayak Ngaju yang dibawakan dengan giring-giring (properti bunyi).",
+      "imageName": "kalimantan_tengah_tarian_tari_giring_giring"
+    },
+    {
+      "id": "kalimantan_tengah_tarian_tari_mandau_talawang",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Mandau Talawang",
+      "description": "Tarian perang Dayak dengan mandau dan perisai talawang.",
+      "imageName": "kalimantan_tengah_tarian_tari_mandau_talawang"
+    },
+    {
+      "id": "kalimantan_tengah_tarian_tari_balean_dadas",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Balean Dadas",
+      "description": "Tarian ritual penyembuhan suku Dayak yang dipimpin balian.",
+      "imageName": "kalimantan_tengah_tarian_tari_balean_dadas",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_tengah_lagu_daerah_kalayar",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Kalayar",
+      "description": "Lagu daerah Kalimantan Tengah yang bernuansa kisah kehidupan dan alam.",
+      "imageName": "kalimantan_tengah_lagu_daerah_kalayar",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_tengah_lagu_daerah_palu_lunta",
+      "province": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Palu Lunta",
+      "description": "Lagu daerah Kalimantan Tengah yang berisi suasana kehidupan masyarakat.",
+      "imageName": "kalimantan_tengah_lagu_daerah_palu_lunta",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_pakaian_adat_babaju_bapontoh",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Babaju Bapontoh",
+      "description": "Pakaian adat Banjar dengan baju bersulam emas, kain sasirangan, dan hiasan kepala.",
+      "imageName": "kalimantan_selatan_pakaian_adat_babaju_bapontoh"
+    },
+    {
+      "id": "kalimantan_selatan_pakaian_adat_kain_sasirangan",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Kain Sasirangan",
+      "description": "Kain khas Banjar dengan teknik jahit dan celup yang bermotif warna-warni.",
+      "imageName": "kalimantan_selatan_pakaian_adat_kain_sasirangan"
+    },
+    {
+      "id": "kalimantan_selatan_pakaian_adat_pengantin_bagajah_gamuling_baular_lulut",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pengantin Bagajah Gamuling Baular Lulut",
+      "description": "Busana pengantin Banjar dengan hiasan kepala megah dan perhiasan emas.",
+      "imageName": "kalimantan_selatan_pakaian_adat_pengantin_bagajah_gamuling_baular_lulut",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_pakaian_adat_baju_bahalai",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Bahalai",
+      "description": "Busana tradisional Banjar yang dipakai dalam acara adat.",
+      "imageName": "kalimantan_selatan_pakaian_adat_baju_bahalai",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_banjar_bubungan_tinggi",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Banjar Bubungan Tinggi",
+      "description": "Rumah panggung Banjar dengan atap pelana yang runcing dan tinggi, dahulu dihuni bangsawan.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_banjar_bubungan_tinggi"
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_gajah_baliku",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Gajah Baliku",
+      "description": "Rumah Banjar dengan atap berbentuk seperti gajah yang tengah berbalik.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_gajah_baliku"
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_palimasan",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Palimasan",
+      "description": "Rumah Banjar beratap limasan yang dahulu dihuni bangsawan.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_palimasan"
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_joglo_gudang",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Joglo Gudang",
+      "description": "Rumah Banjar yang memadukan gaya joglo dengan ruangan yang luas.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_joglo_gudang",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_cacak_burung",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Cacak Burung",
+      "description": "Rumah Banjar dengan atap yang ujungnya menyilang seperti cacak burung.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_cacak_burung"
+    },
+    {
+      "id": "kalimantan_selatan_rumah_adat_rumah_lanting",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lanting",
+      "description": "Rumah terapung di sungai khas masyarakat Banjar.",
+      "imageName": "kalimantan_selatan_rumah_adat_rumah_lanting"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_soto_banjar",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Soto Banjar",
+      "description": "Soto berkuah bening dengan rempah aromatik, disajikan bersama ketupat atau lontong dan telur.",
+      "imageName": "kalimantan_selatan_makanan_soto_banjar"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_ketupat_kandangan",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Ketupat Kandangan",
+      "description": "Ketupat dengan kuah santan dan ikan haruan bakar khas Kandangan.",
+      "imageName": "kalimantan_selatan_makanan_ketupat_kandangan"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_nasi_itik_gambut",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Nasi Itik Gambut",
+      "description": "Nasi dengan itik berbumbu kuah gurih khas Gambut.",
+      "imageName": "kalimantan_selatan_makanan_nasi_itik_gambut"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_amparan_tatak",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Amparan Tatak",
+      "description": "Kue lapis dua warna dari pisang dan santan.",
+      "imageName": "kalimantan_selatan_makanan_amparan_tatak"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_bingka",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Bingka",
+      "description": "Kue manis dari telur dan santan yang dipanggang.",
+      "imageName": "kalimantan_selatan_makanan_bingka"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_apam_barabai",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Apam Barabai",
+      "description": "Kue apam khas Barabai berbahan tepung dan santan, dimakan dengan kuah gula.",
+      "imageName": "kalimantan_selatan_makanan_apam_barabai"
+    },
+    {
+      "id": "kalimantan_selatan_makanan_gangan_asam",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Gangan Asam",
+      "description": "Masakan ikan berkuah asam pedas dengan bumbu rempah.",
+      "imageName": "kalimantan_selatan_makanan_gangan_asam"
+    },
+    {
+      "id": "kalimantan_selatan_tarian_tari_baksa_kembang",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Baksa Kembang",
+      "description": "Tarian penyambutan tamu Banjar dengan gerak lembut yang diiringi musik panting.",
+      "imageName": "kalimantan_selatan_tarian_tari_baksa_kembang"
+    },
+    {
+      "id": "kalimantan_selatan_tarian_tari_radap_rahayu",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Radap Rahayu",
+      "description": "Tarian penyambutan tamu Banjar yang dibawakan secara berpasangan.",
+      "imageName": "kalimantan_selatan_tarian_tari_radap_rahayu"
+    },
+    {
+      "id": "kalimantan_selatan_tarian_tari_japin_carita",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Japin Carita",
+      "description": "Tarian Banjar yang bernuansa Melayu dengan gerak dan cerita.",
+      "imageName": "kalimantan_selatan_tarian_tari_japin_carita"
+    },
+    {
+      "id": "kalimantan_selatan_tarian_tari_baksa_panah",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Baksa Panah",
+      "description": "Tarian Banjar dengan busur panah yang menggambarkan keterampilan memanah.",
+      "imageName": "kalimantan_selatan_tarian_tari_baksa_panah",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_lagu_daerah_ampar_ampar_pisang",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Ampar-Ampar Pisang",
+      "description": "Lagu anak Banjar yang riang dengan irama cepat, populer sebagai lagu bermain.",
+      "imageName": "kalimantan_selatan_lagu_daerah_ampar_ampar_pisang"
+    },
+    {
+      "id": "kalimantan_selatan_lagu_daerah_paris_barantai",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Paris Barantai",
+      "description": "Lagu Banjar tentang keindahan pantai dan kerinduan.",
+      "imageName": "kalimantan_selatan_lagu_daerah_paris_barantai"
+    },
+    {
+      "id": "kalimantan_selatan_lagu_daerah_kambang_goyang",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Kambang Goyang",
+      "description": "Lagu Banjar yang riang dan sering dinyanyikan pada acara hiburan.",
+      "imageName": "kalimantan_selatan_lagu_daerah_kambang_goyang",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_selatan_lagu_daerah_sapu_tangan_babuncu_ampat",
+      "province": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Sapu Tangan Babuncu Ampat",
+      "description": "Lagu Banjar tentang sapu tangan berujung empat sebagai tanda cinta.",
+      "imageName": "kalimantan_selatan_lagu_daerah_sapu_tangan_babuncu_ampat",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_pakaian_adat_taa_dan_sapei_sapaq",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Ta'a dan Sapei Sapaq",
+      "description": "Pakaian adat Dayak Kenyah berhias manik-manik, bulu enggang, dan motif khas Dayak.",
+      "imageName": "kalimantan_timur_pakaian_adat_taa_dan_sapei_sapaq"
+    },
+    {
+      "id": "kalimantan_timur_pakaian_adat_baju_kustin",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Baju Kustin",
+      "description": "Pakaian adat Kutai berbentuk baju dengan sulaman dan kain tenun.",
+      "imageName": "kalimantan_timur_pakaian_adat_baju_kustin"
+    },
+    {
+      "id": "kalimantan_timur_pakaian_adat_ulap_doyo",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Ulap Doyo",
+      "description": "Kain tenun Dayak Benuaq dari serat doyo, bermotif khas dan berwarna alami.",
+      "imageName": "kalimantan_timur_pakaian_adat_ulap_doyo"
+    },
+    {
+      "id": "kalimantan_timur_rumah_adat_rumah_lamin",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Lamin",
+      "description": "Rumah panjang Dayak Kenyah dengan ukiran dan dihuni banyak keluarga, pusat kegiatan adat.",
+      "imageName": "kalimantan_timur_rumah_adat_rumah_lamin"
+    },
+    {
+      "id": "kalimantan_timur_makanan_nasi_bekepor",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Nasi Bekepor",
+      "description": "Nasi yang dimasak bersama ikan asin dan rempah dalam satu periuk, khas masyarakat Kutai.",
+      "imageName": "kalimantan_timur_makanan_nasi_bekepor",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_makanan_amplang",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Amplang",
+      "description": "Kerupuk ikan yang digoreng garing, oleh-oleh khas Samarinda.",
+      "imageName": "kalimantan_timur_makanan_amplang"
+    },
+    {
+      "id": "kalimantan_timur_makanan_ayam_cincane",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Ayam Cincane",
+      "description": "Ayam masak dengan bumbu cincane (santan dan rempah) khas Kutai.",
+      "imageName": "kalimantan_timur_makanan_ayam_cincane",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_makanan_gence_ruan",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Gence Ruan",
+      "description": "Ikan gabus berkuah asam pedas khas Samarinda.",
+      "imageName": "kalimantan_timur_makanan_gence_ruan",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_gantar",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Gantar",
+      "description": "Tarian Dayak yang menggambarkan petani menanam padi dengan tongkat dan gantar sebagai properti.",
+      "imageName": "kalimantan_timur_tarian_tari_gantar"
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_jepen",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Jepen",
+      "description": "Tarian pergaulan Kutai dengan pengaruh Melayu, diiringi musik tingkilan.",
+      "imageName": "kalimantan_timur_tarian_tari_jepen"
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_hudoq",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Hudoq",
+      "description": "Tarian topeng Dayak yang dibawakan saat musim tanam untuk meminta kesuburan.",
+      "imageName": "kalimantan_timur_tarian_tari_hudoq"
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_kancet_ledo",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Kancet Ledo",
+      "description": "Tarian Dayak Kenyah yang ditarikan perempuan dengan gerak lembut seperti burung enggang.",
+      "imageName": "kalimantan_timur_tarian_tari_kancet_ledo"
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_kancet_papatai",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Kancet Papatai",
+      "description": "Tarian perang Dayak Kenyah dengan mandau dan perisai.",
+      "imageName": "kalimantan_timur_tarian_tari_kancet_papatai"
+    },
+    {
+      "id": "kalimantan_timur_tarian_tari_belian_bawo",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Belian Bawo",
+      "description": "Tarian penyembuhan Dayak Benuaq yang dipimpin dukun.",
+      "imageName": "kalimantan_timur_tarian_tari_belian_bawo",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_lagu_daerah_indung_indung",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Indung-Indung",
+      "description": "Lagu Kalimantan Timur yang lembut, dikenal luas sebagai lagu rakyat Kutai.",
+      "imageName": "kalimantan_timur_lagu_daerah_indung_indung",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_timur_lagu_daerah_buah_bolok",
+      "province": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Buah Bolok",
+      "description": "Lagu Kalimantan Timur yang berirama ceria dan dikenal luas.",
+      "imageName": "kalimantan_timur_lagu_daerah_buah_bolok",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_pakaian_adat_pakaian_adat_dayak_kenyah",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Dayak Kenyah",
+      "description": "Busana adat dengan manik-manik dan bulu enggang yang melambangkan keberanian dan kebanggaan.",
+      "imageName": "kalimantan_utara_pakaian_adat_pakaian_adat_dayak_kenyah",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_pakaian_adat_pakaian_adat_bulungan",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Bulungan",
+      "description": "Busana Bulungan yang dipakai dalam upacara kesultanan dengan hiasan emas.",
+      "imageName": "kalimantan_utara_pakaian_adat_pakaian_adat_bulungan",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_pakaian_adat_pakaian_adat_tidung",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "PAKAIAN_ADAT",
+      "name": "Pakaian Adat Tidung",
+      "description": "Busana suku Tidung yang dipakai pada upacara adat dan penyambutan.",
+      "imageName": "kalimantan_utara_pakaian_adat_pakaian_adat_tidung",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_rumah_adat_rumah_baloy_mehit",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Baloy Mehit",
+      "description": "Rumah adat suku Tidung berbentuk panggung dengan atap bertingkat dan ukiran.",
+      "imageName": "kalimantan_utara_rumah_adat_rumah_baloy_mehit",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_rumah_adat_rumah_adat_bulungan",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "RUMAH_ADAT",
+      "name": "Rumah Adat Bulungan",
+      "description": "Rumah tradisional Kesultanan Bulungan berbentuk panggung.",
+      "imageName": "kalimantan_utara_rumah_adat_rumah_adat_bulungan",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_makanan_kepiting_soka",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Kepiting Soka",
+      "description": "Kepiting cangkang lunak yang digoreng garing, hasil khas perairan Kalimantan Utara.",
+      "imageName": "kalimantan_utara_makanan_kepiting_soka"
+    },
+    {
+      "id": "kalimantan_utara_makanan_bubur_paddas",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "MAKANAN",
+      "name": "Bubur Paddas",
+      "description": "Bubur pedas khas Tidung dan Tarakan dengan sayuran dan rempah.",
+      "imageName": "kalimantan_utara_makanan_bubur_paddas",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_tarian_tari_iraw_tengkayu",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Iraw Tengkayu",
+      "description": "Tarian suku Tidung yang digelar saat upacara adat Iraw Tengkayu.",
+      "imageName": "kalimantan_utara_tarian_tari_iraw_tengkayu",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_tarian_tari_datun_julud",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Datun Julud",
+      "description": "Tarian Dayak Kenyah yang dibawakan perempuan secara berbaris dalam syukuran.",
+      "imageName": "kalimantan_utara_tarian_tari_datun_julud",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_tarian_tari_jepen_tidung",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "TARIAN",
+      "name": "Tari Jepen Tidung",
+      "description": "Tarian pergaulan Tidung dengan iringan musik Melayu.",
+      "imageName": "kalimantan_utara_tarian_tari_jepen_tidung",
+      "needsReview": true
+    },
+    {
+      "id": "kalimantan_utara_lagu_daerah_burung_enggang",
+      "province": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "category": "LAGU",
+      "name": "Burung Enggang",
+      "description": "Lagu bertema burung enggang, simbol Kalimantan dan masyarakat Dayak.",
+      "imageName": "kalimantan_utara_lagu_daerah_burung_enggang",
+      "needsReview": true
+    }
+  ]
+}
