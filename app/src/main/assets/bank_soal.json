@@ -1,0 +1,326 @@
+{
+  "jawa": {
+    "pilihanGanda": [
+      {
+        "soal": "Rumah adat Jawa Tengah yang memiliki atap tinggi di bagian tengah disebut…",
+        "pilihan": ["Joglo", "Rumah Gadang", "Honai", "Tongkonan"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Tari Jaipong berasal dari provinsi…",
+        "pilihan": ["Jawa Timur", "Jawa Barat", "DI Yogyakarta", "Banten"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Gudeg adalah makanan khas dari…",
+        "pilihan": ["Surabaya", "Bandung", "Yogyakarta", "Jakarta"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Senjata tradisional Jawa yang bilahnya berkelok-kelok adalah…",
+        "pilihan": ["Mandau", "Rencong", "Kujang", "Keris"],
+        "jawaban": 3
+      },
+      {
+        "soal": "Lagu \"Gundul-Gundul Pacul\" berasal dari…",
+        "pilihan": ["Jawa Tengah", "Sumatera Barat", "Kalimantan Selatan", "Bali"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Kesenian Reog berasal dari daerah…",
+        "pilihan": ["Banyuwangi", "Ponorogo", "Cirebon", "Solo"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Rawon, sup berkuah hitam dari kluwek, adalah makanan khas…",
+        "pilihan": ["Jawa Barat", "Banten", "Jawa Timur", "DKI Jakarta"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Orang yang memainkan wayang kulit disebut…",
+        "pilihan": ["Sinden", "Penabuh", "Penari", "Dalang"],
+        "jawaban": 3
+      }
+    ],
+    "blokKata": [
+      {
+        "soal": "Pulau Jawa memiliki beragam rumah adat. Rumah adat Jawa Tengah bernama ___ , sedangkan rumah adat suku Betawi di Jakarta bernama Rumah ___ .",
+        "jawaban": ["Joglo", "Kebaya"],
+        "pengecoh": ["Gadang", "Honai", "Lamin"]
+      },
+      {
+        "soal": "Yogyakarta terkenal dengan makanan khas bernama ___ yang terbuat dari nangka muda. Dari Jawa Timur, ada ___ , sup daging berkuah hitam dari kluwek.",
+        "jawaban": ["Gudeg", "Rawon"],
+        "pengecoh": ["Rendang", "Pempek", "Papeda"]
+      },
+      {
+        "soal": "Tari ___ adalah tarian yang berasal dari Jawa Barat, sedangkan kesenian Reog berasal dari ___ , Jawa Timur.",
+        "jawaban": ["Jaipong", "Ponorogo"],
+        "pengecoh": ["Saman", "Bandung", "Kecak"]
+      },
+      {
+        "soal": "Pertunjukan wayang kulit dimainkan oleh seorang ___ dan diiringi musik ___ .",
+        "jawaban": ["dalang", "gamelan"],
+        "pengecoh": ["penari", "angklung", "sape"]
+      },
+      {
+        "soal": "Senjata tradisional Jawa yang bilahnya berkelok-kelok disebut ___ . Kain bermotif yang dibuat dengan canting dan malam disebut ___ .",
+        "jawaban": ["Keris", "Batik"],
+        "pengecoh": ["Mandau", "Ulos", "Rencong"]
+      },
+      {
+        "soal": "Lagu daerah \"Gundul-Gundul Pacul\" berasal dari Jawa ___ , sedangkan lagu \"Manuk Dadali\" berasal dari Jawa ___ .",
+        "jawaban": ["Tengah", "Barat"],
+        "pengecoh": ["Timur", "Utara"]
+      }
+    ],
+    "susunHuruf": [
+      {
+        "soal": "Gambar di bawah ini merupakan kain bermotif khas Jawa yang dibuat dengan malam. Apa namanya?",
+        "jawaban": "BATIK",
+        "gambar": "jawa/batik"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan senjata tradisional Jawa dengan nama?",
+        "jawaban": "KERIS",
+        "gambar": "jawa/keris"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Yogyakarta dari nangka muda dengan nama?",
+        "jawaban": "GUDEG",
+        "gambar": "jawa/gudeg"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat Jawa Tengah dengan nama?",
+        "jawaban": "JOGLO",
+        "gambar": "jawa/joglo"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pertunjukan boneka kulit yang dimainkan dalang. Apa namanya?",
+        "jawaban": "WAYANG",
+        "gambar": "jawa/wayang"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan sup berkuah hitam khas Jawa Timur dengan nama?",
+        "jawaban": "RAWON",
+        "gambar": "jawa/rawon"
+      }
+    ]
+  },
+  "sumatra": {
+    "pilihanGanda": [
+      {
+        "soal": "Rumah Gadang adalah rumah adat dari…",
+        "pilihan": ["Sumatera Barat", "Aceh", "Riau", "Lampung"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Tari Saman berasal dari…",
+        "pilihan": ["Sumatera Utara", "Aceh", "Jambi", "Bengkulu"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Rendang adalah masakan khas suku…",
+        "pilihan": ["Batak", "Melayu", "Minangkabau", "Nias"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Kain tenun khas suku Batak disebut…",
+        "pilihan": ["Songket", "Batik", "Sasirangan", "Ulos"],
+        "jawaban": 3
+      },
+      {
+        "soal": "Pempek adalah makanan khas kota…",
+        "pilihan": ["Palembang", "Medan", "Padang", "Pekanbaru"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Senjata tradisional dari Aceh adalah…",
+        "pilihan": ["Keris", "Rencong", "Kujang", "Mandau"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Tari Piring berasal dari…",
+        "pilihan": ["Sumatera Selatan", "Riau", "Sumatera Barat", "Aceh"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Lagu \"Butet\" berasal dari…",
+        "pilihan": ["Sumatera Barat", "Jambi", "Lampung", "Sumatera Utara"],
+        "jawaban": 3
+      }
+    ],
+    "blokKata": [
+      {
+        "soal": "Rumah ___ adalah rumah adat Sumatera Barat dengan atap runcing seperti tanduk kerbau. Di Sumatera Utara, suku Batak Toba memiliki Rumah ___ .",
+        "jawaban": ["Gadang", "Bolon"],
+        "pengecoh": ["Joglo", "Lamin", "Honai"]
+      },
+      {
+        "soal": "Masakan khas Minangkabau yang terkenal di dunia adalah ___ . Dari Palembang, ada ___ yang terbuat dari ikan dan sagu.",
+        "jawaban": ["Rendang", "Pempek"],
+        "pengecoh": ["Gudeg", "Papeda", "Rawon"]
+      },
+      {
+        "soal": "Tari ___ dari Aceh dibawakan sambil duduk berbaris, sedangkan Tari ___ dari Sumatera Barat menggunakan piring sebagai properti.",
+        "jawaban": ["Saman", "Piring"],
+        "pengecoh": ["Kecak", "Jaipong", "Hudoq"]
+      },
+      {
+        "soal": "Kain tenun khas suku Batak disebut ___ , sedangkan kain tenun berbenang emas khas Palembang disebut ___ .",
+        "jawaban": ["Ulos", "Songket"],
+        "pengecoh": ["Batik", "Sasirangan"]
+      },
+      {
+        "soal": "Rencong adalah senjata tradisional dari ___ , sedangkan lagu \"Butet\" berasal dari Sumatera ___ .",
+        "jawaban": ["Aceh", "Utara"],
+        "pengecoh": ["Barat", "Riau", "Jambi"]
+      },
+      {
+        "soal": "Lagu \"Kampuang Nan Jauh di Mato\" berasal dari Sumatera ___ , daerah asal suku ___ .",
+        "jawaban": ["Barat", "Minangkabau"],
+        "pengecoh": ["Utara", "Batak", "Melayu"]
+      }
+    ],
+    "susunHuruf": [
+      {
+        "soal": "Gambar di bawah ini merupakan tari dari Aceh yang dibawakan sambil duduk berbaris. Apa namanya?",
+        "jawaban": "SAMAN",
+        "gambar": "sumatra/saman"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan kain tenun khas Batak dengan nama?",
+        "jawaban": "ULOS",
+        "gambar": "sumatra/ulos"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan masakan khas Minangkabau dengan nama?",
+        "jawaban": "RENDANG",
+        "gambar": "sumatra/rendang"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Palembang dari ikan dan sagu dengan nama?",
+        "jawaban": "PEMPEK",
+        "gambar": "sumatra/pempek"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan senjata tradisional Aceh dengan nama?",
+        "jawaban": "RENCONG",
+        "gambar": "sumatra/rencong"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan kain tenun berbenang emas khas Palembang dengan nama?",
+        "jawaban": "SONGKET",
+        "gambar": "sumatra/songket"
+      }
+    ]
+  },
+  "kalimantan": {
+    "pilihanGanda": [
+      {
+        "soal": "Senjata tradisional suku Dayak berbentuk parang disebut…",
+        "pilihan": ["Mandau", "Keris", "Rencong", "Kujang"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Rumah adat Kalimantan Timur adalah…",
+        "pilihan": ["Rumah Gadang", "Rumah Lamin", "Joglo", "Honai"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Lagu \"Ampar-Ampar Pisang\" berasal dari…",
+        "pilihan": ["Kalimantan Barat", "Kalimantan Timur", "Kalimantan Selatan", "Kalimantan Utara"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Alat musik petik tradisional suku Dayak adalah…",
+        "pilihan": ["Angklung", "Kolintang", "Gamelan", "Sape"],
+        "jawaban": 3
+      },
+      {
+        "soal": "Soto Banjar adalah makanan khas…",
+        "pilihan": ["Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Barat", "Kalimantan Timur"],
+        "jawaban": 0
+      },
+      {
+        "soal": "Kain khas Kalimantan Selatan yang dibuat dengan teknik jelujur dan ikat adalah…",
+        "pilihan": ["Ulos", "Sasirangan", "Songket", "Batik"],
+        "jawaban": 1
+      },
+      {
+        "soal": "Tari Hudoq dibawakan dengan memakai…",
+        "pilihan": ["Selendang", "Kipas", "Topeng", "Piring"],
+        "jawaban": 2
+      },
+      {
+        "soal": "Rumah panjang suku Dayak di Kalimantan Tengah disebut…",
+        "pilihan": ["Joglo", "Tongkonan", "Rumah Gadang", "Rumah Betang"],
+        "jawaban": 3
+      }
+    ],
+    "blokKata": [
+      {
+        "soal": "Suku Dayak memiliki senjata tradisional berbentuk parang bernama ___ dan alat musik petik bernama ___ .",
+        "jawaban": ["Mandau", "Sape"],
+        "pengecoh": ["Keris", "Angklung", "Rencong"]
+      },
+      {
+        "soal": "Rumah adat Kalimantan Timur bernama Rumah ___ , sedangkan rumah panjang suku Dayak di Kalimantan Tengah disebut Rumah ___ .",
+        "jawaban": ["Lamin", "Betang"],
+        "pengecoh": ["Gadang", "Joglo", "Honai"]
+      },
+      {
+        "soal": "Lagu \"Ampar-Ampar Pisang\" berasal dari Kalimantan ___ . Daerah ini juga terkenal dengan kuliner Soto ___ .",
+        "jawaban": ["Selatan", "Banjar"],
+        "pengecoh": ["Timur", "Betawi", "Barat"]
+      },
+      {
+        "soal": "Tari ___ dari Kalimantan Timur dibawakan oleh penari yang memakai ___ .",
+        "jawaban": ["Hudoq", "topeng"],
+        "pengecoh": ["Saman", "selendang", "piring"]
+      },
+      {
+        "soal": "Kain khas Kalimantan Selatan disebut ___ , sedangkan kerupuk ikan khas Kalimantan Timur disebut ___ .",
+        "jawaban": ["Sasirangan", "Amplang"],
+        "pengecoh": ["Ulos", "Pempek", "Songket"]
+      },
+      {
+        "soal": "Suku asli yang banyak mendiami Pulau Kalimantan adalah suku ___ . Pakaian adat pria suku ini di Kalimantan Tengah disebut King ___ .",
+        "jawaban": ["Dayak", "Baba"],
+        "pengecoh": ["Batak", "Bibinge", "Asmat"]
+      }
+    ],
+    "susunHuruf": [
+      {
+        "soal": "Gambar di bawah ini merupakan senjata tradisional suku Dayak dengan nama?",
+        "jawaban": "MANDAU",
+        "gambar": "kalimantan/mandau"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan alat musik petik suku Dayak dengan nama?",
+        "jawaban": "SAPE",
+        "gambar": "kalimantan/sape"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat Kalimantan Timur dengan nama Rumah…?",
+        "jawaban": "LAMIN",
+        "gambar": "kalimantan/lamin"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah panjang suku Dayak dengan nama Rumah…?",
+        "jawaban": "BETANG",
+        "gambar": "kalimantan/betang"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tari topeng suku Dayak dengan nama?",
+        "jawaban": "HUDOQ",
+        "gambar": "kalimantan/hudoq"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan kerupuk ikan khas Kalimantan Timur dengan nama?",
+        "jawaban": "AMPLANG",
+        "gambar": "kalimantan/amplang"
+      }
+    ]
+  }
+}
