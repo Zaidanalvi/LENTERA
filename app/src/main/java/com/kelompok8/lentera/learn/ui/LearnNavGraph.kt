@@ -2,9 +2,7 @@ package com.kelompok8.lentera.learn.ui
 
 import android.net.Uri
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
@@ -14,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavType
@@ -23,45 +22,48 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.kelompok8.lentera.core.model.GlossaryCategory
 import com.kelompok8.lentera.core.model.GlossaryItem
-import com.kelompok8.lentera.learn.ui.screens.MaterialDetailScreen
-import com.kelompok8.lentera.learn.ui.screens.SelectMaterialScreen
-import com.kelompok8.lentera.learn.ui.screens.SubMaterialScreen
-import com.kelompok8.lentera.learn.ui.screens.TableOfContentsScreen
+import com.kelompok8.lentera.core.model.User
+import com.kelompok8.lentera.learn.data.ProvinceInfo
+import com.kelompok8.lentera.learn.ui.screens.CategoryDetailScreen
+import com.kelompok8.lentera.learn.ui.screens.IslandListScreen
+import com.kelompok8.lentera.learn.ui.screens.ProvinceScreen
 
 object LearnRoutes {
-    const val PROVINCES = "learn/provinces"
-    const val TOC = "learn/toc/{province}"
-    const val SUB = "learn/sub/{province}/{category}"
-    const val DETAIL = "learn/detail/{province}/{category}/{itemId}"
+    const val ISLANDS = "learn/islands"
+    const val PROVINCE = "learn/province/{province}"
+    const val CATEGORY = "learn/category/{province}/{category}"
 
-    fun toc(province: String) = "learn/toc/${Uri.encode(province)}"
-    fun sub(province: String, category: GlossaryCategory) =
-        "learn/sub/${Uri.encode(province)}/${category.name}"
-    fun detail(province: String, category: GlossaryCategory, itemId: String) =
-        "learn/detail/${Uri.encode(province)}/${category.name}/$itemId"
+    fun province(province: String) = "learn/province/${Uri.encode(province)}"
+    fun category(province: String, category: GlossaryCategory) =
+        "learn/category/${Uri.encode(province)}/${category.name}"
 }
 
 @Composable
 fun LearnRoute(
     viewModel: LearnViewModel,
-    onExit: () -> Unit,
+    user: User?,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
 
     when (val s = state) {
-        LearnUiState.Loading -> CenteredBox(modifier) { CircularProgressIndicator() }
-        is LearnUiState.Error -> CenteredBox(modifier) {
+        LearnUiState.Loading -> LearnBackground(modifier) {
+            CircularProgressIndicator(
+                color = LearnColors.Neon,
+                modifier = Modifier.align(Alignment.Center),
+            )
+        }
+        is LearnUiState.Error -> LearnBackground(modifier) {
             Column(
+                modifier = Modifier.align(Alignment.Center).padding(24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.padding(24.dp),
             ) {
-                Text(s.message)
+                Text(s.message, color = Color.White)
                 Button(onClick = viewModel::load) { Text("Coba lagi") }
             }
         }
-        is LearnUiState.Success -> LearnNavHost(viewModel, s, onExit, modifier)
+        is LearnUiState.Success -> LearnNavHost(viewModel, s, user, modifier)
     }
 }
 
@@ -69,112 +71,84 @@ fun LearnRoute(
 private fun LearnNavHost(
     viewModel: LearnViewModel,
     data: LearnUiState.Success,
-    onExit: () -> Unit,
+    user: User?,
     modifier: Modifier = Modifier,
 ) {
     val nav = rememberNavController()
     val knownProvinces = data.provincesByIsland.values.flatten().toSet()
 
-    NavHost(navController = nav, startDestination = LearnRoutes.PROVINCES, modifier = modifier) {
+    NavHost(navController = nav, startDestination = LearnRoutes.ISLANDS, modifier = modifier) {
 
-        composable(LearnRoutes.PROVINCES) {
-            SelectMaterialScreen(
+        composable(LearnRoutes.ISLANDS) {
+            IslandListScreen(
                 provincesByIsland = data.provincesByIsland,
-                onProvinceClick = { nav.navigate(LearnRoutes.toc(it)) },
-                onBack = onExit,
+                user = user,
+                onProvinceClick = { nav.navigate(LearnRoutes.province(it)) },
             )
         }
 
         composable(
-            LearnRoutes.TOC,
+            LearnRoutes.PROVINCE,
             arguments = listOf(navArgument("province") { type = NavType.StringType }),
         ) { entry ->
             val province = entry.arguments?.getString("province")?.let(Uri::decode)
             if (province == null || province !in knownProvinces) {
                 NotFound { nav.popBackStack() }
             } else {
-                TableOfContentsScreen(
+                val info by produceState<ProvinceInfo?>(null, province) {
+                    value = viewModel.getProvinceInfo(province)
+                }
+                val previews by produceState<Map<GlossaryCategory, List<GlossaryItem>>?>(null, province) {
+                    value = viewModel.getCategoryItems(province)
+                }
+                ProvinceScreen(
                     province = province,
-                    onCategoryClick = { nav.navigate(LearnRoutes.sub(province, it)) },
-                    onBack = { nav.popBackStack() },
+                    info = info,
+                    previews = previews,
+                    user = user,
+                    onCategoryClick = { nav.navigate(LearnRoutes.category(province, it)) },
                 )
             }
         }
 
         composable(
-            LearnRoutes.SUB,
+            LearnRoutes.CATEGORY,
             arguments = listOf(
                 navArgument("province") { type = NavType.StringType },
                 navArgument("category") { type = NavType.StringType },
             ),
         ) { entry ->
             val province = entry.arguments?.getString("province")?.let(Uri::decode)
-            val category = entry.arguments?.getString("category")?.toCategoryOrNull()
+            val category = GlossaryCategory.entries.firstOrNull {
+                it.name == entry.arguments?.getString("category")
+            }
             if (province == null || category == null || province !in knownProvinces) {
                 NotFound { nav.popBackStack() }
             } else {
                 val items by produceState<List<GlossaryItem>?>(null, province, category) {
                     value = viewModel.getItems(province, category)
                 }
-                SubMaterialScreen(
+                CategoryDetailScreen(
                     province = province,
                     category = category,
                     items = items,
-                    onItemClick = { nav.navigate(LearnRoutes.detail(province, category, it.id)) },
+                    user = user,
                     onBack = { nav.popBackStack() },
                 )
-            }
-        }
-
-        composable(
-            LearnRoutes.DETAIL,
-            arguments = listOf(
-                navArgument("province") { type = NavType.StringType },
-                navArgument("category") { type = NavType.StringType },
-                navArgument("itemId") { type = NavType.StringType },
-            ),
-        ) { entry ->
-            val province = entry.arguments?.getString("province")?.let(Uri::decode)
-            val category = entry.arguments?.getString("category")?.toCategoryOrNull()
-            val itemId = entry.arguments?.getString("itemId")
-            if (province == null || category == null || itemId == null || province !in knownProvinces) {
-                NotFound { nav.popBackStack() }
-            } else {
-                val items by produceState<List<GlossaryItem>?>(null, province, category) {
-                    value = viewModel.getItems(province, category)
-                }
-                val list = items
-                if (list == null) {
-                    CenteredBox { CircularProgressIndicator() }
-                } else {
-                    val item = list.firstOrNull { it.id == itemId }
-                    if (item == null) {
-                        NotFound { nav.popBackStack() }
-                    } else {
-                        MaterialDetailScreen(item = item, onBack = { nav.popBackStack() })
-                    }
-                }
             }
         }
     }
 }
 
-private fun String.toCategoryOrNull(): GlossaryCategory? =
-    GlossaryCategory.values().firstOrNull { it.name == this }
-
-@Composable
-private fun CenteredBox(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
-    Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) { content() }
-}
-
 @Composable
 private fun NotFound(onBack: () -> Unit) {
-    CenteredBox {
+    LearnBackground {
         Column(
+            modifier = Modifier.align(Alignment.Center),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text("Materi tidak ditemukan")
+            Text("Materi tidak ditemukan", color = Color.White)
             Button(onClick = onBack) { Text("Kembali") }
         }
     }
