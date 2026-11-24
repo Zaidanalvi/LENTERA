@@ -131,7 +131,7 @@ private fun LenteraNavHost(
                 onLeaderboardClick = { navController.navigate(Routes.LEADERBOARD) }
             )
         }
-        composable(Routes.LEARN) { LearnScreen() }
+        composable(Routes.LEARN) { LearnScreen(onExit = { navController.navigateToTab(Routes.HOME) }) }
         composable(Routes.SETTINGS) {
             SettingsScreen(
                 onAbout = { navController.navigate(Routes.ABOUT) },
