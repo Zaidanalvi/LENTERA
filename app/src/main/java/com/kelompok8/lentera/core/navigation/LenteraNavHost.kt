@@ -176,7 +176,8 @@ private fun LenteraNavHost(
                     navController.navigate(Routes.score(chapterId, correct)) {
                         popUpTo(Routes.GAME) { inclusive = true }
                     }
-                }
+                },
+                onBack = { navController.popBackStack() }
             )
         }
         composable(

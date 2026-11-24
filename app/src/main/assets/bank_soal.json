@@ -2,324 +2,924 @@
   "jawa": {
     "pilihanGanda": [
       {
-        "soal": "Rumah adat Jawa Tengah yang memiliki atap tinggi di bagian tengah disebut…",
-        "pilihan": ["Joglo", "Rumah Gadang", "Honai", "Tongkonan"],
-        "jawaban": 0
+        "soal": "Rumah Sunda berbentuk panggung dengan atap pelana yang sederhana. Apa nama rumah adat tersebut?",
+        "pilihan": ["Rumah Limasan", "Imah Jolopong", "Rumah Limasan Yogyakarta", "Rumah Kebaya"],
+        "jawaban": 1,
+        "glosarium": "jawa_barat_rumah_adat_imah_jolopong"
       },
       {
-        "soal": "Tari Jaipong berasal dari provinsi…",
-        "pilihan": ["Jawa Timur", "Jawa Barat", "DI Yogyakarta", "Banten"],
-        "jawaban": 1
+        "soal": "Rumah Panggung Betawi adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["Jawa Timur", "Jawa Barat", "DKI Jakarta", "Jawa Tengah"],
+        "jawaban": 2,
+        "glosarium": "dki_jakarta_rumah_adat_rumah_panggung_betawi"
       },
       {
-        "soal": "Gudeg adalah makanan khas dari…",
-        "pilihan": ["Surabaya", "Bandung", "Yogyakarta", "Jakarta"],
-        "jawaban": 2
+        "soal": "Kebaya Jawa dengan potongan kutu baru yang bagian depannya disambung kain tengah. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Pakaian Pengantin Betawi", "Kebaya Sunda dan Pangsi", "Kebaya Encim", "Kebaya Kutubaru"],
+        "jawaban": 3,
+        "glosarium": "di_yogyakarta_pakaian_adat_kebaya_kutubaru"
       },
       {
-        "soal": "Senjata tradisional Jawa yang bilahnya berkelok-kelok adalah…",
-        "pilihan": ["Mandau", "Rencong", "Kujang", "Keris"],
-        "jawaban": 3
+        "soal": "Kebaya Encim adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Jawa Barat", "Banten", "DKI Jakarta", "Jawa Timur"],
+        "jawaban": 2,
+        "glosarium": "dki_jakarta_pakaian_adat_kebaya_encim"
       },
       {
-        "soal": "Lagu \"Gundul-Gundul Pacul\" berasal dari…",
-        "pilihan": ["Jawa Tengah", "Sumatera Barat", "Kalimantan Selatan", "Bali"],
-        "jawaban": 0
+        "soal": "Daging sapi dengan cabai rawit yang sangat pedas. Apa nama makanan khas tersebut?",
+        "pilihan": ["Oseng-Oseng Mercon", "Ketan Bintul", "Bir Pletok", "Soto Kudus"],
+        "jawaban": 0,
+        "glosarium": "di_yogyakarta_makanan_oseng_oseng_mercon"
       },
       {
-        "soal": "Kesenian Reog berasal dari daerah…",
-        "pilihan": ["Banyuwangi", "Ponorogo", "Cirebon", "Solo"],
-        "jawaban": 1
+        "soal": "Wingko Babat adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Jawa Tengah", "DI Yogyakarta", "Jawa Barat", "Banten"],
+        "jawaban": 0,
+        "glosarium": "jawa_tengah_makanan_wingko_babat"
       },
       {
-        "soal": "Rawon, sup berkuah hitam dari kluwek, adalah makanan khas…",
-        "pilihan": ["Jawa Barat", "Banten", "Jawa Timur", "DKI Jakarta"],
-        "jawaban": 2
+        "soal": "Pertunjukan dengan topeng singa raksasa berhiasan merak yang dibawa penari, diiringi gamelan. Apa nama tarian tersebut?",
+        "pilihan": ["Reog Ponorogo", "Tari Sirih Kuning", "Tari Walijamaliha", "Beksan Lawung"],
+        "jawaban": 0,
+        "glosarium": "jawa_timur_tarian_reog_ponorogo"
       },
       {
-        "soal": "Orang yang memainkan wayang kulit disebut…",
-        "pilihan": ["Sinden", "Penabuh", "Penari", "Dalang"],
-        "jawaban": 3
+        "soal": "Tari Rampak Bedug adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["Jawa Timur", "DI Yogyakarta", "DKI Jakarta", "Banten"],
+        "jawaban": 3,
+        "glosarium": "banten_tarian_tari_rampak_bedug"
+      },
+      {
+        "soal": "Lagu Jawa dengan nasihat untuk hidup menjalani hidup yang bermakna. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Ayun Ambing", "Cing Cangkeling", "Sluku-Sluku Bathok", "Es Lilin"],
+        "jawaban": 2,
+        "glosarium": "jawa_tengah_lagu_daerah_sluku_sluku_bathok"
+      },
+      {
+        "soal": "Rek Ayo Rek adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Jawa Timur", "DI Yogyakarta", "Banten", "Jawa Barat"],
+        "jawaban": 0,
+        "glosarium": "jawa_timur_lagu_daerah_rek_ayo_rek"
+      },
+      {
+        "soal": "Rumah beratap piramida yang biasa dipakai untuk bangunan ibadah. Apa nama rumah adat tersebut?",
+        "pilihan": ["Tanean Lanjhang", "Rumah Sulah Nyanda", "Rumah Kebaya", "Rumah Tajug"],
+        "jawaban": 3,
+        "glosarium": "jawa_tengah_rumah_adat_rumah_tajug"
+      },
+      {
+        "soal": "Bangsal Kencono adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["DKI Jakarta", "Jawa Timur", "Jawa Tengah", "DI Yogyakarta"],
+        "jawaban": 3,
+        "glosarium": "di_yogyakarta_rumah_adat_bangsal_kencono"
+      },
+      {
+        "soal": "Baju longgar laki-laki Betawi yang dipakai dengan celana pangsi dan peci. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Pakaian Adat Osing", "Baju Sadariah", "Kebaya Kutubaru", "Iket Sunda"],
+        "jawaban": 1,
+        "glosarium": "dki_jakarta_pakaian_adat_baju_sadariah"
+      },
+      {
+        "soal": "Iket Sunda adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Jawa Tengah", "DI Yogyakarta", "Jawa Barat", "Jawa Timur"],
+        "jawaban": 2,
+        "glosarium": "jawa_barat_pakaian_adat_iket_sunda"
+      },
+      {
+        "soal": "Campuran tahu, lontong, tauge, dan mi dengan bumbu kacang. Apa nama makanan khas tersebut?",
+        "pilihan": ["Ketoprak", "Rawon", "Garang Asem", "Sate Klathak"],
+        "jawaban": 0,
+        "glosarium": "dki_jakarta_makanan_ketoprak"
+      },
+      {
+        "soal": "Angeun Lada adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Banten", "DKI Jakarta", "Jawa Barat", "Jawa Timur"],
+        "jawaban": 0,
+        "glosarium": "banten_makanan_angeun_lada"
+      },
+      {
+        "soal": "Tarian pergaulan Banten yang menggambarkan keceriaan masyarakat. Apa nama tarian tersebut?",
+        "pilihan": ["Tari Topeng Malangan", "Tari Walijamaliha", "Tari Bedhaya Ketawang", "Tari Lenggang Nyai"],
+        "jawaban": 1,
+        "glosarium": "banten_tarian_tari_walijamaliha"
+      },
+      {
+        "soal": "Tari Kuda Lumping adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["DI Yogyakarta", "Jawa Barat", "Jawa Tengah", "Banten"],
+        "jawaban": 2,
+        "glosarium": "jawa_tengah_tarian_tari_kuda_lumping"
+      },
+      {
+        "soal": "Lagu bertema semangat dan kebanggaan akan burung garuda yang dikenal luas di Jawa Barat. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Lir-Ilir", "Manuk Dadali", "Lenggang Kangkung", "Rek Ayo Rek"],
+        "jawaban": 1,
+        "glosarium": "jawa_barat_lagu_daerah_manuk_dadali"
+      },
+      {
+        "soal": "Es Lilin adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Banten", "Jawa Barat", "DI Yogyakarta", "Jawa Timur"],
+        "jawaban": 1,
+        "glosarium": "jawa_barat_lagu_daerah_es_lilin"
       }
     ],
     "blokKata": [
       {
-        "soal": "Pulau Jawa memiliki beragam rumah adat. Rumah adat Jawa Tengah bernama ___ , sedangkan rumah adat suku Betawi di Jakarta bernama Rumah ___ .",
-        "jawaban": ["Joglo", "Kebaya"],
-        "pengecoh": ["Gadang", "Honai", "Lamin"]
+        "soal": "Permukiman keluarga Madura yang tertata memanjang dengan halaman bersama. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tanean Lanjhang", "Jawa Timur"],
+        "pengecoh": ["Rumah Limasan", "Rumah Joglo", "Jawa Barat", "DKI Jakarta"],
+        "glosarium": "jawa_timur_rumah_adat_tanean_lanjhang"
       },
       {
-        "soal": "Yogyakarta terkenal dengan makanan khas bernama ___ yang terbuat dari nangka muda. Dari Jawa Timur, ada ___ , sup daging berkuah hitam dari kluwek.",
-        "jawaban": ["Gudeg", "Rawon"],
-        "pengecoh": ["Rendang", "Pempek", "Papeda"]
+        "soal": "Busana adat Betawi: kebaya encim dan kain batik untuk perempuan, serta baju sadariah dan peci untuk laki-laki. Pakaian adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Pakaian Abang None", "DKI Jakarta"],
+        "pengecoh": ["Kebaya Kartini", "Pangsi Salontreng", "DI Yogyakarta", "Jawa Barat"],
+        "glosarium": "dki_jakarta_pakaian_adat_pakaian_abang_none"
       },
       {
-        "soal": "Tari ___ adalah tarian yang berasal dari Jawa Barat, sedangkan kesenian Reog berasal dari ___ , Jawa Timur.",
-        "jawaban": ["Jaipong", "Ponorogo"],
-        "pengecoh": ["Saman", "Bandung", "Kecak"]
+        "soal": "Kue manis dari kelapa parut dan gula yang berwarna-warni. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Geplak", "DI Yogyakarta"],
+        "pengecoh": ["Mendoan", "Rujak Cingur", "Jawa Timur", "DKI Jakarta"],
+        "glosarium": "di_yogyakarta_makanan_geplak"
       },
       {
-        "soal": "Pertunjukan wayang kulit dimainkan oleh seorang ___ dan diiringi musik ___ .",
-        "jawaban": ["dalang", "gamelan"],
-        "pengecoh": ["penari", "angklung", "sape"]
+        "soal": "Seni pertunjukan Banten yang memamerkan kekebalan tubuh terhadap benda tajam. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Debus", "Banten"],
+        "pengecoh": ["Tari Jathilan", "Tari Topeng Betawi", "DI Yogyakarta", "Jawa Barat"],
+        "glosarium": "banten_tarian_debus"
       },
       {
-        "soal": "Senjata tradisional Jawa yang bilahnya berkelok-kelok disebut ___ . Kain bermotif yang dibuat dengan canting dan malam disebut ___ .",
-        "jawaban": ["Keris", "Batik"],
-        "pengecoh": ["Mandau", "Ulos", "Rencong"]
+        "soal": "Lagu bertema perahu dan kehidupan di perairan yang dikenal di Banten. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Dayung Sampan", "Banten"],
+        "pengecoh": ["Ondel-Ondel", "Cing Cangkeling", "Jawa Tengah", "DI Yogyakarta"],
+        "glosarium": "banten_lagu_daerah_dayung_sampan"
       },
       {
-        "soal": "Lagu daerah \"Gundul-Gundul Pacul\" berasal dari Jawa ___ , sedangkan lagu \"Manuk Dadali\" berasal dari Jawa ___ .",
-        "jawaban": ["Tengah", "Barat"],
-        "pengecoh": ["Timur", "Utara"]
+        "soal": "Rumah panggung masyarakat Baduy dari bambu dan kayu beratap rumbia tanpa paku. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Rumah Sulah Nyanda", "Banten"],
+        "pengecoh": ["Rumah Tajug", "Tanean Lanjhang", "Jawa Tengah", "DI Yogyakarta"],
+        "glosarium": "banten_rumah_adat_rumah_sulah_nyanda"
+      },
+      {
+        "soal": "Nasi yang dimasak dengan santan dan rempah, disajikan dengan lauk. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Nasi Uduk", "DKI Jakarta"],
+        "pengecoh": ["Nasi Timbel", "Wedang Uwuh", "Jawa Timur", "Jawa Tengah"],
+        "glosarium": "dki_jakarta_makanan_nasi_uduk"
+      },
+      {
+        "soal": "Tarian Betawi yang gemulai menggambarkan perempuan Betawi. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Lenggang Nyai", "DKI Jakarta"],
+        "pengecoh": ["Tari Kuda Lumping", "Debus", "Banten", "Jawa Timur"],
+        "glosarium": "dki_jakarta_tarian_tari_lenggang_nyai"
+      },
+      {
+        "soal": "Lagu dolanan anak Jawa tentang ayam yang tidak berekor. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Pitik Tukung", "DI Yogyakarta"],
+        "pengecoh": ["Cing Cangkeling", "Sluku-Sluku Bathok", "Jawa Barat", "Banten"],
+        "glosarium": "di_yogyakarta_lagu_daerah_pitik_tukung"
+      },
+      {
+        "soal": "Rumah Jawa beratap pelana, bentuk rumah yang paling umum. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Rumah Kampung", "Jawa Tengah"],
+        "pengecoh": ["Imah Badak Heuay", "Rumah Osing", "DI Yogyakarta", "Jawa Barat"],
+        "glosarium": "jawa_tengah_rumah_adat_rumah_kampung"
+      },
+      {
+        "soal": "Soto ayam atau kerbau berkuah bening dalam mangkuk kecil. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Soto Kudus", "Jawa Tengah"],
+        "pengecoh": ["Soto Lamongan", "Geplak", "Jawa Barat", "Jawa Timur"],
+        "glosarium": "jawa_tengah_makanan_soto_kudus"
+      },
+      {
+        "soal": "Pertunjukan boneka raksasa Betawi yang diarak untuk menolak bala. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Ondel-Ondel", "DKI Jakarta"],
+        "pengecoh": ["Tari Sintren", "Tari Merak", "Jawa Tengah", "Jawa Barat"],
+        "glosarium": "dki_jakarta_tarian_tari_ondel_ondel"
+      },
+      {
+        "soal": "Lagu Jawa yang mengalun lembut, menggambarkan keindahan alam dan suasana desa. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Gambang Suling", "Jawa Tengah"],
+        "pengecoh": ["Surilang", "Ayun Ambing", "Jawa Barat", "Banten"],
+        "glosarium": "jawa_tengah_lagu_daerah_gambang_suling"
+      },
+      {
+        "soal": "Rumah Jawa sederhana yang atapnya miring ke satu sisi. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Rumah Panggang Pe", "Jawa Tengah"],
+        "pengecoh": ["Imah Capit Gunting", "Rumah Sulah Nyanda", "Jawa Timur", "Jawa Barat"],
+        "glosarium": "jawa_tengah_rumah_adat_rumah_panggang_pe"
+      },
+      {
+        "soal": "Soto ayam kuning dengan taburan koya dan sambal. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Soto Lamongan", "Jawa Timur"],
+        "pengecoh": ["Asinan Betawi", "Timlo Solo", "Banten", "Jawa Barat"],
+        "glosarium": "jawa_timur_makanan_soto_lamongan"
       }
     ],
     "susunHuruf": [
       {
-        "soal": "Gambar di bawah ini merupakan kain bermotif khas Jawa yang dibuat dengan malam. Apa namanya?",
-        "jawaban": "BATIK",
-        "gambar": "jawa/batik"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan senjata tradisional Jawa dengan nama?",
-        "jawaban": "KERIS",
-        "gambar": "jawa/keris"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan makanan khas Yogyakarta dari nangka muda dengan nama?",
-        "jawaban": "GUDEG",
-        "gambar": "jawa/gudeg"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan rumah adat Jawa Tengah dengan nama?",
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Jawa Tengah. Rumah apakah ini?",
         "jawaban": "JOGLO",
-        "gambar": "jawa/joglo"
+        "gambar": "jawa_tengah_rumah_adat_rumah_joglo",
+        "glosarium": "jawa_tengah_rumah_adat_rumah_joglo"
       },
       {
-        "soal": "Gambar di bawah ini merupakan pertunjukan boneka kulit yang dimainkan dalang. Apa namanya?",
-        "jawaban": "WAYANG",
-        "gambar": "jawa/wayang"
+        "soal": "Gambar di bawah ini merupakan rumah adat dari DKI Jakarta. Rumah apakah ini?",
+        "jawaban": "KEBAYA",
+        "gambar": "dki_jakarta_rumah_adat_rumah_kebaya",
+        "glosarium": "dki_jakarta_rumah_adat_rumah_kebaya"
       },
       {
-        "soal": "Gambar di bawah ini merupakan sup berkuah hitam khas Jawa Timur dengan nama?",
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Jawa Timur. Rumah apakah ini?",
+        "jawaban": "OSING",
+        "gambar": "jawa_timur_rumah_adat_rumah_osing",
+        "glosarium": "jawa_timur_rumah_adat_rumah_osing"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Jawa Tengah. Rumah apakah ini?",
+        "jawaban": "LIMASAN",
+        "gambar": "jawa_tengah_rumah_adat_rumah_limasan",
+        "glosarium": "jawa_tengah_rumah_adat_rumah_limasan"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari DI Yogyakarta. Apa namanya?",
+        "jawaban": "SURJAN",
+        "gambar": "di_yogyakarta_pakaian_adat_surjan",
+        "glosarium": "di_yogyakarta_pakaian_adat_surjan"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas DI Yogyakarta. Apa namanya?",
+        "jawaban": "GUDEG",
+        "gambar": "di_yogyakarta_makanan_gudeg",
+        "glosarium": "di_yogyakarta_makanan_gudeg"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Jawa Timur. Apa namanya?",
         "jawaban": "RAWON",
-        "gambar": "jawa/rawon"
+        "gambar": "jawa_timur_makanan_rawon",
+        "glosarium": "jawa_timur_makanan_rawon"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Jawa Barat. Apa namanya?",
+        "jawaban": "BATAGOR",
+        "gambar": "jawa_barat_makanan_batagor",
+        "glosarium": "jawa_barat_makanan_batagor"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Jawa Barat. Apa namanya?",
+        "jawaban": "KAREDOK",
+        "gambar": "jawa_barat_makanan_karedok",
+        "glosarium": "jawa_barat_makanan_karedok"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Jawa Tengah. Apa namanya?",
+        "jawaban": "MENDOAN",
+        "gambar": "jawa_tengah_makanan_mendoan",
+        "glosarium": "jawa_tengah_makanan_mendoan"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas DI Yogyakarta. Apa namanya?",
+        "jawaban": "TIWUL",
+        "gambar": "di_yogyakarta_makanan_tiwul",
+        "glosarium": "di_yogyakarta_makanan_tiwul"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Jawa Barat. Tari apakah ini?",
+        "jawaban": "JAIPONG",
+        "gambar": "jawa_barat_tarian_tari_jaipong",
+        "glosarium": "jawa_barat_tarian_tari_jaipong"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Jawa Barat. Tari apakah ini?",
+        "jawaban": "MERAK",
+        "gambar": "jawa_barat_tarian_tari_merak",
+        "glosarium": "jawa_barat_tarian_tari_merak"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Jawa Timur. Tari apakah ini?",
+        "jawaban": "REMO",
+        "gambar": "jawa_timur_tarian_tari_remo",
+        "glosarium": "jawa_timur_tarian_tari_remo"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari DI Yogyakarta. Tari apakah ini?",
+        "jawaban": "SERIMPI",
+        "gambar": "di_yogyakarta_tarian_tari_serimpi",
+        "glosarium": "di_yogyakarta_tarian_tari_serimpi"
       }
     ]
   },
   "sumatra": {
     "pilihanGanda": [
       {
-        "soal": "Rumah Gadang adalah rumah adat dari…",
-        "pilihan": ["Sumatera Barat", "Aceh", "Riau", "Lampung"],
-        "jawaban": 0
+        "soal": "Rumah adat Nias yang kokoh dan tahan gempa, dengan tiang kayu besar dan atap tinggi. Apa nama rumah adat tersebut?",
+        "pilihan": ["Rangkiang", "Rumah Baanjuang", "Rumah Cara Gudang", "Omo Hada"],
+        "jawaban": 3,
+        "glosarium": "sumatera_utara_rumah_adat_omo_hada"
       },
       {
-        "soal": "Tari Saman berasal dari…",
-        "pilihan": ["Sumatera Utara", "Aceh", "Jambi", "Bengkulu"],
-        "jawaban": 1
+        "soal": "Rumoh Aceh adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["Lampung", "Sumatera Utara", "Aceh", "Sumatera Selatan"],
+        "jawaban": 2,
+        "glosarium": "aceh_rumah_adat_rumoh_aceh"
       },
       {
-        "soal": "Rendang adalah masakan khas suku…",
-        "pilihan": ["Batak", "Melayu", "Minangkabau", "Nias"],
-        "jawaban": 2
+        "soal": "Mahkota emas yang bertingkat banyak untuk pengantin perempuan Minangkabau. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Suntiang", "Uis Gara", "Kain Cual", "Kerawang Gayo"],
+        "jawaban": 0,
+        "glosarium": "sumatera_barat_pakaian_adat_suntiang"
       },
       {
-        "soal": "Kain tenun khas suku Batak disebut…",
-        "pilihan": ["Songket", "Batik", "Sasirangan", "Ulos"],
-        "jawaban": 3
+        "soal": "Kain Jumputan adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Kepulauan Riau", "Aceh", "Sumatera Selatan", "Bengkulu"],
+        "jawaban": 2,
+        "glosarium": "sumatera_selatan_pakaian_adat_kain_jumputan"
       },
       {
-        "soal": "Pempek adalah makanan khas kota…",
-        "pilihan": ["Palembang", "Medan", "Padang", "Pekanbaru"],
-        "jawaban": 0
+        "soal": "Mi lidi Batak berukuran besar dengan kuah santan atau bumbu andaliman yang pedas. Apa nama makanan khas tersebut?",
+        "pilihan": ["Rendang", "Kuah Pliek U", "Otak-Otak", "Mie Gomak"],
+        "jawaban": 3,
+        "glosarium": "sumatera_utara_makanan_mie_gomak"
       },
       {
-        "soal": "Senjata tradisional dari Aceh adalah…",
-        "pilihan": ["Keris", "Rencong", "Kujang", "Mandau"],
-        "jawaban": 1
+        "soal": "Timphan adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Aceh", "Kepulauan Bangka Belitung", "Kepulauan Riau", "Jambi"],
+        "jawaban": 0,
+        "glosarium": "aceh_makanan_timphan"
       },
       {
-        "soal": "Tari Piring berasal dari…",
-        "pilihan": ["Sumatera Selatan", "Riau", "Sumatera Barat", "Aceh"],
-        "jawaban": 2
+        "soal": "Tarian penyambutan tamu dengan penari perempuan yang membawa wadah sirih. Apa nama tarian tersebut?",
+        "pilihan": ["Tari Baluse", "Tari Guro-Guro Aron", "Tari Joget Lambak", "Tari Sigeh Penguten"],
+        "jawaban": 3,
+        "glosarium": "lampung_tarian_tari_sigeh_penguten"
       },
       {
-        "soal": "Lagu \"Butet\" berasal dari…",
-        "pilihan": ["Sumatera Barat", "Jambi", "Lampung", "Sumatera Utara"],
-        "jawaban": 3
+        "soal": "Tari Guel adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["Aceh", "Lampung", "Sumatera Selatan", "Kepulauan Riau"],
+        "jawaban": 0,
+        "glosarium": "aceh_tarian_tari_guel"
+      },
+      {
+        "soal": "Lagu daerah Batak Toba yang bernuansa ceria dan sering dibawakan dalam acara adat maupun hiburan. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Tanoh Lado", "Soleram", "Bareh Solok", "Sinanggar Tullo"],
+        "jawaban": 3,
+        "glosarium": "sumatera_utara_lagu_daerah_sinanggar_tullo"
+      },
+      {
+        "soal": "Cik Mek Molek adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Lampung", "Jambi", "Kepulauan Riau", "Kepulauan Bangka Belitung"],
+        "jawaban": 2,
+        "glosarium": "kepulauan_riau_lagu_daerah_cik_mek_molek"
+      },
+      {
+        "soal": "Lumbung padi Minangkabau berbentuk panggung dengan atap bergonjong. Apa nama rumah adat tersebut?",
+        "pilihan": ["Rumah Panggung Belitung", "Rangkiang", "Lamban Pesagi", "Rumah Panggung Limas"],
+        "jawaban": 1,
+        "glosarium": "sumatera_barat_rumah_adat_rangkiang"
+      },
+      {
+        "soal": "Uma Mentawai adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["Sumatera Barat", "Aceh", "Kepulauan Riau", "Riau"],
+        "jawaban": 0,
+        "glosarium": "sumatera_barat_rumah_adat_uma_mentawai"
+      },
+      {
+        "soal": "Kain tenun khas Bangka dengan benang emas yang dipakai dalam upacara adat. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Pakaian Adat Pepadun", "Tanjak", "Kain Cual", "Songket Jambi"],
+        "jawaban": 2,
+        "glosarium": "kepulauan_bangka_belitung_pakaian_adat_kain_cual"
+      },
+      {
+        "soal": "Pakaian Adat Pepadun adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Sumatera Utara", "Jambi", "Lampung", "Riau"],
+        "jawaban": 2,
+        "glosarium": "lampung_pakaian_adat_pakaian_adat_pepadun"
+      },
+      {
+        "soal": "Pempek dalam kuah santan encer berasa gurih manis. Apa nama makanan khas tersebut?",
+        "pilihan": ["Laksan", "Mie Sagu", "Timphan", "Dendeng Balado"],
+        "jawaban": 0,
+        "glosarium": "sumatera_selatan_makanan_laksan"
+      },
+      {
+        "soal": "Naniura adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Sumatera Utara", "Bengkulu", "Riau", "Jambi"],
+        "jawaban": 0,
+        "glosarium": "sumatera_utara_makanan_naniura"
+      },
+      {
+        "soal": "Tarian pergaulan Lampung dengan pengaruh Melayu yang ditarikan berpasangan. Apa nama tarian tersebut?",
+        "pilihan": ["Tari Bedana", "Tari Olang-Olang", "Tari Sigale-gale", "Tari Ratoh Jaroe"],
+        "jawaban": 0,
+        "glosarium": "lampung_tarian_tari_bedana"
+      },
+      {
+        "soal": "Tari Ghazal adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["Lampung", "Sumatera Utara", "Sumatera Selatan", "Kepulauan Riau"],
+        "jawaban": 3,
+        "glosarium": "kepulauan_riau_tarian_tari_ghazal"
+      },
+      {
+        "soal": "Lagu yang mengisahkan Lampung, tanah yang subur dan kaya akan hasil bumi. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Aneuk Yatim", "Piso Surit", "Tanoh Lado", "Soleram"],
+        "jawaban": 2,
+        "glosarium": "lampung_lagu_daerah_tanoh_lado"
+      },
+      {
+        "soal": "Lancang Kuning adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Sumatera Utara", "Riau", "Bengkulu", "Kepulauan Bangka Belitung"],
+        "jawaban": 1,
+        "glosarium": "riau_lagu_daerah_lancang_kuning"
       }
     ],
     "blokKata": [
       {
-        "soal": "Rumah ___ adalah rumah adat Sumatera Barat dengan atap runcing seperti tanduk kerbau. Di Sumatera Utara, suku Batak Toba memiliki Rumah ___ .",
-        "jawaban": ["Gadang", "Bolon"],
-        "pengecoh": ["Joglo", "Lamin", "Honai"]
+        "soal": "Balai adat Lampung berbentuk panggung yang dipakai untuk musyawarah dan upacara adat. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Nuwo Sesat", "Lampung"],
+        "pengecoh": ["Rumoh Aceh", "Uma Mentawai", "Sumatera Selatan", "Jambi"],
+        "glosarium": "lampung_rumah_adat_nuwo_sesat"
       },
       {
-        "soal": "Masakan khas Minangkabau yang terkenal di dunia adalah ___ . Dari Palembang, ada ___ yang terbuat dari ikan dan sagu.",
-        "jawaban": ["Rendang", "Pempek"],
-        "pengecoh": ["Gudeg", "Papeda", "Rawon"]
+        "soal": "Pakaian pengantin pria Aceh berupa baju hitam bersulam emas, celana panjang, kain songket, dan meukeutop. Pakaian adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Linto Baro", "Aceh"],
+        "pengecoh": ["Baju Kurung Basiba", "Songket Palembang", "Lampung", "Jambi"],
+        "glosarium": "aceh_pakaian_adat_linto_baro"
       },
       {
-        "soal": "Tari ___ dari Aceh dibawakan sambil duduk berbaris, sedangkan Tari ___ dari Sumatera Barat menggunakan piring sebagai properti.",
-        "jawaban": ["Saman", "Piring"],
-        "pengecoh": ["Kecak", "Jaipong", "Hudoq"]
+        "soal": "Masakan ikan berkuah kuning dengan tumbukan kelapa yang gurih. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Gangan Belitung", "Kepulauan Bangka Belitung"],
+        "pengecoh": ["Nasi Gemuk", "Kue Bangkit", "Sumatera Utara", "Riau"],
+        "glosarium": "kepulauan_bangka_belitung_makanan_gangan_belitung"
       },
       {
-        "soal": "Kain tenun khas suku Batak disebut ___ , sedangkan kain tenun berbenang emas khas Palembang disebut ___ .",
-        "jawaban": ["Ulos", "Songket"],
-        "pengecoh": ["Batik", "Sasirangan"]
+        "soal": "Tarian perang Nias yang dibawakan dengan perisai, tombak, dan baju besi tradisional. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Baluse", "Sumatera Utara"],
+        "pengecoh": ["Tari Cangget", "Tari Payung", "Sumatera Barat", "Kepulauan Riau"],
+        "glosarium": "sumatera_utara_tarian_tari_baluse"
       },
       {
-        "soal": "Rencong adalah senjata tradisional dari ___ , sedangkan lagu \"Butet\" berasal dari Sumatera ___ .",
-        "jawaban": ["Aceh", "Utara"],
-        "pengecoh": ["Barat", "Riau", "Jambi"]
+        "soal": "Lagu Minang tentang bunga yang mekar, menggambarkan keindahan alam. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Kambanglah Bungo", "Sumatera Barat"],
+        "pengecoh": ["Gending Sriwijaya", "Tanoh Lado", "Sumatera Selatan", "Aceh"],
+        "glosarium": "sumatera_barat_lagu_daerah_kambanglah_bungo"
       },
       {
-        "soal": "Lagu \"Kampuang Nan Jauh di Mato\" berasal dari Sumatera ___ , daerah asal suku ___ .",
-        "jawaban": ["Barat", "Minangkabau"],
-        "pengecoh": ["Utara", "Batak", "Melayu"]
+        "soal": "Rumah panggung adat Lampung Saibatin yang berukir dan beratap pelana. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Lamban Pesagi", "Lampung"],
+        "pengecoh": ["Rumah Limas Potong", "Rumah Baanjuang", "Sumatera Utara", "Sumatera Barat"],
+        "glosarium": "lampung_rumah_adat_lamban_pesagi"
+      },
+      {
+        "soal": "Pakaian pemimpin adat Minangkabau berupa baju hitam, sarung, deta di kepala, dan tongkat. Pakaian adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Pakaian Penghulu", "Sumatera Barat"],
+        "pengecoh": ["Linto Baro", "Siger", "Aceh", "Lampung"],
+        "glosarium": "sumatera_barat_pakaian_adat_pakaian_penghulu"
+      },
+      {
+        "soal": "Ikan yang difermentasi dengan garam dan nasi, rasanya asam dan gurih. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Pekasam", "Lampung"],
+        "pengecoh": ["Rendang", "Mie Sagu", "Sumatera Utara", "Sumatera Selatan"],
+        "glosarium": "lampung_makanan_pekasam"
+      },
+      {
+        "soal": "Tarian perempuan Aceh dengan gerak tangan yang cepat, kompak, dan diiringi syair. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Ratoh Jaroe", "Aceh"],
+        "pengecoh": ["Tari Andun", "Tari Persembahan", "Bengkulu", "Sumatera Selatan"],
+        "glosarium": "aceh_tarian_tari_ratoh_jaroe"
+      },
+      {
+        "soal": "Lagu daerah Sumatera Selatan yang populer dan sering dinyanyikan dalam berbagai acara. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Dek Sangke", "Sumatera Selatan"],
+        "pengecoh": ["Bungong Jeumpa", "Sinanggar Tullo", "Kepulauan Bangka Belitung", "Kepulauan Riau"],
+        "glosarium": "sumatera_selatan_lagu_daerah_dek_sangke"
+      },
+      {
+        "soal": "Rumah panggung Jambi berbahan kayu dengan atap bergaya pelana dan ukiran motif flora. Rumah adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Rumah Kajang Lako", "Jambi"],
+        "pengecoh": ["Rumah Lancang", "Rumah Baanjuang", "Sumatera Selatan", "Kepulauan Riau"],
+        "glosarium": "jambi_rumah_adat_rumah_kajang_lako"
+      },
+      {
+        "soal": "Pakaian adat perempuan Minangkabau dengan baju kurung beludru bersulam benang emas, kain songket, dan tengkuluk bertanduk. Pakaian adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Bundo Kanduang", "Sumatera Barat"],
+        "pengecoh": ["Kain Kapal", "Songket Palembang", "Sumatera Selatan", "Sumatera Utara"],
+        "glosarium": "sumatera_barat_pakaian_adat_bundo_kanduang"
+      },
+      {
+        "soal": "Rebung yang difermentasi dan dimasak dengan ikan, sambal, atau daging. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Lemea", "Bengkulu"],
+        "pengecoh": ["Seruit", "Mie Lendir", "Lampung", "Kepulauan Riau"],
+        "glosarium": "bengkulu_makanan_lemea"
+      },
+      {
+        "soal": "Tarian Nias yang dibawakan beramai-ramai dalam pesta pernikahan dan perayaan. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Maena", "Sumatera Utara"],
+        "pengecoh": ["Zapin Penyengat", "Tari Campak", "Riau", "Bengkulu"],
+        "glosarium": "sumatera_utara_tarian_tari_maena"
+      },
+      {
+        "soal": "Lagu Melayu yang lembut dan sering dijadikan nyanyian pengantar tidur anak. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Soleram", "Riau"],
+        "pengecoh": ["Cik Mek Molek", "Ayam Den Lapeh", "Sumatera Selatan", "Bengkulu"],
+        "glosarium": "riau_lagu_daerah_soleram"
       }
     ],
     "susunHuruf": [
       {
-        "soal": "Gambar di bawah ini merupakan tari dari Aceh yang dibawakan sambil duduk berbaris. Apa namanya?",
-        "jawaban": "SAMAN",
-        "gambar": "sumatra/saman"
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Sumatera Barat. Rumah apakah ini?",
+        "jawaban": "GADANG",
+        "gambar": "sumatera_barat_rumah_adat_rumah_gadang",
+        "glosarium": "sumatera_barat_rumah_adat_rumah_gadang"
       },
       {
-        "soal": "Gambar di bawah ini merupakan kain tenun khas Batak dengan nama?",
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Sumatera Utara. Rumah apakah ini?",
+        "jawaban": "BOLON",
+        "gambar": "sumatera_utara_rumah_adat_rumah_bolon",
+        "glosarium": "sumatera_utara_rumah_adat_rumah_bolon"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Riau. Rumah apakah ini?",
+        "jawaban": "LONTIK",
+        "gambar": "riau_rumah_adat_rumah_lontik",
+        "glosarium": "riau_rumah_adat_rumah_lontik"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari Sumatera Utara. Apa namanya?",
         "jawaban": "ULOS",
-        "gambar": "sumatra/ulos"
+        "gambar": "sumatera_utara_pakaian_adat_ulos",
+        "glosarium": "sumatera_utara_pakaian_adat_ulos"
       },
       {
-        "soal": "Gambar di bawah ini merupakan masakan khas Minangkabau dengan nama?",
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari Lampung. Apa namanya?",
+        "jawaban": "TAPIS",
+        "gambar": "lampung_pakaian_adat_tapis",
+        "glosarium": "lampung_pakaian_adat_tapis"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari Lampung. Apa namanya?",
+        "jawaban": "SIGER",
+        "gambar": "lampung_pakaian_adat_siger",
+        "glosarium": "lampung_pakaian_adat_siger"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Sumatera Barat. Apa namanya?",
         "jawaban": "RENDANG",
-        "gambar": "sumatra/rendang"
+        "gambar": "sumatera_barat_makanan_rendang",
+        "glosarium": "sumatera_barat_makanan_rendang"
       },
       {
-        "soal": "Gambar di bawah ini merupakan makanan khas Palembang dari ikan dan sagu dengan nama?",
+        "soal": "Gambar di bawah ini merupakan makanan khas Sumatera Selatan. Apa namanya?",
         "jawaban": "PEMPEK",
-        "gambar": "sumatra/pempek"
+        "gambar": "sumatera_selatan_makanan_pempek",
+        "glosarium": "sumatera_selatan_makanan_pempek"
       },
       {
-        "soal": "Gambar di bawah ini merupakan senjata tradisional Aceh dengan nama?",
-        "jawaban": "RENCONG",
-        "gambar": "sumatra/rencong"
+        "soal": "Gambar di bawah ini merupakan makanan khas Sumatera Selatan. Apa namanya?",
+        "jawaban": "TEKWAN",
+        "gambar": "sumatera_selatan_makanan_tekwan",
+        "glosarium": "sumatera_selatan_makanan_tekwan"
       },
       {
-        "soal": "Gambar di bawah ini merupakan kain tenun berbenang emas khas Palembang dengan nama?",
-        "jawaban": "SONGKET",
-        "gambar": "sumatra/songket"
+        "soal": "Gambar di bawah ini merupakan makanan khas Sumatera Utara. Apa namanya?",
+        "jawaban": "ARSIK",
+        "gambar": "sumatera_utara_makanan_arsik",
+        "glosarium": "sumatera_utara_makanan_arsik"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Aceh. Tari apakah ini?",
+        "jawaban": "SAMAN",
+        "gambar": "aceh_tarian_tari_saman",
+        "glosarium": "aceh_tarian_tari_saman"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Sumatera Barat. Tari apakah ini?",
+        "jawaban": "PIRING",
+        "gambar": "sumatera_barat_tarian_tari_piring",
+        "glosarium": "sumatera_barat_tarian_tari_piring"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Riau. Tari apakah ini?",
+        "jawaban": "ZAPIN",
+        "gambar": "riau_tarian_tari_zapin",
+        "glosarium": "riau_tarian_tari_zapin"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Aceh. Tari apakah ini?",
+        "jawaban": "SEUDATI",
+        "gambar": "aceh_tarian_tari_seudati",
+        "glosarium": "aceh_tarian_tari_seudati"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Sumatera Selatan. Tari apakah ini?",
+        "jawaban": "TANGGAI",
+        "gambar": "sumatera_selatan_tarian_tari_tanggai",
+        "glosarium": "sumatera_selatan_tarian_tari_tanggai"
       }
     ]
   },
   "kalimantan": {
     "pilihanGanda": [
       {
-        "soal": "Senjata tradisional suku Dayak berbentuk parang disebut…",
-        "pilihan": ["Mandau", "Keris", "Rencong", "Kujang"],
-        "jawaban": 0
+        "soal": "Rumah adat suku Tidung berbentuk panggung dengan atap bertingkat dan ukiran. Apa nama rumah adat tersebut?",
+        "pilihan": ["Rumah Joglo Gudang", "Rumah Baloy Mehit", "Rumah Lamin", "Rumah Banjar Bubungan Tinggi"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_utara_rumah_adat_rumah_baloy_mehit"
       },
       {
-        "soal": "Rumah adat Kalimantan Timur adalah…",
-        "pilihan": ["Rumah Gadang", "Rumah Lamin", "Joglo", "Honai"],
-        "jawaban": 1
+        "soal": "Rumah Melayu Pontianak adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Barat", "Kalimantan Timur"],
+        "jawaban": 2,
+        "glosarium": "kalimantan_barat_rumah_adat_rumah_melayu_pontianak"
       },
       {
-        "soal": "Lagu \"Ampar-Ampar Pisang\" berasal dari…",
-        "pilihan": ["Kalimantan Barat", "Kalimantan Timur", "Kalimantan Selatan", "Kalimantan Utara"],
-        "jawaban": 2
+        "soal": "Pakaian adat Banjar dengan baju bersulam emas, kain sasirangan, dan hiasan kepala. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Ulap Doyo", "Babaju Bapontoh", "Baju Kustin", "Pakaian Adat Dayak Kenyah"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_selatan_pakaian_adat_babaju_bapontoh"
       },
       {
-        "soal": "Alat musik petik tradisional suku Dayak adalah…",
-        "pilihan": ["Angklung", "Kolintang", "Gamelan", "Sape"],
-        "jawaban": 3
+        "soal": "Pakaian Adat Tionghoa Singkawang adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Selatan", "Kalimantan Barat", "Kalimantan Timur", "Kalimantan Utara"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_barat_pakaian_adat_pakaian_adat_tionghoa_singkawang"
       },
       {
-        "soal": "Soto Banjar adalah makanan khas…",
-        "pilihan": ["Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Barat", "Kalimantan Timur"],
-        "jawaban": 0
+        "soal": "Nasi yang dimasak bersama ikan asin dan rempah dalam satu periuk, khas masyarakat Kutai. Apa nama makanan khas tersebut?",
+        "pilihan": ["Wadi", "Bingka", "Lemang Pontianak", "Nasi Bekepor"],
+        "jawaban": 3,
+        "glosarium": "kalimantan_timur_makanan_nasi_bekepor"
       },
       {
-        "soal": "Kain khas Kalimantan Selatan yang dibuat dengan teknik jelujur dan ikat adalah…",
-        "pilihan": ["Ulos", "Sasirangan", "Songket", "Batik"],
-        "jawaban": 1
+        "soal": "Juhu Singkah adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Barat", "Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Timur"],
+        "jawaban": 2,
+        "glosarium": "kalimantan_tengah_makanan_juhu_singkah"
       },
       {
-        "soal": "Tari Hudoq dibawakan dengan memakai…",
-        "pilihan": ["Selendang", "Kipas", "Topeng", "Piring"],
-        "jawaban": 2
+        "soal": "Tarian Dayak Kenyah yang dibawakan perempuan secara berbaris dalam syukuran. Apa nama tarian tersebut?",
+        "pilihan": ["Tari Hudoq", "Tari Belian Bawo", "Tari Manasai", "Tari Datun Julud"],
+        "jawaban": 3,
+        "glosarium": "kalimantan_utara_tarian_tari_datun_julud"
       },
       {
-        "soal": "Rumah panjang suku Dayak di Kalimantan Tengah disebut…",
-        "pilihan": ["Joglo", "Tongkonan", "Rumah Gadang", "Rumah Betang"],
-        "jawaban": 3
+        "soal": "Tari Kancet Papatai adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Barat", "Kalimantan Utara"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_timur_tarian_tari_kancet_papatai"
+      },
+      {
+        "soal": "Lagu daerah Kalimantan Tengah yang berisi suasana kehidupan masyarakat. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Cik Cik Periok", "Burung Enggang", "Buah Bolok", "Palu Lunta"],
+        "jawaban": 3,
+        "glosarium": "kalimantan_tengah_lagu_daerah_palu_lunta"
+      },
+      {
+        "soal": "Paris Barantai adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Selatan", "Kalimantan Tengah", "Kalimantan Utara", "Kalimantan Barat"],
+        "jawaban": 0,
+        "glosarium": "kalimantan_selatan_lagu_daerah_paris_barantai"
+      },
+      {
+        "soal": "Rumah Banjar beratap limasan yang dahulu dihuni bangsawan. Apa nama rumah adat tersebut?",
+        "pilihan": ["Rumah Baluk", "Rumah Betang", "Rumah Palimasan", "Rumah Radakng"],
+        "jawaban": 2,
+        "glosarium": "kalimantan_selatan_rumah_adat_rumah_palimasan"
+      },
+      {
+        "soal": "Rumah Adat Bulungan adalah rumah adat yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Utara", "Kalimantan Timur", "Kalimantan Barat", "Kalimantan Tengah"],
+        "jawaban": 0,
+        "glosarium": "kalimantan_utara_rumah_adat_rumah_adat_bulungan"
+      },
+      {
+        "soal": "Pakaian adat Dayak Ngaju berhias manik-manik, bulu enggang, dan kain tenun. Apa nama pakaian adat tersebut?",
+        "pilihan": ["Baju Sangkarut", "Pakaian Adat Tionghoa Singkawang", "Pakaian Adat Dayak Kenyah", "Baju Telok Belanga Pontianak"],
+        "jawaban": 0,
+        "glosarium": "kalimantan_tengah_pakaian_adat_baju_sangkarut"
+      },
+      {
+        "soal": "Baju Telok Belanga Pontianak adalah pakaian adat yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Utara", "Kalimantan Timur", "Kalimantan Barat", "Kalimantan Tengah"],
+        "jawaban": 2,
+        "glosarium": "kalimantan_barat_pakaian_adat_baju_telok_belanga_pontianak"
+      },
+      {
+        "soal": "Sayur daun singkong yang dimasak dengan santan dan bumbu khas Dayak. Apa nama makanan khas tersebut?",
+        "pilihan": ["Soto Banjar", "Apam Barabai", "Gangan Asam", "Kalumpe"],
+        "jawaban": 3,
+        "glosarium": "kalimantan_tengah_makanan_kalumpe"
+      },
+      {
+        "soal": "Nasi Itik Gambut adalah makanan khas yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Utara", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Tengah"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_selatan_makanan_nasi_itik_gambut"
+      },
+      {
+        "soal": "Tarian pergaulan Kutai dengan pengaruh Melayu, diiringi musik tingkilan. Apa nama tarian tersebut?",
+        "pilihan": ["Tari Balean Dadas", "Tari Iraw Tengkayu", "Tari Mandau Talawang", "Tari Jepen"],
+        "jawaban": 3,
+        "glosarium": "kalimantan_timur_tarian_tari_jepen"
+      },
+      {
+        "soal": "Tari Giring-Giring adalah tarian yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Timur", "Kalimantan Utara", "Kalimantan Tengah", "Kalimantan Selatan"],
+        "jawaban": 2,
+        "glosarium": "kalimantan_tengah_tarian_tari_giring_giring"
+      },
+      {
+        "soal": "Lagu Kalimantan Timur yang lembut, dikenal luas sebagai lagu rakyat Kutai. Apa nama lagu daerah tersebut?",
+        "pilihan": ["Kambang Goyang", "Indung-Indung", "Palu Lunta", "Ampar-Ampar Pisang"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_timur_lagu_daerah_indung_indung"
+      },
+      {
+        "soal": "Burung Enggang adalah lagu daerah yang berasal dari provinsi…",
+        "pilihan": ["Kalimantan Selatan", "Kalimantan Utara", "Kalimantan Tengah", "Kalimantan Barat"],
+        "jawaban": 1,
+        "glosarium": "kalimantan_utara_lagu_daerah_burung_enggang"
       }
     ],
     "blokKata": [
       {
-        "soal": "Suku Dayak memiliki senjata tradisional berbentuk parang bernama ___ dan alat musik petik bernama ___ .",
-        "jawaban": ["Mandau", "Sape"],
-        "pengecoh": ["Keris", "Angklung", "Rencong"]
+        "soal": "Kain khas Banjar dengan teknik jahit dan celup yang bermotif warna-warni. Pakaian adat ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Kain Sasirangan", "Kalimantan Selatan"],
+        "pengecoh": ["Baju Kustin", "Baju Sangkarut", "Kalimantan Barat", "Kalimantan Utara"],
+        "glosarium": "kalimantan_selatan_pakaian_adat_kain_sasirangan"
       },
       {
-        "soal": "Rumah adat Kalimantan Timur bernama Rumah ___ , sedangkan rumah panjang suku Dayak di Kalimantan Tengah disebut Rumah ___ .",
-        "jawaban": ["Lamin", "Betang"],
-        "pengecoh": ["Gadang", "Joglo", "Honai"]
+        "soal": "Kue lapis dua warna dari pisang dan santan. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Amparan Tatak", "Kalimantan Selatan"],
+        "pengecoh": ["Choipan", "Pengkang", "Kalimantan Tengah", "Kalimantan Barat"],
+        "glosarium": "kalimantan_selatan_makanan_amparan_tatak"
       },
       {
-        "soal": "Lagu \"Ampar-Ampar Pisang\" berasal dari Kalimantan ___ . Daerah ini juga terkenal dengan kuliner Soto ___ .",
-        "jawaban": ["Selatan", "Banjar"],
-        "pengecoh": ["Timur", "Betawi", "Barat"]
+        "soal": "Tarian pergaulan Dayak Ngaju yang dibawakan beramai-ramai dalam lingkaran. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Manasai", "Kalimantan Tengah"],
+        "pengecoh": ["Tari Japin Carita", "Tari Jepen Tidung", "Kalimantan Barat", "Kalimantan Timur"],
+        "glosarium": "kalimantan_tengah_tarian_tari_manasai"
       },
       {
-        "soal": "Tari ___ dari Kalimantan Timur dibawakan oleh penari yang memakai ___ .",
-        "jawaban": ["Hudoq", "topeng"],
-        "pengecoh": ["Saman", "selendang", "piring"]
+        "soal": "Lagu anak Banjar yang riang dengan irama cepat, populer sebagai lagu bermain. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Ampar-Ampar Pisang", "Kalimantan Selatan"],
+        "pengecoh": ["Indung-Indung", "Burung Enggang", "Kalimantan Timur", "Kalimantan Tengah"],
+        "glosarium": "kalimantan_selatan_lagu_daerah_ampar_ampar_pisang"
       },
       {
-        "soal": "Kain khas Kalimantan Selatan disebut ___ , sedangkan kerupuk ikan khas Kalimantan Timur disebut ___ .",
-        "jawaban": ["Sasirangan", "Amplang"],
-        "pengecoh": ["Ulos", "Pempek", "Songket"]
+        "soal": "Pangsit kukus khas Pontianak dengan kulit bening dan isian bengkuang atau kucai. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Chai Kue", "Kalimantan Barat"],
+        "pengecoh": ["Apam Barabai", "Soto Banjar", "Kalimantan Tengah", "Kalimantan Utara"],
+        "glosarium": "kalimantan_barat_makanan_chai_kue"
       },
       {
-        "soal": "Suku asli yang banyak mendiami Pulau Kalimantan adalah suku ___ . Pakaian adat pria suku ini di Kalimantan Tengah disebut King ___ .",
-        "jawaban": ["Dayak", "Baba"],
-        "pengecoh": ["Batak", "Bibinge", "Asmat"]
+        "soal": "Tarian Banjar yang bernuansa Melayu dengan gerak dan cerita. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Japin Carita", "Kalimantan Selatan"],
+        "pengecoh": ["Tari Jepen Tidung", "Tari Giring-Giring", "Kalimantan Tengah", "Kalimantan Timur"],
+        "glosarium": "kalimantan_selatan_tarian_tari_japin_carita"
+      },
+      {
+        "soal": "Lagu daerah Kalimantan Tengah yang bernuansa kisah kehidupan dan alam. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Kalayar", "Kalimantan Tengah"],
+        "pengecoh": ["Ampar-Ampar Pisang", "Cik Cik Periok", "Kalimantan Selatan", "Kalimantan Utara"],
+        "glosarium": "kalimantan_tengah_lagu_daerah_kalayar"
+      },
+      {
+        "soal": "Ikan gabus berkuah asam pedas khas Samarinda. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Gence Ruan", "Kalimantan Timur"],
+        "pengecoh": ["Chai Kue", "Soto Banjar", "Kalimantan Tengah", "Kalimantan Utara"],
+        "glosarium": "kalimantan_timur_makanan_gence_ruan"
+      },
+      {
+        "soal": "Tarian Dayak Kenyah yang ditarikan perempuan dengan gerak lembut seperti burung enggang. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Kancet Ledo", "Kalimantan Timur"],
+        "pengecoh": ["Tari Giring-Giring", "Tari Baksa Kembang", "Kalimantan Barat", "Kalimantan Utara"],
+        "glosarium": "kalimantan_timur_tarian_tari_kancet_ledo"
+      },
+      {
+        "soal": "Lagu Banjar yang riang dan sering dinyanyikan pada acara hiburan. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Kambang Goyang", "Kalimantan Selatan"],
+        "pengecoh": ["Burung Enggang", "Indung-Indung", "Kalimantan Utara", "Kalimantan Barat"],
+        "glosarium": "kalimantan_selatan_lagu_daerah_kambang_goyang"
+      },
+      {
+        "soal": "Ketan berisi ebi yang dibungkus daun pisang lalu dibakar. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Pengkang", "Kalimantan Barat"],
+        "pengecoh": ["Ketupat Kandangan", "Gangan Asam", "Kalimantan Tengah", "Kalimantan Timur"],
+        "glosarium": "kalimantan_barat_makanan_pengkang"
+      },
+      {
+        "soal": "Tarian penyambutan tamu Banjar dengan gerak lembut yang diiringi musik panting. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Baksa Kembang", "Kalimantan Selatan"],
+        "pengecoh": ["Tari Monong", "Tari Datun Julud", "Kalimantan Tengah", "Kalimantan Utara"],
+        "glosarium": "kalimantan_selatan_tarian_tari_baksa_kembang"
+      },
+      {
+        "soal": "Lagu Kalimantan Timur yang berirama ceria dan dikenal luas. Lagu daerah ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Buah Bolok", "Kalimantan Timur"],
+        "pengecoh": ["Kambang Goyang", "Palu Lunta", "Kalimantan Barat", "Kalimantan Selatan"],
+        "glosarium": "kalimantan_timur_lagu_daerah_buah_bolok"
+      },
+      {
+        "soal": "Soto berkuah bening dengan rempah aromatik, disajikan bersama ketupat atau lontong dan telur. Makanan khas ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Soto Banjar", "Kalimantan Selatan"],
+        "pengecoh": ["Lemang Pontianak", "Bubur Pedas Sambas", "Kalimantan Utara", "Kalimantan Barat"],
+        "glosarium": "kalimantan_selatan_makanan_soto_banjar"
+      },
+      {
+        "soal": "Tarian penyambutan tamu Banjar yang dibawakan secara berpasangan. Tarian ini bernama ___ dan berasal dari provinsi ___ .",
+        "jawaban": ["Tari Radap Rahayu", "Kalimantan Selatan"],
+        "pengecoh": ["Tari Gantar", "Tari Monong", "Kalimantan Timur", "Kalimantan Barat"],
+        "glosarium": "kalimantan_selatan_tarian_tari_radap_rahayu"
       }
     ],
     "susunHuruf": [
       {
-        "soal": "Gambar di bawah ini merupakan senjata tradisional suku Dayak dengan nama?",
-        "jawaban": "MANDAU",
-        "gambar": "kalimantan/mandau"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan alat musik petik suku Dayak dengan nama?",
-        "jawaban": "SAPE",
-        "gambar": "kalimantan/sape"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan rumah adat Kalimantan Timur dengan nama Rumah…?",
-        "jawaban": "LAMIN",
-        "gambar": "kalimantan/lamin"
-      },
-      {
-        "soal": "Gambar di bawah ini merupakan rumah panjang suku Dayak dengan nama Rumah…?",
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Kalimantan Tengah. Rumah apakah ini?",
         "jawaban": "BETANG",
-        "gambar": "kalimantan/betang"
+        "gambar": "kalimantan_tengah_rumah_adat_rumah_betang",
+        "glosarium": "kalimantan_tengah_rumah_adat_rumah_betang"
       },
       {
-        "soal": "Gambar di bawah ini merupakan tari topeng suku Dayak dengan nama?",
-        "jawaban": "HUDOQ",
-        "gambar": "kalimantan/hudoq"
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Kalimantan Timur. Rumah apakah ini?",
+        "jawaban": "LAMIN",
+        "gambar": "kalimantan_timur_rumah_adat_rumah_lamin",
+        "glosarium": "kalimantan_timur_rumah_adat_rumah_lamin"
       },
       {
-        "soal": "Gambar di bawah ini merupakan kerupuk ikan khas Kalimantan Timur dengan nama?",
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Kalimantan Barat. Rumah apakah ini?",
+        "jawaban": "PANJAI",
+        "gambar": "kalimantan_barat_rumah_adat_rumah_panjai",
+        "glosarium": "kalimantan_barat_rumah_adat_rumah_panjai"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Kalimantan Barat. Rumah apakah ini?",
+        "jawaban": "BALUK",
+        "gambar": "kalimantan_barat_rumah_adat_rumah_baluk",
+        "glosarium": "kalimantan_barat_rumah_adat_rumah_baluk"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan rumah adat dari Kalimantan Barat. Rumah apakah ini?",
+        "jawaban": "RADAKNG",
+        "gambar": "kalimantan_barat_rumah_adat_rumah_radakng",
+        "glosarium": "kalimantan_barat_rumah_adat_rumah_radakng"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari Kalimantan Timur. Baju apakah ini?",
+        "jawaban": "KUSTIN",
+        "gambar": "kalimantan_timur_pakaian_adat_baju_kustin",
+        "glosarium": "kalimantan_timur_pakaian_adat_baju_kustin"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan pakaian adat dari Kalimantan Selatan. Baju apakah ini?",
+        "jawaban": "BAHALAI",
+        "gambar": "kalimantan_selatan_pakaian_adat_baju_bahalai",
+        "glosarium": "kalimantan_selatan_pakaian_adat_baju_bahalai"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Kalimantan Timur. Apa namanya?",
         "jawaban": "AMPLANG",
-        "gambar": "kalimantan/amplang"
+        "gambar": "kalimantan_timur_makanan_amplang",
+        "glosarium": "kalimantan_timur_makanan_amplang"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Kalimantan Selatan. Apa namanya?",
+        "jawaban": "BINGKA",
+        "gambar": "kalimantan_selatan_makanan_bingka",
+        "glosarium": "kalimantan_selatan_makanan_bingka"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Kalimantan Tengah. Apa namanya?",
+        "jawaban": "WADI",
+        "gambar": "kalimantan_tengah_makanan_wadi",
+        "glosarium": "kalimantan_tengah_makanan_wadi"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan makanan khas Kalimantan Barat. Apa namanya?",
+        "jawaban": "CHOIPAN",
+        "gambar": "kalimantan_barat_makanan_choipan",
+        "glosarium": "kalimantan_barat_makanan_choipan"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Kalimantan Timur. Tari apakah ini?",
+        "jawaban": "HUDOQ",
+        "gambar": "kalimantan_timur_tarian_tari_hudoq",
+        "glosarium": "kalimantan_timur_tarian_tari_hudoq"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Kalimantan Timur. Tari apakah ini?",
+        "jawaban": "GANTAR",
+        "gambar": "kalimantan_timur_tarian_tari_gantar",
+        "glosarium": "kalimantan_timur_tarian_tari_gantar"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Kalimantan Barat. Tari apakah ini?",
+        "jawaban": "NGAJAT",
+        "gambar": "kalimantan_barat_tarian_tari_ngajat",
+        "glosarium": "kalimantan_barat_tarian_tari_ngajat"
+      },
+      {
+        "soal": "Gambar di bawah ini merupakan tarian dari Kalimantan Barat. Tari apakah ini?",
+        "jawaban": "MONONG",
+        "gambar": "kalimantan_barat_tarian_tari_monong",
+        "glosarium": "kalimantan_barat_tarian_tari_monong"
       }
     ]
   }

@@ -1,14 +1,9 @@
 package com.kelompok8.lentera.game
 
-import android.content.Context
-import android.graphics.BitmapFactory
+import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
-import androidx.compose.runtime.produceState
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.io.IOException
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -31,15 +26,19 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
@@ -54,9 +53,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -97,7 +101,7 @@ private val ProgressFill = Color(0xFF6C9BFF)
 private val ProgressTrack = Color(0xFF2A3166)
 
 @Composable
-fun GameScreen(chapterId: String, onFinished: (Int) -> Unit) {
+fun GameScreen(chapterId: String, onFinished: (Int) -> Unit, onBack: () -> Unit) {
     val context = LocalContext.current
     val viewModel: GameViewModel = viewModel(
         key = "game_$chapterId",
@@ -111,6 +115,19 @@ fun GameScreen(chapterId: String, onFinished: (Int) -> Unit) {
         if (state.isFinished) onFinished(state.correctCount)
     }
 
+    var confirmExit by remember { mutableStateOf(false) }
+    val requestExit = { if (state.questions.isEmpty()) onBack() else confirmExit = true }
+    BackHandler(enabled = !state.isFinished) { requestExit() }
+    if (confirmExit) {
+        ExitDialog(
+            onExit = {
+                confirmExit = false
+                onBack()
+            },
+            onStay = { confirmExit = false }
+        )
+    }
+
     GameContent(
         chapterId = chapterId,
         state = state,
@@ -119,7 +136,8 @@ fun GameScreen(chapterId: String, onFinished: (Int) -> Unit) {
         onUnpick = viewModel::unpick,
         onCheck = viewModel::checkAnswer,
         onNext = viewModel::next,
-        onRetry = viewModel::loadQuestions
+        onRetry = viewModel::loadQuestions,
+        onBack = requestExit
     )
 }
 
@@ -132,7 +150,8 @@ private fun GameContent(
     onUnpick: (Int) -> Unit,
     onCheck: () -> Unit,
     onNext: () -> Unit,
-    onRetry: () -> Unit
+    onRetry: () -> Unit,
+    onBack: () -> Unit
 ) {
     val question = state.currentQuestion
     Column(
@@ -141,7 +160,7 @@ private fun GameContent(
             .padding(horizontal = 20.dp, vertical = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        GameHeader(islandName(chapterId), state.coin, state.avatarId)
+        GameHeader(islandName(chapterId), state.coin, state.avatarId, onBack)
 
         when {
             state.isLoading -> Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
@@ -225,22 +244,26 @@ private fun islandName(chapterId: String): String {
 }
 
 @Composable
-private fun GameHeader(title: String, coin: Int, avatarId: Int) {
+private fun GameHeader(title: String, coin: Int, avatarId: Int, onBack: () -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .background(PillBlue, RoundedCornerShape(20.dp))
-                .border(1.dp, PillBorder, RoundedCornerShape(20.dp))
-                .padding(vertical = 3.dp, horizontal = 10.dp)
-        ) {
-            Image(painterResource(R.drawable.coin), contentDescription = "Koin", modifier = Modifier.size(20.dp))
-            Spacer(Modifier.width(10.dp))
-            GameText(coin.toString(), size = 14)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            BackButton(onBack)
+            Spacer(Modifier.width(8.dp))
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .background(PillBlue, RoundedCornerShape(20.dp))
+                    .border(1.dp, PillBorder, RoundedCornerShape(20.dp))
+                    .padding(vertical = 3.dp, horizontal = 10.dp)
+            ) {
+                Image(painterResource(R.drawable.coin), contentDescription = "Koin", modifier = Modifier.size(20.dp))
+                Spacer(Modifier.width(10.dp))
+                GameText(coin.toString(), size = 14)
+            }
         }
         GameText(title, size = 16, color = LenteraLime)
         Box(
@@ -257,6 +280,54 @@ private fun GameHeader(title: String, coin: Int, avatarId: Int) {
             )
         }
     }
+}
+
+@Composable
+private fun BackButton(onClick: () -> Unit) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .size(36.dp)
+            .clip(CircleShape)
+            .background(PillBlue)
+            .border(1.dp, PillBorder, CircleShape)
+            .clickable(onClickLabel = "Kembali", role = Role.Button, onClick = onClick)
+    ) {
+        Canvas(Modifier.size(14.dp)) {
+            val arrow = Path().apply {
+                moveTo(size.width * 0.68f, size.height * 0.12f)
+                lineTo(size.width * 0.3f, size.height * 0.5f)
+                lineTo(size.width * 0.68f, size.height * 0.88f)
+            }
+            drawPath(
+                arrow,
+                color = TextLight,
+                style = Stroke(width = 2.5.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round)
+            )
+        }
+    }
+}
+
+@Composable
+private fun ExitDialog(onExit: () -> Unit, onStay: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onStay,
+        containerColor = CardDark,
+        title = { GameText("Keluar dari permainan?", size = 18) },
+        text = {
+            GameText(
+                "Jawabanmu di chapter ini tidak akan disimpan.",
+                size = 14,
+                weight = FontWeight.Medium
+            )
+        },
+        confirmButton = {
+            TextButton(onClick = onExit) { GameText("KELUAR", size = 14, color = WrongRed) }
+        },
+        dismissButton = {
+            TextButton(onClick = onStay) { GameText("LANJUT MAIN", size = 14, color = LenteraLime) }
+        }
+    )
 }
 
 @Composable
@@ -549,50 +620,30 @@ private fun WordChip(
     }
 }
 
-private const val IMAGE_FOLDER = "gambar_soal"
-private val IMAGE_EXTENSIONS = listOf("", ".jpg", ".jpeg", ".png", ".webp")
-private const val IMAGE_MAX_WIDTH = 1000
-
-private fun loadQuestionImage(context: Context, imageName: String): ImageBitmap? {
-    val assets = context.assets
-    for (extension in IMAGE_EXTENSIONS) {
-        val path = "$IMAGE_FOLDER/$imageName$extension"
-        val bounds = try {
-            assets.open(path).use { stream ->
-                BitmapFactory.Options().apply {
-                    inJustDecodeBounds = true
-                    BitmapFactory.decodeStream(stream, null, this)
-                }
-            }
-        } catch (e: IOException) {
-            continue
-        }
-        if (bounds.outWidth <= 0) continue
-        var sampleSize = 1
-        while (bounds.outWidth / (sampleSize * 2) >= IMAGE_MAX_WIDTH) sampleSize *= 2
-        val options = BitmapFactory.Options().apply { inSampleSize = sampleSize }
-        return assets.open(path).use { BitmapFactory.decodeStream(it, null, options) }?.asImageBitmap()
-    }
-    return null
-}
-
+@SuppressLint("DiscouragedApi")
 @Composable
 private fun QuestionImage(imageName: String?) {
     if (imageName.isNullOrBlank()) return
     val context = LocalContext.current
-    val bitmap by produceState<ImageBitmap?>(null, imageName) {
-        value = withContext(Dispatchers.IO) { loadQuestionImage(context, imageName) }
+    val resId = remember(imageName) {
+        context.resources.getIdentifier(imageName, "drawable", context.packageName)
     }
-    val image = bitmap ?: return
-    Image(
-        bitmap = image,
-        contentDescription = null,
-        contentScale = ContentScale.Crop,
+    if (resId == 0) return
+    Box(
         modifier = Modifier
             .fillMaxWidth()
             .aspectRatio(16f / 9f)
             .clip(RoundedCornerShape(8.dp))
-    )
+            .background(CardDark),
+        contentAlignment = Alignment.Center
+    ) {
+        Image(
+            painter = painterResource(resId),
+            contentDescription = null,
+            contentScale = ContentScale.Fit,
+            modifier = Modifier.fillMaxSize()
+        )
+    }
 }
 
 private fun instructionFor(question: Question): String = when (question) {
@@ -709,7 +760,7 @@ private fun GamePreview(question: Question, input: AnswerInput) {
                 chapterId = "jawa_1",
                 state = GameUiState(isLoading = false, questions = listOf(question), input = input),
                 onSelectOption = {}, onPick = {}, onUnpick = {},
-                onCheck = {}, onNext = {}, onRetry = {}
+                onCheck = {}, onNext = {}, onRetry = {}, onBack = {}
             )
         }
     }
