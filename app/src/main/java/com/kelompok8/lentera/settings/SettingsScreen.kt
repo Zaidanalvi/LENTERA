@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kelompok8.lentera.core.data.AppContainer
+import com.kelompok8.lentera.core.data.UserSession
 import com.kelompok8.lentera.ui.theme.DarkButton
 import com.kelompok8.lentera.ui.theme.LenteraPink
 import com.kelompok8.lentera.ui.theme.NavyDeep
@@ -109,6 +110,7 @@ fun SettingsScreen(
         Button(
             onClick = {
                 AppContainer.authRepository.logout()
+                UserSession.clear()
                 onLogout()
             },
             shape = RoundedCornerShape(50),

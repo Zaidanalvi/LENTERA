@@ -77,6 +77,30 @@ class FirebaseAuthRepository(
         }.getOrNull()
     }
 
+    override suspend fun updateProfile(
+        name: String,
+        gender: String,
+        location: String,
+        avatarId: Int
+    ): Result<User> = runCatching {
+        val firebaseUser = auth.currentUser ?: error("Sesi login berakhir, silakan masuk lagi")
+
+        users.document(firebaseUser.uid).update(
+            mapOf(
+                "name" to name,
+                "gender" to gender,
+                "location" to location,
+                "avatarId" to avatarId
+            )
+        ).await()
+
+        // Nama di profil Auth ikut diganti supaya currentUser() tetap sesuai
+        val profileUpdate = UserProfileChangeRequest.Builder().setDisplayName(name).build()
+        firebaseUser.updateProfile(profileUpdate).await()
+
+        getProfile() ?: error("Profil tidak ditemukan")
+    }
+
     override fun logout() = auth.signOut()
 
     private fun DocumentSnapshot.toUser(uid: String, email: String, fallbackName: String) = User(

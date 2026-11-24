@@ -4,6 +4,8 @@ object Routes {
     const val WELCOME = "welcome"
     const val ABOUT = "about"
     const val LOGIN = "login"
+    const val PROFILE = "profile"
+    const val EDIT_PROFILE = "profile/edit"
     const val REGISTER = "register"
 
     const val HOME = "home"

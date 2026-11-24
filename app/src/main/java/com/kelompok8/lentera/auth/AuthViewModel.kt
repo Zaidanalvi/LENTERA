@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.data.AuthRepository
+import com.kelompok8.lentera.core.data.UserSession
 import com.kelompok8.lentera.core.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -78,7 +79,10 @@ class AuthViewModel(
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, errorMessage = null) }
             action()
-                .onSuccess { user -> _uiState.update { it.copy(isLoading = false, loggedInUser = user) } }
+                .onSuccess { user ->
+                    UserSession.set(user)
+                    _uiState.update { it.copy(isLoading = false, loggedInUser = user) }
+                }
                 .onFailure { e -> _uiState.update { it.copy(isLoading = false, errorMessage = e.toMessage()) } }
         }
     }

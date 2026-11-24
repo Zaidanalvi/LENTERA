@@ -3,6 +3,8 @@ package com.kelompok8.lentera.core.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -22,6 +24,10 @@ import com.kelompok8.lentera.auth.LoginScreen
 import com.kelompok8.lentera.auth.RegisterScreen
 import com.kelompok8.lentera.auth.WelcomeScreen
 import com.kelompok8.lentera.core.data.AppContainer
+import com.kelompok8.lentera.core.data.UserSession
+import com.kelompok8.lentera.core.ui.LocalOpenProfile
+import com.kelompok8.lentera.profile.EditProfileScreen
+import com.kelompok8.lentera.profile.ProfileScreen
 import com.kelompok8.lentera.game.GameScreen
 import com.kelompok8.lentera.home.HomeScreen
 import com.kelompok8.lentera.leaderboard.LeaderboardScreen
@@ -54,6 +60,12 @@ fun LenteraApp() {
         if (AppContainer.authRepository.currentUser() != null) Routes.HOME else Routes.WELCOME
     }
 
+    // Muat profil sekali saat aplikasi dibuka, dipakai header di semua halaman
+    LaunchedEffect(Unit) {
+        if (AppContainer.authRepository.currentUser() != null) UserSession.refresh()
+    }
+
+    CompositionLocalProvider(LocalOpenProfile provides { navController.navigate(Routes.PROFILE) { launchSingleTop = true } }) {
     LenteraBackground {
         Scaffold(
             containerColor = Color.Transparent,
@@ -69,6 +81,7 @@ fun LenteraApp() {
         ) { innerPadding ->
             LenteraNavHost(navController, startDestination, Modifier.padding(innerPadding))
         }
+    }
     }
 }
 
@@ -177,6 +190,23 @@ private fun LenteraNavHost(
                 chapterId = entry.arguments?.getString("chapterId").orEmpty(),
                 correctCount = entry.arguments?.getInt("correct") ?: 0,
                 onDone = { navController.popBackStack() }
+            )
+        }
+        composable(Routes.PROFILE) {
+            ProfileScreen(
+                onBack = { navController.popBackStack() },
+                onEdit = { navController.navigate(Routes.EDIT_PROFILE) },
+                onLoggedOut = {
+                    navController.navigate(Routes.WELCOME) {
+                        popUpTo(navController.graph.id) { inclusive = true }
+                    }
+                }
+            )
+        }
+        composable(Routes.EDIT_PROFILE) {
+            EditProfileScreen(
+                onBack = { navController.popBackStack() },
+                onSaved = { navController.popBackStack() }
             )
         }
         composable(Routes.LEADERBOARD) {

@@ -27,6 +27,8 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -42,6 +44,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
+import com.kelompok8.lentera.core.data.UserSession
 import com.kelompok8.lentera.ui.theme.AvatarPink
 import com.kelompok8.lentera.ui.theme.AvatarPurple
 import com.kelompok8.lentera.ui.theme.FieldBlue
@@ -223,6 +226,12 @@ fun Header(
     countCoin: Int,
     pfp: Int
 ) {
+    // Kalau sudah login, koin dan avatar diambil dari profil asli, bukan nilai bawaan pemanggil
+    val sessionUser by UserSession.profile.collectAsState()
+    val coin = sessionUser?.coin ?: countCoin
+    val avatarRes = sessionUser?.let { avatarEmojis.getOrElse(it.avatarId) { pfp } } ?: pfp
+    val openProfile = LocalOpenProfile.current
+
     Row(
         modifier = Modifier.width(347.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -238,18 +247,23 @@ fun Header(
         ) {
             Image(painterResource(R.drawable.coin), contentDescription = "Coin", modifier = Modifier.size(20.dp))
             Spacer(Modifier.width(10.dp))
-            Text(text = countCoin.toString(), color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
+            Text(text = coin.toString(), color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
         }
         Text(text = title, color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 20.sp)
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .size(40.dp)
+                .clip(RoundedCornerShape(100.dp))
                 .background(Color(0xFF1620A7), shape = RoundedCornerShape(100.dp))
                 .border(1.dp, color = Color(0x38FFFFFF), shape = RoundedCornerShape(100.dp))
+                .then(
+                    if (openProfile != null) Modifier.clickable(onClickLabel = "Buka profil", onClick = openProfile)
+                    else Modifier
+                )
         ) {
             Image(painterResource(
-                pfp),
+                avatarRes),
                 contentDescription = "Profile",
                 modifier = Modifier
                     .size(31.dp)

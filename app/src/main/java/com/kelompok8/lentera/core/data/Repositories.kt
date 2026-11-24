@@ -25,6 +25,7 @@ interface AuthRepository {
     ): Result<User>
     fun currentUser(): User?                 // cepat, tapi hanya berisi uid, nama, dan email
     suspend fun getProfile(): User?          // profil lengkap dari Firestore
+    suspend fun updateProfile(name: String, gender: String, location: String, avatarId: Int): Result<User>
     fun logout()
 }
 
