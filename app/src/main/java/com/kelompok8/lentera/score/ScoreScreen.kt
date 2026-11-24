@@ -5,21 +5,19 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,11 +31,9 @@ import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.model.ChapterResult
-import com.kelompok8.lentera.core.ui.AvatarImage
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import com.kelompok8.lentera.ui.theme.LENTERATheme
-import com.kelompok8.lentera.ui.theme.museoModerno
 import com.kelompok8.lentera.ui.theme.TextLight
 import com.kelompok8.lentera.ui.theme.mPlus1p
 
@@ -45,6 +41,18 @@ import com.kelompok8.lentera.ui.theme.mPlus1p
 @Composable
 fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
     val result = ChapterResult(chapterId = chapterId, correctCount = correctCount)
+
+    val currentUser = remember {
+        runCatching { AppContainer.authRepository.currentUser() }.getOrNull()
+    }
+
+    // Simpan skor otomatis ke Firestore saat halaman dibuka
+    LaunchedEffect(chapterId, correctCount, currentUser?.uid) {
+        val uid = currentUser?.uid
+        if (!uid.isNullOrBlank()) {
+            AppContainer.scoreRepository.saveResult(uid, result)
+        }
+    }
 
     val islandName = when {
         chapterId.contains("jawa", ignoreCase = true) -> "Pulau Jawa"
