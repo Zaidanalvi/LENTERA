@@ -160,7 +160,15 @@ private fun GameContent(
             else -> {
                 Spacer(Modifier.height(20.dp))
                 GameText("SOAL ${state.currentIndex + 1}", size = 20)
-                Spacer(Modifier.height(20.dp))
+                Spacer(Modifier.height(6.dp))
+                GameText(
+                    instructionFor(question),
+                    size = 12,
+                    color = LenteraLime,
+                    align = TextAlign.Center,
+                    weight = FontWeight.Medium
+                )
+                Spacer(Modifier.height(14.dp))
 
                 Column(
                     modifier = Modifier
@@ -188,12 +196,20 @@ private fun GameContent(
                 Spacer(Modifier.height(12.dp))
                 state.checkedCorrect?.let { correct ->
                     FeedbackText(correct)
+                    if (!correct) {
+                        GameText(
+                            "Jawaban benar: ${correctAnswerOf(question)}",
+                            size = 13,
+                            align = TextAlign.Center,
+                            weight = FontWeight.Medium
+                        )
+                    }
                     Spacer(Modifier.height(8.dp))
                 }
                 if (state.isChecked) {
                     ActionButton(if (state.isLastQuestion) "SELESAI" else "LANJUT", onClick = onNext)
                 } else {
-                    ActionButton("SIMPAN JAWABAN", onClick = onCheck, enabled = state.canCheck)
+                    ActionButton("PERIKSA JAWABAN", onClick = onCheck, enabled = state.canCheck)
                 }
                 Spacer(Modifier.height(20.dp))
                 ProgressFooter(state.currentIndex, state.questions.size)
@@ -287,6 +303,8 @@ private fun MultipleChoiceBody(
                 val background: Brush = when {
                     checkedCorrect == true && selected -> Brush.linearGradient(listOf(ActionGreen, ActionGreen))
                     checkedCorrect == false && selected -> Brush.linearGradient(listOf(WrongRed, WrongRed))
+                    checkedCorrect == false && index == question.correctIndex ->
+                        Brush.linearGradient(listOf(ActionGreen, ActionGreen))
                     checkedCorrect == null && selected -> Brush.linearGradient(listOf(ActionGreen, ActionGreen))
                     else -> Brush.horizontalGradient(listOf(OptionStart, OptionEnd))
                 }
@@ -358,11 +376,6 @@ private fun LetterGridBody(
             }
         }
 
-        val answerColor = when (checkedCorrect) {
-            true -> ActionGreen
-            false -> WrongRed
-            null -> TileBlue
-        }
         Row(
             modifier = Modifier
                 .clip(RoundedCornerShape(8.dp))
@@ -373,7 +386,14 @@ private fun LetterGridBody(
             repeat(question.answer.length) { position ->
                 val index = input.pickedIndices.getOrNull(position)
                 if (index != null) {
-                    LetterTile(question.letters[index], answerColor, enabled = !locked) { onUnpick(position) }
+                    val letter = question.letters[index]
+                    // setelah diperiksa, huruf yang posisinya sudah benar tetap hijau
+                    val answerColor = when {
+                        checkedCorrect == null -> TileBlue
+                        letter.equals(question.answer.getOrNull(position) ?: ' ', ignoreCase = true) -> ActionGreen
+                        else -> WrongRed
+                    }
+                    LetterTile(letter, answerColor, enabled = !locked) { onUnpick(position) }
                 } else {
                     Box(
                         Modifier
@@ -433,9 +453,10 @@ private fun FillBlankParagraph(
         ) {
             val index = input.pickedIndices.getOrNull(position)
             if (index != null) {
+                // dicek per kotak, jadi pemain tahu bagian mana yang salah
                 val color = when {
                     checkedCorrect == null -> ChipUsed
-                    checkedCorrect -> ActionGreen
+                    question.blocks[index] == question.answer.getOrNull(position) -> ActionGreen
                     else -> WrongRed
                 }
                 WordChip(
@@ -572,6 +593,18 @@ private fun QuestionImage(imageName: String?) {
             .aspectRatio(16f / 9f)
             .clip(RoundedCornerShape(8.dp))
     )
+}
+
+private fun instructionFor(question: Question): String = when (question) {
+    is Question.MultipleChoice -> "Pilih satu jawaban yang benar"
+    is Question.WordBlock -> "Ketuk kata di bawah untuk mengisi bagian kosong. Ketuk kata yang sudah terisi untuk membatalkan"
+    is Question.LetterArrange -> "Ketuk huruf untuk menyusun jawaban. Ketuk huruf di kotak jawaban untuk menghapus"
+}
+
+private fun correctAnswerOf(question: Question): String = when (question) {
+    is Question.MultipleChoice -> question.options.getOrElse(question.correctIndex) { "-" }
+    is Question.WordBlock -> question.answer.joinToString(", ")
+    is Question.LetterArrange -> question.answer.uppercase()
 }
 
 @Composable
