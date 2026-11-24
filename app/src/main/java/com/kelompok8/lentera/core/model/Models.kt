@@ -74,6 +74,12 @@ data class BestScore(
     val bestScore: Int
 )
 
+// Data medali per pulau
+data class Medal(
+    val island: Island,
+    val unlocked: Boolean = true
+)
+
 data class LeaderboardEntry(
     val uid: String,
     val rank: Int,
