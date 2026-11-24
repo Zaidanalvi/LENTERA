@@ -1,5 +1,6 @@
 package com.kelompok8.lentera.game
 
+import com.google.gson.JsonParser
 import com.kelompok8.lentera.core.model.Question
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -17,6 +18,24 @@ class GameLogicTest {
     fun fileBankSoalValidDanBerisiTigaPulau() {
         val banks = JsonQuestionRepository.parseBank(bankJson)
         assertEquals(setOf("jawa", "sumatra", "kalimantan"), banks.keys)
+    }
+
+    @Test
+    fun gambarDanSumberSoalAdaDiGlosarium() {
+        val glossary = JsonParser.parseString(File("src/main/assets/glossary.json").readText())
+            .asJsonObject.getAsJsonArray("items").map { it.asJsonObject }
+        val ids = glossary.map { it.get("id").asString }.toSet()
+        val images = glossary.mapNotNull { it.get("imageName")?.asString }.toSet()
+
+        JsonParser.parseString(bankJson).asJsonObject.entrySet().forEach { (island, data) ->
+            data.asJsonObject.entrySet().forEach { (type, list) ->
+                list.asJsonArray.forEachIndexed { i, q ->
+                    val where = "$island.$type soal ke-${i + 1}"
+                    q.asJsonObject.get("glosarium")?.asString?.let { assertTrue("$where: id $it tidak ada", it in ids) }
+                    q.asJsonObject.get("gambar")?.asString?.let { assertTrue("$where: gambar $it tidak ada", it in images) }
+                }
+            }
+        }
     }
 
     @Test
