@@ -38,7 +38,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -233,7 +235,7 @@ fun Header(
     val openProfile = LocalOpenProfile.current
 
     Row(
-        modifier = Modifier.width(347.dp),
+        modifier = Modifier.fillMaxWidth(0.88f),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -278,6 +280,7 @@ fun IslandCard(
     islandName: String,
     progressText: String = "0/5",
     isAvailable: Boolean = true,
+    modifier: Modifier = Modifier.width(170.dp),
     onIslandClick: () -> Unit
 ) {
     val cardBackground = if (isAvailable) {
@@ -289,13 +292,12 @@ fun IslandCard(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier
-            .width(170.dp)
-            .height(168.dp)
+        modifier = modifier
+            .height(162.dp)
             .clip(RoundedCornerShape(16.dp))
             .border(1.dp, borderColor, RoundedCornerShape(16.dp))
             .background(cardBackground)
-            .padding(14.dp)
+            .padding(horizontal = 12.dp, vertical = 14.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -305,7 +307,11 @@ fun IslandCard(
             Text(
                 text = "Pulau $islandName",
                 fontFamily = mPlus1p,
-                fontSize = if (islandName.length <= 5) 19.sp else 14.sp,
+                fontSize = 15.sp,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center,
                 color = if (isAvailable) Color.White else Color(0xFFA5ABC7)
             )
 
@@ -316,7 +322,7 @@ fun IslandCard(
                     Text(
                         text = progressText,
                         fontFamily = museoModerno,
-                        fontSize = 30.sp,
+                        fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color(0xFFEEFF00)
                     )
@@ -324,6 +330,7 @@ fun IslandCard(
                         text = "CHAPTER",
                         fontFamily = mPlus1p,
                         fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
                         color = Color(0xFFDCDFEF)
                     )
                 }
@@ -333,12 +340,14 @@ fun IslandCard(
                     modifier = Modifier
                         .clip(RoundedCornerShape(6.dp))
                         .background(Color(0xFF282B3D))
-                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                        .padding(horizontal = 10.dp, vertical = 5.dp)
                 ) {
                     Text(
                         text = "COMING SOON",
                         fontFamily = mPlus1p,
-                        fontSize = 14.sp,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        maxLines = 1,
                         color = Color(0xFF8D93B4)
                     )
                 }
@@ -376,7 +385,7 @@ fun IslandCard(
                     Text(
                         text = if (isAvailable) "PLAY" else "LOCKED",
                         fontFamily = mPlus1p,
-                        fontSize = 20.sp,
+                        fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
                         color = if (isAvailable) Color.White else Color(0xFF707696)
                     )

@@ -76,13 +76,12 @@ fun ProfileScreen(
                 "Profil",
                 color = Color.White,
                 fontFamily = mPlus1p,
+                fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.weight(1f)
             )
-            TextButton(onClick = onEdit, enabled = user != null) {
-                Text("Ubah", color = LenteraLime, fontFamily = mPlus1p, fontWeight = FontWeight.Bold, fontSize = 15.sp)
-            }
+            EditCircleButton(enabled = user != null, onClick = onEdit)
         }
 
         when {

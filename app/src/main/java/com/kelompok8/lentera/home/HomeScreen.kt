@@ -15,7 +15,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -70,23 +72,22 @@ fun HomeScreen(onIslandClick: (String) -> Unit) {
         }
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(y = 30.dp)
-        ) {
-            Header("Beranda", 50, R.drawable.avatar1png)
-        }
+        Header("Beranda", 50, R.drawable.avatar1png)
+
+        Spacer(modifier = Modifier.height(18.dp))
 
         Column(
             modifier = Modifier
-                .align(Alignment.Center)
                 .fillMaxWidth(0.88f)
-                .offset(y = 40.dp),
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+                .padding(bottom = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             WelcomeBanner(
@@ -95,57 +96,57 @@ fun HomeScreen(onIslandClick: (String) -> Unit) {
                 onContinuePlay = { onIslandClick(activeIsland.name) }
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-            Column(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = "Pilihan Peta Nusantara",
-                    fontFamily = mPlus1p,
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White,
-                    modifier = Modifier.align(Alignment.Start)
-                )
-            }
+            Text(
+                text = "Pilihan Peta Nusantara",
+                fontFamily = mPlus1p,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                modifier = Modifier.align(Alignment.Start)
+            )
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(14.dp))
 
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.JAWA.displayName,
                     progressText = "$jawaProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.JAWA.name) }
                 )
                 IslandCard(
                     islandName = Island.SUMATRA.displayName,
                     progressText = "$sumatraProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.SUMATRA.name) }
                 )
             }
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(14.dp))
 
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.KALIMANTAN.displayName,
                     progressText = "$kalimantanProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.KALIMANTAN.name) }
                 )
                 IslandCard(
                     islandName = "Papua",
                     progressText = "0/5",
                     isAvailable = false,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = {}
                 )
             }
@@ -162,7 +163,7 @@ fun WelcomeBanner(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(230.dp)
+            .height(210.dp)
             .clip(RoundedCornerShape(16.dp))
             .border(1.dp, Color(0xFFA568E3), RoundedCornerShape(16.dp))
             .background(Brush.linearGradient(listOf(Color(0xFFC21AFF), Color(0xFF102999))))

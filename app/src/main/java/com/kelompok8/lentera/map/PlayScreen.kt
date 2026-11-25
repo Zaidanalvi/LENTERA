@@ -8,8 +8,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -52,22 +54,22 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
         }
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(y = 30.dp)
-        ) {
-            Header("Bermain", 50, R.drawable.avatar1png)
-        }
+        Header("Bermain", 50, R.drawable.avatar1png)
+
+        Spacer(modifier = Modifier.height(18.dp))
+
         Column(
             modifier = Modifier
-                .align(Alignment.Center)
                 .fillMaxWidth(0.88f)
-                .offset(y = 40.dp),
+                .weight(1f)
+                .verticalScroll(rememberScrollState())
+                .padding(bottom = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(
@@ -78,7 +80,7 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
                 Text(
                     text = "Selesaikan Soal\ndan Dapatkan Poin",
                     fontFamily = mPlus1p,
-                    fontSize = 24.sp,
+                    fontSize = 23.sp,
                     fontWeight = FontWeight.Bold,
                     lineHeight = 28.sp,
                     color = Color(0xFFDDFF00),
@@ -95,62 +97,68 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
                 }
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(16.dp))
 
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.JAWA.displayName,
                     progressText = "$jawaProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.JAWA.name) }
                 )
                 IslandCard(
                     islandName = Island.SUMATRA.displayName,
                     progressText = "$sumatraProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.SUMATRA.name) }
                 )
             }
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(14.dp))
 
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.KALIMANTAN.displayName,
                     progressText = "$kalimantanProgress/5",
                     isAvailable = true,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = { onIslandClick(Island.KALIMANTAN.name) }
                 )
                 IslandCard(
                     islandName = "Sulawesi",
                     progressText = "0/5",
                     isAvailable = false,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = {}
                 )
             }
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(14.dp))
 
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = "Sunda Kecil",
                     progressText = "0/5",
                     isAvailable = false,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = {}
                 )
                 IslandCard(
                     islandName = "Papua",
                     progressText = "0/5",
                     isAvailable = false,
+                    modifier = Modifier.weight(1f),
                     onIslandClick = {}
                 )
             }
