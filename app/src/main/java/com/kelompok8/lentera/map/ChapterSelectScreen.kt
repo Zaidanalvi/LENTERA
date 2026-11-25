@@ -23,6 +23,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -31,6 +32,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,7 +49,8 @@ import com.kelompok8.lentera.ui.theme.museoModerno
 @Composable
 fun ChapterSelectScreen(
     island: String,
-    onChapterClick: (String) -> Unit
+    onChapterClick: (String) -> Unit,
+    onBack: () -> Unit
 ) {
     val currentIsland = remember(island) {
         Island.entries.firstOrNull {
@@ -81,13 +85,36 @@ fun ChapterSelectScreen(
                 .padding(top = 90.dp, start = 20.dp, end = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Pilih Level Permainan",
-                fontFamily = museoModerno,
-                fontSize = 24.sp,
-                color = Color(0xFFEEFF00),
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.align(Alignment.Start)
-            )
+            ) {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .size(36.dp)
+                        .clip(CircleShape)
+                        .background(Color(0xFF1620A7))
+                        .border(1.dp, Color(0x38FFFFFF), CircleShape)
+                        .clickable(onClickLabel = "Kembali", role = Role.Button, onClick = onBack)
+                ) {
+                    Icon(
+                        painter = painterResource(R.drawable.baseline_arrow_back_ios_24),
+                        contentDescription = "Kembali",
+                        tint = Color.White,
+                        modifier = Modifier
+                            .size(16.dp)
+                            .offset(x = 3.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.width(12.dp))
+                Text(
+                    text = "Pilih Level Permainan",
+                    fontFamily = museoModerno,
+                    fontSize = 24.sp,
+                    color = Color(0xFFEEFF00)
+                )
+            }
 
             Spacer(modifier = Modifier.height(4.dp))
 
@@ -240,6 +267,7 @@ private fun getChaptersForIsland(island: Island): List<Chapter> {
 fun ChapterSelectScreenPreview() {
     ChapterSelectScreen(
         island = "JAWA",
-        onChapterClick = {}
+        onChapterClick = {},
+        onBack = {}
     )
 }
