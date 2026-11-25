@@ -218,7 +218,7 @@ private fun GameContent(
                     if (!correct) {
                         GameText(
                             "Jawaban benar: ${correctAnswerOf(question)}",
-                            size = 13,
+                            size = 14,
                             align = TextAlign.Center,
                             weight = FontWeight.Medium
                         )
@@ -419,7 +419,7 @@ private fun LetterGridBody(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            GameText(question.prompt, size = 13, align = TextAlign.Center, weight = FontWeight.Medium)
+            GameText(question.prompt, size = 14, align = TextAlign.Center, weight = FontWeight.Medium)
             QuestionImage(question.imageName)
         }
 
@@ -552,8 +552,8 @@ private fun FillBlankParagraph(
         color = TextLight,
         fontFamily = mPlus1p,
         fontWeight = FontWeight.Medium,
-        fontSize = 13.sp,
-        lineHeight = 28.sp,
+        fontSize = 14.sp,
+        lineHeight = 32.sp,
         textAlign = TextAlign.Justify
     )
 }
@@ -583,19 +583,17 @@ private fun WordChoicePanel(
             WordChip(
                 word, if (used) ChipUsed else ChipBlue, enabled = !used && !locked,
                 modifier = Modifier.height(PanelChipHeight),
-                textStyle = PanelChipTextStyle,
                 horizontalPadding = 12.dp
             ) { onPick(index) }
         }
     }
 }
 
-private val ChipHeight = 22.dp
+private val ChipHeight = 26.dp
 private val ChipHorizontalPadding = 6.dp
-private val ChipTextStyle = TextStyle(fontFamily = mPlus1p, fontWeight = FontWeight.Medium, fontSize = 12.sp)
+private val ChipTextStyle = TextStyle(fontFamily = mPlus1p, fontWeight = FontWeight.Medium, fontSize = 14.sp)
 
 private val PanelChipHeight = 34.dp
-private val PanelChipTextStyle = TextStyle(fontFamily = mPlus1p, fontWeight = FontWeight.Medium, fontSize = 14.sp)
 
 @Composable
 private fun WordChip(

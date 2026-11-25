@@ -162,7 +162,8 @@ private fun LenteraNavHost(
         ) { entry ->
             ChapterSelectScreen(
                 island = entry.arguments?.getString("island").orEmpty(),
-                onChapterClick = { chapterId -> navController.navigate(Routes.game(chapterId)) }
+                onChapterClick = { chapterId -> navController.navigate(Routes.game(chapterId)) },
+                onBack = { navController.popBackStack() }
             )
         }
         composable(
