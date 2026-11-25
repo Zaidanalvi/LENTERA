@@ -1,5 +1,11 @@
 package com.kelompok8.lentera.core.navigation
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -7,7 +13,10 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -38,6 +47,7 @@ import com.kelompok8.lentera.map.PlayScreen
 import com.kelompok8.lentera.score.ScoreScreen
 import com.kelompok8.lentera.settings.AboutScreen
 import com.kelompok8.lentera.settings.SettingsScreen
+import com.kelompok8.lentera.splash.SplashScreen
 
 private val bottomItems = listOf(
     BottomItem(Routes.HOME, "Beranda", R.drawable.home),
@@ -65,6 +75,9 @@ fun LenteraApp() {
         if (AppContainer.authRepository.currentUser() != null) UserSession.refresh()
     }
 
+    var showSplash by rememberSaveable { mutableStateOf(true) }
+
+    Box(Modifier.fillMaxSize()) {
     CompositionLocalProvider(LocalOpenProfile provides { navController.navigate(Routes.PROFILE) { launchSingleTop = true } }) {
     LenteraBackground {
         Scaffold(
@@ -81,6 +94,14 @@ fun LenteraApp() {
         ) { innerPadding ->
             LenteraNavHost(navController, startDestination, Modifier.padding(innerPadding))
         }
+    }
+    }
+    AnimatedVisibility(
+        visible = showSplash,
+        enter = EnterTransition.None,
+        exit = fadeOut(tween(durationMillis = 500))
+    ) {
+        SplashScreen(onFinished = { showSplash = false })
     }
     }
 }
