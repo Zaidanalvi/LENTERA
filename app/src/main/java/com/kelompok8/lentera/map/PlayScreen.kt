@@ -10,27 +10,48 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
+import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.IslandCard
-import com.kelompok8.lentera.ui.theme.museoModerno
+import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // PJ: Hilal — halaman Main (pilih pulau untuk bermain)
 @Composable
 fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) {
+    var jawaProgress by remember { mutableIntStateOf(0) }
+    var sumatraProgress by remember { mutableIntStateOf(0) }
+    var kalimantanProgress by remember { mutableIntStateOf(0) }
+
+    val uid = AppContainer.authRepository.currentUser()?.uid.orEmpty()
+
+    LaunchedEffect(uid) {
+        if (uid.isNotBlank()) {
+            val scores = AppContainer.scoreRepository.getBestScores(uid)
+            val chapterIds = scores.map { it.chapterId.lowercase() }.distinct()
+            jawaProgress = chapterIds.count { it.startsWith("jawa_") }.coerceAtMost(5)
+            sumatraProgress = chapterIds.count { it.startsWith("sumatra_") }.coerceAtMost(5)
+            kalimantanProgress = chapterIds.count { it.startsWith("kalimantan_") }.coerceAtMost(5)
+        }
+    }
+
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -54,9 +75,11 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Selesaikan Soal\n" + "dan Dapatkan Poin",
-                    fontFamily = museoModerno,
-                    fontSize = 27.sp,
+                Text(
+                    text = "Selesaikan Soal\ndan Dapatkan Poin",
+                    fontFamily = mPlus1p,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
                     lineHeight = 28.sp,
                     color = Color(0xFFDDFF00),
                 )
@@ -66,56 +89,68 @@ fun PlayScreen(onIslandClick: (String) -> Unit, onLeaderboardClick: () -> Unit) 
                     Icon(
                         painter = painterResource(R.drawable.baseline_leaderboard_24),
                         contentDescription = "Leaderboard",
-                        tint = Color(0xFFFFFFFF),
+                        tint = Color.White,
                         modifier = Modifier.size(30.dp)
                     )
                 }
             }
+
             Spacer(Modifier.height(20.dp))
+
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.JAWA.displayName,
-                    coin = Island.JAWA.coin,
+                    progressText = "$jawaProgress/5",
+                    isAvailable = true,
                     onIslandClick = { onIslandClick(Island.JAWA.name) }
                 )
                 IslandCard(
                     islandName = Island.SUMATRA.displayName,
-                    coin = Island.SUMATRA.coin,
+                    progressText = "$sumatraProgress/5",
+                    isAvailable = true,
                     onIslandClick = { onIslandClick(Island.SUMATRA.name) }
                 )
             }
-            Spacer(Modifier.height(20.dp))
+
+            Spacer(Modifier.height(16.dp))
+
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = Island.KALIMANTAN.displayName,
-                    coin = Island.KALIMANTAN.coin,
+                    progressText = "$kalimantanProgress/5",
+                    isAvailable = true,
                     onIslandClick = { onIslandClick(Island.KALIMANTAN.name) }
                 )
                 IslandCard(
                     islandName = "Sulawesi",
-                    coin = 50,
+                    progressText = "0/5",
+                    isAvailable = false,
                     onIslandClick = {}
                 )
             }
-            Spacer(Modifier.height(20.dp))
+
+            Spacer(Modifier.height(16.dp))
+
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IslandCard(
                     islandName = "Sunda Kecil",
-                    coin = 50,
+                    progressText = "0/5",
+                    isAvailable = false,
                     onIslandClick = {}
                 )
                 IslandCard(
                     islandName = "Papua",
-                    coin = 50,
+                    progressText = "0/5",
+                    isAvailable = false,
                     onIslandClick = {}
                 )
             }

@@ -276,65 +276,109 @@ fun Header(
 @Composable
 fun IslandCard(
     islandName: String,
-    coin: Int,
+    progressText: String = "0/5",
+    isAvailable: Boolean = true,
     onIslandClick: () -> Unit
 ) {
+    val cardBackground = if (isAvailable) {
+        Brush.linearGradient(listOf(Color(0xFF8A1DDE), Color(0xFF4B1078)))
+    } else {
+        Brush.linearGradient(listOf(Color(0xFF35394E), Color(0xFF1E2133)))
+    }
+    val borderColor = if (isAvailable) Color(0xFFA568E3) else Color(0xFF4E5370)
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .width(174.35.dp)
-            .height(168.01.dp)
+            .width(170.dp)
+            .height(168.dp)
             .clip(RoundedCornerShape(16.dp))
-            .border(1.dp, Color(0xFFa568e3), RoundedCornerShape(16.dp))
-            .background(Brush.linearGradient(listOf(Color(0xFF8A1DDE), Color(0xFF4B1078))))
-            .padding(15.dp)
+            .border(1.dp, borderColor, RoundedCornerShape(16.dp))
+            .background(cardBackground)
+            .padding(14.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxSize()
         ) {
-            Text("Pulau $islandName",
+            Text(
+                text = "Pulau $islandName",
                 fontFamily = mPlus1p,
-                fontSize = if (islandName.length <= 5) 20.sp else 15.sp,
-                color = Color(0xFFFFFFFF)
+                fontSize = if (islandName.length <= 5) 19.sp else 14.sp,
+                color = if (isAvailable) Color.White else Color(0xFFA5ABC7)
             )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.width(100.dp)
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.coin),
-                    contentDescription = "Coin",
-                    modifier = Modifier.size(41.dp)
-                )
-                Text("$coin",
-                    fontFamily = mPlus1p,
-                    fontSize = 40.sp,
-                    color = Color(0xFFFFFFFF)
-                )
+
+            if (isAvailable) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = progressText,
+                        fontFamily = museoModerno,
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFFEEFF00)
+                    )
+                    Text(
+                        text = "CHAPTER",
+                        fontFamily = mPlus1p,
+                        fontSize = 11.sp,
+                        color = Color(0xFFDCDFEF)
+                    )
+                }
+            } else {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(Color(0xFF282B3D))
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                ) {
+                    Text(
+                        text = "COMING SOON",
+                        fontFamily = mPlus1p,
+                        fontSize = 14.sp,
+                        color = Color(0xFF8D93B4)
+                    )
+                }
             }
+
             ElevatedButton(
-                onClick = onIslandClick,
+                onClick = { if (isAvailable) onIslandClick() },
+                enabled = isAvailable,
                 shape = RoundedCornerShape(7.dp),
                 contentPadding = PaddingValues(0.dp),
-                colors = ButtonDefaults.buttonColors(Color.Transparent),
-                border = BorderStroke(1.dp, Color(0xFF8951b5)),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Transparent,
+                    disabledContainerColor = Color.Transparent
+                ),
+                border = BorderStroke(
+                    1.dp,
+                    if (isAvailable) Color(0xFF8951B5) else Color(0xFF42465F)
+                ),
                 modifier = Modifier
-                    .width(150.58.dp)
-                    .height(36.46.dp)
+                    .fillMaxWidth()
+                    .height(36.dp)
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Brush.linearGradient(listOf(Color(0xFF9f56d8), Color(0xFF57019A)))),
+                        .background(
+                            if (isAvailable) {
+                                Brush.linearGradient(listOf(Color(0xFF9F56D8), Color(0xFF57019A)))
+                            } else {
+                                SolidColor(Color(0xFF26293A))
+                            }
+                        ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("PLAY",
+                    Text(
+                        text = if (isAvailable) "PLAY" else "LOCKED",
                         fontFamily = mPlus1p,
-                        fontSize = 16.sp,
-                        color = Color(0xFFFFFFFF),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (isAvailable) Color.White else Color(0xFF707696)
                     )
                 }
             }
@@ -342,12 +386,27 @@ fun IslandCard(
     }
 }
 
+@Composable
+fun IslandCard(
+    islandName: String,
+    coin: Int,
+    onIslandClick: () -> Unit
+) {
+    IslandCard(
+        islandName = islandName,
+        progressText = "0/5",
+        isAvailable = true,
+        onIslandClick = onIslandClick
+    )
+}
+
 @Preview
 @Composable
 fun IslandCardPreview() {
     IslandCard(
-        "Jawa",
-        50,
+        islandName = "Jawa",
+        progressText = "2/5",
+        isAvailable = true,
         onIslandClick = {}
     )
 }

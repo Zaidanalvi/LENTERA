@@ -26,7 +26,11 @@ import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -39,11 +43,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
+import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.model.Chapter
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.ui.theme.mPlus1p
-import com.kelompok8.lentera.ui.theme.museoModerno
 
 // PJ: Hilal — pilih chapter 1-5, tampilkan progres tiap chapter
 @Composable
@@ -60,6 +64,20 @@ fun ChapterSelectScreen(
 
     val chapters = remember(currentIsland) {
         getChaptersForIsland(currentIsland)
+    }
+
+    var bestScoresMap by remember { mutableStateOf(mapOf<String, Int>()) }
+    val uid = AppContainer.authRepository.currentUser()?.uid.orEmpty()
+
+    LaunchedEffect(uid) {
+        if (uid.isNotBlank()) {
+            val scores = AppContainer.scoreRepository.getBestScores(uid)
+            bestScoresMap = scores.associate { it.chapterId.lowercase() to it.bestScore }
+        }
+    }
+
+    val completedCount = remember(chapters, bestScoresMap) {
+        chapters.count { bestScoresMap.containsKey(it.id.lowercase()) }
     }
 
     Box(
@@ -110,8 +128,9 @@ fun ChapterSelectScreen(
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
                     text = "Pilih Level Permainan",
-                    fontFamily = museoModerno,
-                    fontSize = 24.sp,
+                    fontFamily = mPlus1p,
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
                     color = Color(0xFFEEFF00)
                 )
             }
@@ -119,15 +138,15 @@ fun ChapterSelectScreen(
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = "Selesaikan 10 soal kuis di setiap chapter untuk kumpulkan poin!",
+                text = "Progres: $completedCount/5 Chapter Selesai",
                 fontFamily = mPlus1p,
-                fontSize = 13.sp,
-                lineHeight = 20.sp,
-                color = Color(0xFFB0B7DB),
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF4CC38A),
                 modifier = Modifier.align(Alignment.Start)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(14.dp),
@@ -137,8 +156,10 @@ fun ChapterSelectScreen(
                     .weight(1f)
             ) {
                 items(chapters) { chapter ->
+                    val bestScore = bestScoresMap[chapter.id.lowercase()]
                     ChapterGameCard(
                         chapter = chapter,
+                        bestScore = bestScore,
                         onChapterClick = onChapterClick
                     )
                 }
@@ -150,14 +171,29 @@ fun ChapterSelectScreen(
 @Composable
 private fun ChapterGameCard(
     chapter: Chapter,
+    bestScore: Int?,
     onChapterClick: (String) -> Unit
 ) {
+    val isCompleted = bestScore != null
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
-            .border(1.dp, Color(0xFF8A1DDE), RoundedCornerShape(16.dp))
-            .background(Brush.linearGradient(listOf(Color(0xFF131A6B), Color(0xFF090D4D))))
+            .border(
+                1.dp,
+                if (isCompleted) Color(0xFF4CC38A) else Color(0xFF8A1DDE),
+                RoundedCornerShape(16.dp)
+            )
+            .background(
+                Brush.linearGradient(
+                    if (isCompleted) {
+                        listOf(Color(0xFF0F382B), Color(0xFF091E2A))
+                    } else {
+                        listOf(Color(0xFF131A6B), Color(0xFF090D4D))
+                    }
+                )
+            )
             .clickable { onChapterClick(chapter.id) }
             .padding(16.dp)
     ) {
@@ -171,13 +207,33 @@ private fun ChapterGameCard(
                 modifier = Modifier.weight(1f)
             ) {
                 Column {
-                    Text(
-                        text = "CHAPTER ${chapter.number}",
-                        fontFamily = museoModerno,
-                        fontSize = 18.sp,
-                        color = Color(0xFFEEFF00),
-                        letterSpacing = 1.sp
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            text = "CHAPTER ${chapter.number}",
+                            fontFamily = mPlus1p,
+                            fontSize = 17.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color(0xFFEEFF00),
+                            letterSpacing = 1.sp
+                        )
+                        if (isCompleted) {
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(Color(0xFF4CC38A))
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    text = "SELESAI",
+                                    fontFamily = mPlus1p,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            }
+                        }
+                    }
                     Spacer(modifier = Modifier.height(2.dp))
                     Text(
                         text = chapter.title,
@@ -188,10 +244,10 @@ private fun ChapterGameCard(
                     )
                     Spacer(modifier = Modifier.height(2.dp))
                     Text(
-                        text = "10 Soal Kuis",
+                        text = if (isCompleted) "Skor Terbaik: $bestScore Pts" else "10 Soal Kuis",
                         fontFamily = mPlus1p,
                         fontSize = 11.sp,
-                        color = Color(0xFF9AA3B8)
+                        color = if (isCompleted) Color(0xFF4CC38A) else Color(0xFF9AA3B8)
                     )
                 }
             }
@@ -203,7 +259,10 @@ private fun ChapterGameCard(
                 shape = RoundedCornerShape(10.dp),
                 contentPadding = PaddingValues(0.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                border = BorderStroke(1.dp, Color(0xFF8951B5)),
+                border = BorderStroke(
+                    1.dp,
+                    if (isCompleted) Color(0xFF4CC38A) else Color(0xFF8951B5)
+                ),
                 modifier = Modifier
                     .width(76.dp)
                     .height(36.dp)
@@ -211,11 +270,19 @@ private fun ChapterGameCard(
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Brush.linearGradient(listOf(Color(0xFF9F56D8), Color(0xFF57019A)))),
+                        .background(
+                            Brush.linearGradient(
+                                if (isCompleted) {
+                                    listOf(Color(0xFF14BF8E), Color(0xFF0F7A5B))
+                                } else {
+                                    listOf(Color(0xFF9F56D8), Color(0xFF57019A))
+                                }
+                            )
+                        ),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "PLAY",
+                        text = if (isCompleted) "ULANG" else "PLAY",
                         fontFamily = mPlus1p,
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold,

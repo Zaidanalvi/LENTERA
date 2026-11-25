@@ -3,10 +3,12 @@ package com.kelompok8.lentera.profile
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +26,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,19 +47,22 @@ val CardPurpleBottom = Color(0xFF4A12A3)
 
 @Composable
 fun CircleIconButton(iconRes: Int, contentDescription: String, onClick: () -> Unit) {
-    IconButton(
-        onClick = onClick,
+    Box(
+        contentAlignment = Alignment.Center,
         modifier = Modifier
-            .size(44.dp)
+            .size(36.dp)
             .clip(CircleShape)
-            .background(HeaderPill)
+            .background(Color(0xFF1620A7))
             .border(1.dp, Color(0x38FFFFFF), CircleShape)
+            .clickable(onClickLabel = "Kembali", role = Role.Button, onClick = onClick)
     ) {
         Icon(
             painter = painterResource(iconRes),
             contentDescription = contentDescription,
             tint = Color.White,
-            modifier = Modifier.size(18.dp)
+            modifier = Modifier
+                .size(16.dp)
+                .offset(x = 3.dp)
         )
     }
 }
