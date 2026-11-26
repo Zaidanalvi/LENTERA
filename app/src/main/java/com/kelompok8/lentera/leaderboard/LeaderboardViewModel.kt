@@ -23,14 +23,18 @@ data class LeaderboardUiState(
 
 class LeaderboardViewModel(
     private val repository: LeaderboardRepository = AppContainer.leaderboardRepository,
-    private val pageSize: Int = 10
+    private val pageSize: Int = 10,
+    private val currentUid: () -> String? = { AppContainer.authRepository.currentUser()?.uid }
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(LeaderboardUiState())
+    private val _uiState = MutableStateFlow(LeaderboardUiState(isLoading = true))
     val uiState: StateFlow<LeaderboardUiState> = _uiState.asStateFlow()
 
     init {
-        loadPage(1)
+        viewModelScope.launch {
+            currentUid()?.let { uid -> runCatching { repository.syncPlayer(uid) } }
+            loadPage(1)
+        }
     }
 
     fun loadPage(page: Int) {
