@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.Canvas
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -25,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -36,6 +34,9 @@ import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.model.GlossaryCategory
 import com.kelompok8.lentera.core.model.User
+import com.kelompok8.lentera.core.ui.Header
+import com.kelompok8.lentera.core.ui.LenteraBackground
+import com.kelompok8.lentera.ui.theme.mPlus1p
 import kotlin.math.abs
 
 internal object LearnColors {
@@ -60,8 +61,8 @@ internal object LearnColors {
 }
 
 internal object LearnFonts {
-    val Heading: FontFamily = FontFamily.Default
-    val Mono: FontFamily = FontFamily.Monospace
+    val Heading: FontFamily = mPlus1p
+    val Mono: FontFamily = mPlus1p
 }
 
 internal val CardBrush: Brush = Brush.horizontalGradient(
@@ -73,29 +74,7 @@ internal fun LearnBackground(
     modifier: Modifier = Modifier,
     content: @Composable BoxScope.() -> Unit,
 ) {
-    Box(modifier.fillMaxSize().background(LearnColors.Background)) {
-        Canvas(Modifier.fillMaxSize()) {
-            val w = size.width
-            val h = size.height
-            val light = Path().apply {
-                moveTo(0f, h * 0.20f)
-                cubicTo(w * 0.30f, h * 0.10f, w * 0.70f, h * 0.32f, w, h * 0.18f)
-                lineTo(w, h)
-                lineTo(0f, h)
-                close()
-            }
-            drawPath(light, LearnColors.WaveLight)
-            val dark = Path().apply {
-                moveTo(0f, h * 0.48f)
-                cubicTo(w * 0.35f, h * 0.38f, w * 0.65f, h * 0.62f, w, h * 0.44f)
-                lineTo(w, h)
-                lineTo(0f, h)
-                close()
-            }
-            drawPath(dark, LearnColors.WaveDark)
-        }
-        content()
-    }
+    LenteraBackground(modifier = modifier, content = content)
 }
 
 @DrawableRes
@@ -122,62 +101,17 @@ internal fun LearnTopBar(
     modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier
+        contentAlignment = Alignment.Center,
+        modifier = modifier
             .fillMaxWidth()
-            .statusBarsPadding()
-            .padding(horizontal = 16.dp, vertical = 12.dp),
+            .padding(top = 24.dp, bottom = 6.dp),
     ) {
-        CoinPill(user?.coin ?: 0, Modifier.align(Alignment.CenterStart))
-        if (title != null) {
-            Text(
-                text = title,
-                color = Color.White,
-                fontSize = 15.sp,
-                fontWeight = FontWeight.SemiBold,
-                modifier = Modifier.align(Alignment.Center),
-            )
-        }
-        AvatarCircle(user?.avatarId ?: 0, Modifier.align(Alignment.CenterEnd))
-    }
-}
-
-@Composable
-private fun CoinPill(coin: Int, modifier: Modifier = Modifier) {
-    val shape = RoundedCornerShape(50)
-    Row(
-        modifier = modifier
-            .clip(shape)
-            .background(LearnColors.CoinPill)
-            .border(1.dp, LearnColors.CoinPillBorder, shape)
-            .padding(horizontal = 8.dp, vertical = 4.dp),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Image(
-            painter = painterResource(R.drawable.coin),
-            contentDescription = "Koin",
-            modifier = Modifier.size(20.dp),
-        )
-        Spacer(Modifier.width(6.dp))
-        Text(
-            text = coin.toString(),
-            color = Color.White,
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Bold,
+        Header(
+            title = title.orEmpty(),
+            countCoin = user?.coin ?: 0,
+            pfp = avatarDrawable(user?.avatarId ?: 0)
         )
     }
-}
-
-@Composable
-private fun AvatarCircle(avatarId: Int, modifier: Modifier = Modifier) {
-    Image(
-        painter = painterResource(avatarDrawable(avatarId)),
-        contentDescription = "Avatar",
-        contentScale = ContentScale.Crop,
-        modifier = modifier
-            .size(36.dp)
-            .clip(CircleShape)
-            .border(2.dp, LearnColors.AvatarBorder, CircleShape),
-    )
 }
 
 internal fun categoryEmoji(category: GlossaryCategory): String = when (category) {
