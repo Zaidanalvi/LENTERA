@@ -1,4 +1,132 @@
 {
+  "provinces": [
+    {
+      "name": "Aceh",
+      "island": "SUMATRA",
+      "description": "Aceh dikenal dengan kekayaan budaya Islam, tradisi yang kuat, serta seni dan kuliner khas yang unik.",
+      "imageName": "province_aceh"
+    },
+    {
+      "name": "Sumatera Utara",
+      "island": "SUMATRA",
+      "description": "Sumatera Utara dihuni beragam suku seperti Batak, Melayu, Karo, dan Nias dengan adat, kain ulos, dan kuliner yang khas.",
+      "imageName": "province_sumatera_utara"
+    },
+    {
+      "name": "Sumatera Barat",
+      "island": "SUMATRA",
+      "description": "Sumatera Barat adalah rumah masyarakat Minangkabau yang terkenal dengan Rumah Gadang, adat matrilineal, dan masakan Padang.",
+      "imageName": "province_sumatera_barat"
+    },
+    {
+      "name": "Riau",
+      "island": "SUMATRA",
+      "description": "Riau adalah pusat budaya Melayu dengan seni pantun, tari zapin, dan hidangan berbahan ikan dan sagu.",
+      "imageName": "province_riau"
+    },
+    {
+      "name": "Kepulauan Riau",
+      "island": "SUMATRA",
+      "description": "Kepulauan Riau memiliki budaya Melayu pesisir yang kuat, lengkap dengan seni bahari dan hidangan laut yang khas.",
+      "imageName": "province_kepulauan_riau"
+    },
+    {
+      "name": "Jambi",
+      "island": "SUMATRA",
+      "description": "Jambi menyimpan warisan budaya Melayu di sepanjang Sungai Batanghari, dari batik hingga masakan tempoyak.",
+      "imageName": "province_jambi"
+    },
+    {
+      "name": "Sumatera Selatan",
+      "island": "SUMATRA",
+      "description": "Sumatera Selatan dikenal lewat budaya Palembang, kain songket, Rumah Limas, dan kuliner pempek.",
+      "imageName": "province_sumatera_selatan"
+    },
+    {
+      "name": "Kepulauan Bangka Belitung",
+      "island": "SUMATRA",
+      "description": "Bangka Belitung memadukan budaya Melayu dan Tionghoa dengan kain cual, hidangan laut, dan tarian tradisi.",
+      "imageName": "province_kepulauan_bangka_belitung"
+    },
+    {
+      "name": "Bengkulu",
+      "island": "SUMATRA",
+      "description": "Bengkulu kaya akan adat suku Rejang, kain besurek, dan bunga Rafflesia sebagai identitas daerah.",
+      "imageName": "province_bengkulu"
+    },
+    {
+      "name": "Lampung",
+      "island": "SUMATRA",
+      "description": "Lampung terkenal dengan kain tapis, mahkota siger, serta adat Pepadun dan Saibatin yang lestari.",
+      "imageName": "province_lampung"
+    },
+    {
+      "name": "DKI Jakarta",
+      "island": "JAWA",
+      "description": "DKI Jakarta adalah rumah budaya Betawi yang hidup lewat ondel-ondel, kerak telor, dan beragam tradisi kota.",
+      "imageName": "province_dki_jakarta"
+    },
+    {
+      "name": "Jawa Barat",
+      "island": "JAWA",
+      "description": "Jawa Barat menyimpan budaya Sunda yang lembut, dari angklung dan tari jaipong hingga kuliner khasnya.",
+      "imageName": "province_jawa_barat"
+    },
+    {
+      "name": "Banten",
+      "island": "JAWA",
+      "description": "Banten memadukan tradisi masyarakat Baduy, seni debus, dan kuliner pesisir yang kaya rasa.",
+      "imageName": "province_banten"
+    },
+    {
+      "name": "Jawa Tengah",
+      "island": "JAWA",
+      "description": "Jawa Tengah adalah pusat budaya Jawa dengan batik, wayang, candi, dan kuliner yang beragam.",
+      "imageName": "province_jawa_tengah"
+    },
+    {
+      "name": "DI Yogyakarta",
+      "island": "JAWA",
+      "description": "DI Yogyakarta dikenal sebagai kota budaya dengan keraton, batik, gamelan, dan kuliner gudeg.",
+      "imageName": "province_di_yogyakarta"
+    },
+    {
+      "name": "Jawa Timur",
+      "island": "JAWA",
+      "description": "Jawa Timur kaya akan kesenian seperti reog dan ludruk serta budaya Madura, Osing, dan Tengger.",
+      "imageName": "province_jawa_timur"
+    },
+    {
+      "name": "Kalimantan Barat",
+      "island": "KALIMANTAN",
+      "description": "Kalimantan Barat memadukan budaya Dayak, Melayu, dan Tionghoa dengan rumah panjang dan kuliner yang khas.",
+      "imageName": "province_kalimantan_barat"
+    },
+    {
+      "name": "Kalimantan Tengah",
+      "island": "KALIMANTAN",
+      "description": "Kalimantan Tengah adalah tanah suku Dayak dengan rumah betang, seni ritual, dan kearifan hutan.",
+      "imageName": "province_kalimantan_tengah"
+    },
+    {
+      "name": "Kalimantan Selatan",
+      "island": "KALIMANTAN",
+      "description": "Kalimantan Selatan menyimpan budaya Banjar yang kuat, dari kain sasirangan hingga rumah Bubungan Tinggi.",
+      "imageName": "province_kalimantan_selatan"
+    },
+    {
+      "name": "Kalimantan Timur",
+      "island": "KALIMANTAN",
+      "description": "Kalimantan Timur dihuni suku Dayak dan Kutai dengan rumah lamin, tari tradisional, dan kerajinan manik.",
+      "imageName": "province_kalimantan_timur"
+    },
+    {
+      "name": "Kalimantan Utara",
+      "island": "KALIMANTAN",
+      "description": "Kalimantan Utara memiliki beragam budaya Dayak, Tidung, dan Bulungan di wilayah perbatasan yang kaya alam.",
+      "imageName": "province_kalimantan_utara"
+    }
+  ],
   "items": [
     {
       "id": "aceh_pakaian_adat_ulee_balang",

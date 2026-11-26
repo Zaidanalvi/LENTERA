@@ -23,9 +23,9 @@ class GlossaryRepositoryTest {
 
     @Test
     fun setiapProvinsiPunyaSemuaKategori() = runBlocking {
-        Island.values().forEach { island ->
+        Island.entries.forEach { island ->
             repo.getProvinces(island).forEach { province ->
-                GlossaryCategory.values().forEach { category ->
+                GlossaryCategory.entries.forEach { category ->
                     assertTrue("$province $category", repo.getItems(province, category).isNotEmpty())
                 }
             }
@@ -42,5 +42,15 @@ class GlossaryRepositoryTest {
     @Test
     fun provinsiTidakAdaMengembalikanKosong() = runBlocking {
         assertTrue(repo.getItems("Atlantis", GlossaryCategory.TARIAN).isEmpty())
+    }
+
+    @Test
+    fun setiapProvinsiPunyaInfoBanner() = runBlocking {
+        Island.entries.forEach { island ->
+            repo.getProvinces(island).forEach { province ->
+                val info = repo.getProvinceInfo(province)
+                assertTrue("$province tanpa info", info != null && info.description.isNotEmpty())
+            }
+        }
     }
 }

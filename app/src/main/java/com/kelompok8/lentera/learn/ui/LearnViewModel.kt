@@ -9,6 +9,9 @@ import com.kelompok8.lentera.core.data.GlossaryRepository
 import com.kelompok8.lentera.core.model.GlossaryCategory
 import com.kelompok8.lentera.core.model.GlossaryItem
 import com.kelompok8.lentera.core.model.Island
+import com.kelompok8.lentera.learn.data.GlossaryRepositoryImpl
+import com.kelompok8.lentera.learn.data.ProvinceInfo
+import com.kelompok8.lentera.learn.data.ProvinceInfoSource
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,7 +24,10 @@ sealed interface LearnUiState {
     data class Success(val provincesByIsland: Map<Island, List<String>>) : LearnUiState
 }
 
-class LearnViewModel(private val repository: GlossaryRepository) : ViewModel() {
+class LearnViewModel(
+    private val repository: GlossaryRepository,
+    private val provinceInfoSource: ProvinceInfoSource,
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow<LearnUiState>(LearnUiState.Loading)
     val uiState: StateFlow<LearnUiState> = _uiState.asStateFlow()
@@ -34,7 +40,11 @@ class LearnViewModel(private val repository: GlossaryRepository) : ViewModel() {
         _uiState.value = LearnUiState.Loading
         viewModelScope.launch {
             _uiState.value = try {
-                LearnUiState.Success(Island.values().associateWith { repository.getProvinces(it) })
+                val preferred = listOf(Island.SUMATRA, Island.JAWA, Island.KALIMANTAN)
+                val order = preferred + Island.entries.filterNot { it in preferred }
+                LearnUiState.Success(
+                    order.associateWith { repository.getProvinces(it) }.filterValues { it.isNotEmpty() },
+                )
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -46,8 +56,14 @@ class LearnViewModel(private val repository: GlossaryRepository) : ViewModel() {
     suspend fun getItems(province: String, category: GlossaryCategory): List<GlossaryItem> =
         repository.getItems(province, category)
 
+    suspend fun getCategoryItems(province: String): Map<GlossaryCategory, List<GlossaryItem>> =
+        GlossaryCategory.entries.associateWith { repository.getItems(province, it) }
+
+    suspend fun getProvinceInfo(province: String): ProvinceInfo? =
+        provinceInfoSource.getProvinceInfo(province)
+
     companion object {
-        fun factory(repository: GlossaryRepository): ViewModelProvider.Factory =
-            viewModelFactory { initializer { LearnViewModel(repository) } }
+        fun factory(repository: GlossaryRepositoryImpl): ViewModelProvider.Factory =
+            viewModelFactory { initializer { LearnViewModel(repository, repository) } }
     }
 }

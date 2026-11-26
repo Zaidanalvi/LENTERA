@@ -13,7 +13,7 @@ import org.json.JSONObject
 
 class GlossaryRepositoryImpl internal constructor(
     private val readJson: () -> String,
-) : GlossaryRepository {
+) : GlossaryRepository, ProvinceInfoSource {
 
     constructor(context: Context, assetPath: String = DEFAULT_ASSET_PATH) : this(
         readJson = {
@@ -23,23 +23,33 @@ class GlossaryRepositoryImpl internal constructor(
         },
     )
 
-    private val mutex = Mutex()
-    private var cache: List<GlossaryItem>? = null
+    private class Loaded(
+        val items: List<GlossaryItem>,
+        val provinces: Map<String, ProvinceInfo>,
+    )
 
-    private suspend fun items(): List<GlossaryItem> = cache ?: mutex.withLock {
+    private val mutex = Mutex()
+    private var cache: Loaded? = null
+
+    private suspend fun loaded(): Loaded = cache ?: mutex.withLock {
         cache ?: withContext(Dispatchers.IO) { parse(readJson()) }.also { cache = it }
     }
 
     override suspend fun getProvinces(island: Island): List<String> =
-        items().filter { it.island == island }.map { it.province }.distinct()
+        loaded().items.filter { it.island == island }.map { it.province }.distinct()
 
     override suspend fun getItems(province: String, category: GlossaryCategory): List<GlossaryItem> =
-        items().filter { it.province == province && it.category == category }
+        loaded().items.filter { it.province == province && it.category == category }
 
-    private fun parse(json: String): List<GlossaryItem> {
-        val array = JSONObject(json).getJSONArray("items")
-        return List(array.length()) { i ->
-            val o = array.getJSONObject(i)
+    override suspend fun getProvinceInfo(province: String): ProvinceInfo? =
+        loaded().provinces[province]
+
+    private fun parse(json: String): Loaded {
+        val root = JSONObject(json)
+
+        val itemArray = root.getJSONArray("items")
+        val items = List(itemArray.length()) { i ->
+            val o = itemArray.getJSONObject(i)
             GlossaryItem(
                 id = o.getString("id"),
                 province = o.getString("province"),
@@ -50,6 +60,23 @@ class GlossaryRepositoryImpl internal constructor(
                 imageName = o.optString("imageName").ifEmpty { null },
             )
         }
+
+        val provinceArray = root.optJSONArray("provinces")
+        val provinces = if (provinceArray == null) {
+            emptyMap()
+        } else {
+            (0 until provinceArray.length()).associate { i ->
+                val o = provinceArray.getJSONObject(i)
+                val name = o.getString("name")
+                name to ProvinceInfo(
+                    name = name,
+                    description = o.optString("description"),
+                    imageName = o.optString("imageName").ifEmpty { null },
+                )
+            }
+        }
+
+        return Loaded(items, provinces)
     }
 
     companion object {
