@@ -22,7 +22,10 @@ import kotlinx.coroutines.launch
 data class AuthUiState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
-    val loggedInUser: User? = null
+    val loggedInUser: User? = null,
+    val isResettingPassword: Boolean = false,
+    val resetPasswordError: String? = null,
+    val resetPasswordSuccess: String? = null
 )
 
 class AuthViewModel(
@@ -66,6 +69,63 @@ class AuthViewModel(
             return
         }
         runAuth { repository.register(email.trim(), password, name.trim(), gender, location, avatarId) }
+    }
+
+    fun sendPasswordReset(email: String) {
+        val trimmed = email.trim()
+        val error = when {
+            trimmed.isEmpty() -> "Masukkan email akunmu terlebih dahulu"
+            !isValidEmail(trimmed) -> "Format email tidak valid"
+            else -> null
+        }
+        if (error != null) {
+            _uiState.update { it.copy(resetPasswordError = error, resetPasswordSuccess = null) }
+            return
+        }
+        if (_uiState.value.isResettingPassword) return
+
+        viewModelScope.launch {
+            _uiState.update {
+                it.copy(
+                    isResettingPassword = true,
+                    resetPasswordError = null,
+                    resetPasswordSuccess = null
+                )
+            }
+            repository.resetPassword(trimmed)
+                .onSuccess {
+                    _uiState.update {
+                        it.copy(
+                            isResettingPassword = false,
+                            resetPasswordSuccess = "Link reset password telah dikirim ke $trimmed. Silakan cek kotak masuk atau folder Spam email kamu."
+                        )
+                    }
+                }
+                .onFailure { e ->
+                    val msg = when (e) {
+                        is FirebaseAuthInvalidUserException -> "Email belum terdaftar di LENTERA"
+                        is FirebaseNetworkException -> "Tidak ada koneksi internet"
+                        is FirebaseTooManyRequestsException -> "Terlalu banyak permintaan, coba beberapa saat lagi"
+                        else -> "Gagal mengirim email reset password, periksa kembali emailmu"
+                    }
+                    _uiState.update {
+                        it.copy(
+                            isResettingPassword = false,
+                            resetPasswordError = msg
+                        )
+                    }
+                }
+        }
+    }
+
+    fun clearResetPasswordState() {
+        _uiState.update {
+            it.copy(
+                isResettingPassword = false,
+                resetPasswordError = null,
+                resetPasswordSuccess = null
+            )
+        }
     }
 
     fun clearError() {

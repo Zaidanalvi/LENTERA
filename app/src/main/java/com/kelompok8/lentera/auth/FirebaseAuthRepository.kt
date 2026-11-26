@@ -101,6 +101,10 @@ class FirebaseAuthRepository(
         getProfile() ?: error("Profil tidak ditemukan")
     }
 
+    override suspend fun resetPassword(email: String): Result<Unit> = runCatching {
+        auth.sendPasswordResetEmail(email.trim()).await()
+    }
+
     override fun logout() = auth.signOut()
 
     private fun DocumentSnapshot.toUser(uid: String, email: String, fallbackName: String) = User(

@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -67,6 +68,7 @@ private fun RegisterForm(
     errorMessage: String?,
     onBackToMenu: () -> Unit
 ) {
+    val context = LocalContext.current
     var email by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
     var name by rememberSaveable { mutableStateOf("") }
@@ -122,7 +124,18 @@ private fun RegisterForm(
         PinkButton(
             text = "Daftar Sekarang",
             isLoading = isLoading,
-            onClick = { viewModel.register(email, password, name, gender, location, avatarId) }
+            onClick = {
+                if (SavedAccountsStore.isRememberMeEnabled(context) && email.isNotBlank() && password.length >= 6) {
+                    SavedAccountsStore.saveAccount(
+                        context = context,
+                        email = email.trim(),
+                        password = password,
+                        name = name.trim(),
+                        avatarId = avatarId
+                    )
+                }
+                viewModel.register(email, password, name, gender, location, avatarId)
+            }
         )
         LinkText(text = "Kembali ke Menu Utama", onClick = onBackToMenu)
     }
