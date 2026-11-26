@@ -23,6 +23,7 @@ interface AuthRepository {
         location: String,
         avatarId: Int
     ): Result<User>
+    suspend fun resetPassword(email: String): Result<Unit> = Result.success(Unit)
     fun currentUser(): User?                 // cepat, tapi hanya berisi uid, nama, dan email
     suspend fun getProfile(): User?          // profil lengkap dari Firestore
     suspend fun updateProfile(name: String, gender: String, location: String, avatarId: Int): Result<User>
