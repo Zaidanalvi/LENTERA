@@ -37,7 +37,7 @@ interface QuestionRepository {
 
 // PJ: Panji
 interface ScoreRepository {
-    suspend fun saveResult(uid: String, result: ChapterResult)
+    suspend fun saveResult(uid: String, result: ChapterResult): Island?
     suspend fun getBestScores(uid: String): List<BestScore>
     suspend fun hasMedal(uid: String, island: Island): Boolean
     suspend fun checkAndUnlockMedal(uid: String, island: Island): Boolean

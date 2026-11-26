@@ -221,10 +221,16 @@ private fun LenteraNavHost(
                 navArgument("correct") { type = NavType.IntType }
             )
         ) { entry ->
+            val chapterId = entry.arguments?.getString("chapterId").orEmpty()
             ScoreScreen(
-                chapterId = entry.arguments?.getString("chapterId").orEmpty(),
+                chapterId = chapterId,
                 correctCount = entry.arguments?.getInt("correct") ?: 0,
-                onDone = { navController.popBackStack() }
+                onDone = { navController.popBackStack() },
+                onRetry = {
+                    navController.navigate(Routes.game(chapterId)) {
+                        popUpTo(Routes.SCORE) { inclusive = true }
+                    }
+                }
             )
         }
         composable(Routes.PROFILE) {

@@ -13,8 +13,10 @@ class FirebaseScoreRepository(
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 ) : ScoreRepository {
 
-    override suspend fun saveResult(uid: String, result: ChapterResult) {
-        if (uid.isBlank()) return
+    override suspend fun saveResult(uid: String, result: ChapterResult): Island? {
+        if (uid.isBlank()) return null
+        var newlyUnlockedIsland: Island? = null
+
         runCatching {
             val userScoreRef = db.collection("users")
                 .document(uid)
@@ -50,12 +52,16 @@ class FirebaseScoreRepository(
                 SetOptions.merge()
             ).await()
 
-            // 3. Cek & buka medali secara otomatis jika skor 100 dan semua chapter di pulau bernilai 100
+            // 3. Cek & buka medali secara otomatis jika skor 100 dan semua 5 chapter di pulau bernilai 100
             val island = getIslandFromChapterId(result.chapterId)
             if (island != null && newBest == 100) {
-                checkAndUnlockMedal(uid, island)
+                val isNew = checkAndUnlockMedal(uid, island)
+                if (isNew) {
+                    newlyUnlockedIsland = island
+                }
             }
         }
+        return newlyUnlockedIsland
     }
 
     override suspend fun getBestScores(uid: String): List<BestScore> {
@@ -91,13 +97,13 @@ class FirebaseScoreRepository(
 
     /**
      * Memeriksa apakah semua 5 chapter dari suatu pulau sudah mendapat nilai 100.
-     * Jika ya dan belum pernah mendapatkan medali, simpan medali baru ke Firebase.
+     * Jika ya dan belum pernah mendapatkan medali, simpan medali baru ke Firebase dan kembalikan true.
      */
     override suspend fun checkAndUnlockMedal(uid: String, island: Island): Boolean {
         if (uid.isBlank()) return false
 
-        // Jika sudah punya medali untuk pulau ini, tidak perlu diproses ulang
-        if (hasMedal(uid, island)) return true
+        // Jika sudah pernah dapat medali untuk pulau ini, return false (bukan medali baru)
+        if (hasMedal(uid, island)) return false
 
         val prefix = island.name.lowercase() // "jawa", "sumatra", "kalimantan"
         val requiredChapterIds = (1..5).map { "${prefix}_$it" }
@@ -105,7 +111,7 @@ class FirebaseScoreRepository(
         val scores = getBestScores(uid)
         val islandScores = scores.filter { it.chapterId.startsWith(prefix, ignoreCase = true) }
 
-        // Syarat: Semua 5 chapter dari pulau ini sudah bernilai 100
+        // Syarat: Semua 5 chapter dari pulau ini harus sudah bernilai 100
         val allPerfect = requiredChapterIds.all { reqId ->
             islandScores.any { it.chapterId.equals(reqId, ignoreCase = true) && it.bestScore == 100 }
         }
