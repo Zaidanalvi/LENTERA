@@ -142,6 +142,7 @@ class AuthViewModel(
                 .onSuccess { user ->
                     UserSession.set(user)
                     _uiState.update { it.copy(isLoading = false, loggedInUser = user) }
+                    launch { UserSession.refresh() }
                 }
                 .onFailure { e -> _uiState.update { it.copy(isLoading = false, errorMessage = e.toMessage()) } }
         }

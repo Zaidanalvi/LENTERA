@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.data.AppContainer
+import com.kelompok8.lentera.core.data.UserSession
 import com.kelompok8.lentera.core.model.ChapterResult
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.LenteraBackground
@@ -51,6 +52,7 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
         val uid = currentUser?.uid
         if (!uid.isNullOrBlank()) {
             AppContainer.scoreRepository.saveResult(uid, result)
+            UserSession.refresh()
             runCatching { AppContainer.leaderboardRepository.syncPlayer(uid) }
         }
     }

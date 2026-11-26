@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.data.QuestionRepository
+import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.model.Question
 import com.kelompok8.lentera.core.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,7 +27,7 @@ data class GameUiState(
     val input: AnswerInput = AnswerInput(),
     val checkedCorrect: Boolean? = null,
     val correctCount: Int = 0,
-    val coin: Int = 0,
+    val medalCount: Int = 0,
     val avatarId: Int = 0,
     val isFinished: Boolean = false,
     val errorMessage: String? = null
@@ -35,6 +36,7 @@ data class GameUiState(
     val isChecked: Boolean get() = checkedCorrect != null
     val isLastQuestion: Boolean get() = currentIndex == questions.lastIndex
     val canCheck: Boolean get() = !isChecked && currentQuestion?.let { AnswerChecker.isComplete(it, input) } == true
+    val medalTotal: Int get() = Island.entries.size
 }
 
 object AnswerChecker {
@@ -61,7 +63,8 @@ object AnswerChecker {
 class GameViewModel(
     private val chapterId: String,
     private val repository: QuestionRepository,
-    private val loadProfile: suspend () -> User? = { AppContainer.authRepository.getProfile() }
+    private val loadProfile: suspend () -> User? = { AppContainer.authRepository.getProfile() },
+    private val loadMedalCount: suspend (String) -> Int = { uid -> AppContainer.scoreRepository.getEarnedMedals(uid).size }
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
@@ -74,13 +77,15 @@ class GameViewModel(
     private fun loadHeader() {
         viewModelScope.launch {
             val user = try { loadProfile() } catch (e: Exception) { null } ?: return@launch
-            _uiState.update { it.copy(coin = user.coin, avatarId = user.avatarId) }
+            _uiState.update { it.copy(avatarId = user.avatarId) }
+            val medals = try { loadMedalCount(user.uid) } catch (e: Exception) { 0 }
+            _uiState.update { it.copy(medalCount = medals) }
         }
     }
 
     fun loadQuestions() {
         viewModelScope.launch {
-            _uiState.update { GameUiState(isLoading = true, coin = it.coin, avatarId = it.avatarId) }
+            _uiState.update { GameUiState(isLoading = true, medalCount = it.medalCount, avatarId = it.avatarId) }
             try {
                 val questions = repository.getQuestions(chapterId)
                 _uiState.update {

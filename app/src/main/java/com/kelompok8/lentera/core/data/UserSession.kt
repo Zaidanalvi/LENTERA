@@ -11,8 +11,19 @@ object UserSession {
     private val _profile = MutableStateFlow<User?>(null)
     val profile: StateFlow<User?> = _profile.asStateFlow()
 
+    private val _medalCount = MutableStateFlow(0)
+    val medalCount: StateFlow<Int> = _medalCount.asStateFlow()
+
     suspend fun refresh() {
-        _profile.value = runCatching { AppContainer.authRepository.getProfile() }.getOrNull()
+        val user = runCatching { AppContainer.authRepository.getProfile() }.getOrNull()
+        _profile.value = user
+        _medalCount.value = if (user == null) 0 else runCatching {
+            AppContainer.scoreRepository.getEarnedMedals(user.uid).size
+        }.getOrDefault(_medalCount.value)
+    }
+
+    fun setMedalCount(count: Int) {
+        _medalCount.value = count
     }
 
     fun set(user: User?) {
@@ -21,5 +32,6 @@ object UserSession {
 
     fun clear() {
         _profile.value = null
+        _medalCount.value = 0
     }
 }

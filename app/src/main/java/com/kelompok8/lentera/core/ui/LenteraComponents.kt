@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.data.UserSession
+import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.ui.theme.AvatarPink
 import com.kelompok8.lentera.ui.theme.AvatarPurple
 import com.kelompok8.lentera.ui.theme.FieldBlue
@@ -225,12 +226,12 @@ fun AvatarImage(
 @Composable
 fun Header(
     title: String,
-    countCoin: Int,
+    countCoin: Int = 0,
     pfp: Int
 ) {
-    // Kalau sudah login, koin dan avatar diambil dari profil asli, bukan nilai bawaan pemanggil
+    // Kalau sudah login, medali dan avatar diambil dari profil asli, bukan nilai bawaan pemanggil
     val sessionUser by UserSession.profile.collectAsState()
-    val coin = sessionUser?.coin ?: countCoin
+    val medalCount by UserSession.medalCount.collectAsState()
     val avatarRes = sessionUser?.let { avatarEmojis.getOrElse(it.avatarId) { pfp } } ?: pfp
     val openProfile = LocalOpenProfile.current
 
@@ -247,9 +248,9 @@ fun Header(
                 .border(1.dp, color = Color(0x38FFFFFF), shape = RoundedCornerShape(20.dp))
                 .padding(vertical = 3.dp, horizontal = 10.dp)
         ) {
-            Image(painterResource(R.drawable.coin), contentDescription = "Coin", modifier = Modifier.size(20.dp))
-            Spacer(Modifier.width(10.dp))
-            Text(text = coin.toString(), color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
+            MedalIcon(Modifier.size(20.dp))
+            Spacer(Modifier.width(8.dp))
+            Text(text = "$medalCount/${Island.entries.size}", color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
         }
         Text(text = title, color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 20.sp)
         Box(

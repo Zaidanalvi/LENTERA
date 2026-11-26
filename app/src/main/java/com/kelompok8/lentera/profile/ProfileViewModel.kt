@@ -65,6 +65,7 @@ class ProfileViewModel(
                     medalCount = islands.count { island -> island.hasMedal }
                 )
             }
+            UserSession.setMedalCount(islands.count { island -> island.hasMedal })
         }
     }
 

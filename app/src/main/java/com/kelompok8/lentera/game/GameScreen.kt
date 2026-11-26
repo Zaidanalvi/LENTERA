@@ -73,6 +73,7 @@ import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.model.Question
 import com.kelompok8.lentera.core.ui.LenteraBackground
+import com.kelompok8.lentera.core.ui.MedalIcon
 import com.kelompok8.lentera.core.ui.avatarEmojis
 import com.kelompok8.lentera.ui.theme.LENTERATheme
 import com.kelompok8.lentera.ui.theme.LenteraLime
@@ -160,7 +161,7 @@ private fun GameContent(
             .padding(horizontal = 20.dp, vertical = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        GameHeader(islandName(chapterId), state.coin, state.avatarId, onBack)
+        GameHeader(islandName(chapterId), state.medalCount, state.medalTotal, state.avatarId, onBack)
 
         when {
             state.isLoading -> Box(Modifier.weight(1f), contentAlignment = Alignment.Center) {
@@ -244,7 +245,7 @@ private fun islandName(chapterId: String): String {
 }
 
 @Composable
-private fun GameHeader(title: String, coin: Int, avatarId: Int, onBack: () -> Unit) {
+private fun GameHeader(title: String, medalCount: Int, medalTotal: Int, avatarId: Int, onBack: () -> Unit) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -260,9 +261,9 @@ private fun GameHeader(title: String, coin: Int, avatarId: Int, onBack: () -> Un
                     .border(1.dp, PillBorder, RoundedCornerShape(20.dp))
                     .padding(vertical = 3.dp, horizontal = 10.dp)
             ) {
-                Image(painterResource(R.drawable.coin), contentDescription = "Koin", modifier = Modifier.size(20.dp))
-                Spacer(Modifier.width(10.dp))
-                GameText(coin.toString(), size = 14)
+                MedalIcon(Modifier.size(20.dp))
+                Spacer(Modifier.width(8.dp))
+                GameText("$medalCount/$medalTotal", size = 14)
             }
         }
         GameText(title, size = 16, color = LenteraLime)
