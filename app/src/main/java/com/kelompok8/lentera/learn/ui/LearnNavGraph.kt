@@ -107,6 +107,7 @@ private fun LearnNavHost(
                     previews = previews,
                     user = user,
                     onCategoryClick = { nav.navigate(LearnRoutes.category(province, it)) },
+                    onBack = { nav.popBackStack() },
                 )
             }
         }

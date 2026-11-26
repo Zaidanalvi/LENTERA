@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.foundation.Image
@@ -61,11 +62,14 @@ import com.kelompok8.lentera.core.model.GlossaryItem
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.model.User
 import com.kelompok8.lentera.learn.data.ProvinceInfo
+import com.kelompok8.lentera.learn.ui.LearnAudioController
 import com.kelompok8.lentera.learn.ui.LearnBackground
 import com.kelompok8.lentera.learn.ui.LearnFonts
 import com.kelompok8.lentera.learn.ui.LearnTopBar
+import com.kelompok8.lentera.learn.ui.SongPlayerBar
 import com.kelompok8.lentera.learn.ui.categoryEmoji
 import com.kelompok8.lentera.learn.ui.rememberDrawableId
+import com.kelompok8.lentera.learn.ui.rememberLearnAudioController
 
 // Palet warna diambil langsung dari desain Figma
 private object Figma {
@@ -143,7 +147,7 @@ fun IslandListScreen(
 
     LearnBackground {
         Column(Modifier.fillMaxSize()) {
-            LearnTopBar(title = if (expandedIsland == null) "Belajar" else null, user = user)
+            LearnTopBar(title = "Belajar", user = user)
             LazyColumn(
                 contentPadding = PaddingValues(start = 32.dp, end = 32.dp, top = 24.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(14.dp),
@@ -156,8 +160,16 @@ fun IslandListScreen(
                         fontSize = 26.sp,
                         lineHeight = 32.sp,
                         fontWeight = FontWeight.ExtraBold,
-                        modifier = Modifier.padding(bottom = 22.dp),
+                        modifier = Modifier.padding(bottom = 14.dp),
                     )
+                }
+                if (expandedIsland != null) {
+                    item(key = "back_all_islands") {
+                        LearnBackPill(
+                            text = "Semua Pulau",
+                            onClick = { expandedIsland = null },
+                        )
+                    }
                 }
                 items(shownIslands, key = { it.key.name }) { (island, provinces) ->
                     IslandCard(
@@ -366,6 +378,7 @@ fun ProvinceScreen(
     previews: Map<GlossaryCategory, List<GlossaryItem>>?,
     user: User?,
     onCategoryClick: (GlossaryCategory) -> Unit,
+    onBack: () -> Unit,
 ) {
     LearnBackground {
         Column(
@@ -389,6 +402,13 @@ fun ProvinceScreen(
                     title = null,
                     user = user,
                     modifier = Modifier.align(Alignment.TopCenter),
+                )
+                LearnBackPill(
+                    text = "Kembali",
+                    onClick = onBack,
+                    modifier = Modifier
+                        .align(Alignment.TopStart)
+                        .padding(start = 24.dp, top = 76.dp),
                 )
                 Column(
                     Modifier
@@ -510,24 +530,21 @@ fun CategoryDetailScreen(
     user: User?,
     onBack: () -> Unit,
 ) {
+    val audioController = if (category == GlossaryCategory.LAGU) rememberLearnAudioController() else null
+
     LearnBackground {
         Column(Modifier.fillMaxSize()) {
             LearnTopBar(title = province, user = user)
             Row(
-                Modifier.fillMaxWidth().padding(start = 23.dp, end = 39.dp, top = 22.dp, bottom = 12.dp),
+                Modifier.fillMaxWidth().padding(start = 24.dp, end = 32.dp, top = 16.dp, bottom = 12.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                IconButton(
-                    onClick = onBack,
-                    modifier = Modifier.semantics { contentDescription = "Kembali" },
-                ) {
-                    BackArrow(Modifier.size(width = 22.dp, height = 18.dp))
-                }
+                LearnCircleBackButton(onClick = onBack)
                 Text(
                     text = category.displayName,
                     color = Figma.Neon,
                     fontFamily = LearnFonts.Heading,
-                    fontSize = 28.sp,
+                    fontSize = 26.sp,
                     fontWeight = FontWeight.ExtraBold,
                     textAlign = TextAlign.End,
                     modifier = Modifier.weight(1f),
@@ -542,10 +559,57 @@ fun CategoryDetailScreen(
                     contentPadding = PaddingValues(start = 32.dp, end = 32.dp, top = 10.dp, bottom = 24.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
-                    items(items, key = { it.id }) { item -> ItemCard(item) }
+                    items(items, key = { it.id }) { item ->
+                        ItemCard(item = item, audioController = audioController)
+                    }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun LearnCircleBackButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = modifier
+            .size(40.dp)
+            .clip(CircleShape)
+            .background(Color(0xD91620A7))
+            .border(1.dp, Color(0x45FFFFFF), CircleShape)
+            .clickable(onClickLabel = "Kembali", role = Role.Button, onClick = onClick),
+    ) {
+        BackArrow(Modifier.size(width = 18.dp, height = 14.dp))
+    }
+}
+
+@Composable
+private fun LearnBackPill(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+            .clip(RoundedCornerShape(50))
+            .background(Color(0xD91620A7))
+            .border(1.dp, Color(0x45FFFFFF), RoundedCornerShape(50))
+            .clickable(onClickLabel = text, role = Role.Button, onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 8.dp),
+    ) {
+        BackArrow(Modifier.size(width = 15.dp, height = 12.dp))
+        Spacer(Modifier.width(8.dp))
+        Text(
+            text = text,
+            color = Color.White,
+            fontFamily = LearnFonts.Heading,
+            fontSize = 13.sp,
+            fontWeight = FontWeight.Bold,
+        )
     }
 }
 
@@ -554,7 +618,7 @@ private fun BackArrow(modifier: Modifier) {
     Canvas(modifier) {
         val w = size.width
         val h = size.height
-        val stroke = 2.5.dp.toPx()
+        val stroke = 2.4.dp.toPx()
         drawLine(Color.White, Offset(0f, h / 2), Offset(w, h / 2), stroke, StrokeCap.Round)
         drawLine(Color.White, Offset(0f, h / 2), Offset(h / 2, 0f), stroke, StrokeCap.Round)
         drawLine(Color.White, Offset(0f, h / 2), Offset(h / 2, h), stroke, StrokeCap.Round)
@@ -562,21 +626,27 @@ private fun BackArrow(modifier: Modifier) {
 }
 
 @Composable
-private fun ItemCard(item: GlossaryItem) {
+private fun ItemCard(
+    item: GlossaryItem,
+    audioController: LearnAudioController? = null,
+) {
     val shape = RoundedCornerShape(14.dp)
+    val isPlayingSong = audioController?.let { it.activeItemId == item.id && it.isPlaying } == true
+
     Column(
         Modifier
             .fillMaxWidth()
             .clip(shape)
             .background(Figma.DetailCard)
             .border(1.dp, Figma.DetailBorder, shape)
-            .padding(start = 16.dp, end = 14.dp, top = 17.dp, bottom = 34.dp),
+            .padding(start = 16.dp, end = 14.dp, top = 17.dp, bottom = 26.dp),
     ) {
         ItemImage(
             item = item,
+            isPlayingSong = isPlayingSong,
             modifier = Modifier.fillMaxWidth().aspectRatio(2.1f).clip(RoundedCornerShape(8.dp)),
         )
-        Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(18.dp))
         Text(
             text = item.name,
             color = Color.White,
@@ -586,7 +656,7 @@ private fun ItemCard(item: GlossaryItem) {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(start = 8.dp),
         )
-        Spacer(Modifier.height(18.dp))
+        Spacer(Modifier.height(14.dp))
         Text(
             text = item.description,
             color = Color.White,
@@ -595,19 +665,55 @@ private fun ItemCard(item: GlossaryItem) {
             lineHeight = 14.6.sp,
             fontWeight = FontWeight.SemiBold,
         )
+        if (item.category == GlossaryCategory.LAGU && audioController != null) {
+            Spacer(Modifier.height(16.dp))
+            SongPlayerBar(item = item, controller = audioController)
+        }
     }
 }
 
 @Composable
-private fun ItemImage(item: GlossaryItem, modifier: Modifier = Modifier) {
+private fun ItemImage(
+    item: GlossaryItem,
+    isPlayingSong: Boolean = false,
+    modifier: Modifier = Modifier,
+) {
     val resId = rememberDrawableId(item.imageName)
     if (resId != 0) {
-        Image(
-            painter = painterResource(resId),
-            contentDescription = item.name,
-            contentScale = ContentScale.Crop,
-            modifier = modifier,
-        )
+        Box(modifier) {
+            Image(
+                painter = painterResource(resId),
+                contentDescription = item.name,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.matchParentSize(),
+            )
+            if (isPlayingSong) {
+                PlayingIndicatorBadge(
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(8.dp),
+                )
+            }
+        }
+    } else if (item.category == GlossaryCategory.LAGU) {
+        Box(
+            modifier.background(
+                Brush.linearGradient(listOf(Color(0xFF281978), Color(0xFF131D5E), Color(0xFF0B1344))),
+            ),
+            contentAlignment = Alignment.Center,
+        ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(text = categoryEmoji(item.category), fontSize = 38.sp)
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    text = if (isPlayingSong) "Sedang Diputar" else "Lagu Daerah ${item.province}",
+                    color = if (isPlayingSong) Figma.Neon else Figma.ProvinceText,
+                    fontFamily = LearnFonts.Heading,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                )
+            }
+        }
     } else {
         Box(
             modifier.background(
@@ -617,5 +723,24 @@ private fun ItemImage(item: GlossaryItem, modifier: Modifier = Modifier) {
         ) {
             Text(text = categoryEmoji(item.category), fontSize = 36.sp)
         }
+    }
+}
+
+@Composable
+private fun PlayingIndicatorBadge(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(50))
+            .background(Color(0xCC0A1059))
+            .border(1.dp, Figma.Neon, RoundedCornerShape(50))
+            .padding(horizontal = 10.dp, vertical = 4.dp),
+    ) {
+        Text(
+            text = "♫ Sedang Diputar",
+            color = Figma.Neon,
+            fontFamily = LearnFonts.Heading,
+            fontSize = 10.sp,
+            fontWeight = FontWeight.Bold,
+        )
     }
 }
