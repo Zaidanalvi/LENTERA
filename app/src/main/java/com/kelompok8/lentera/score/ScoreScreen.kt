@@ -9,9 +9,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -64,31 +65,29 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
         else -> "Pulau Jawa"
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 24.dp, bottom = 20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // --- TOP BAR ---
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(y = 30.dp)
-        ) {
-            Header("Skor Akhir", 50, R.drawable.avatar1png)
-        }
+        Header("Skor Akhir", 50, R.drawable.avatar1png)
 
         // --- CENTER CARD ---
         Box(
             modifier = Modifier
-                .align(Alignment.Center)
-                .fillMaxWidth(0.88f)
-                .clip(RoundedCornerShape(28.dp))
-                .background(Color(0xFF040842))
-                .border(2.dp, Color(0xFF16248C), RoundedCornerShape(28.dp))
-                .padding(horizontal = 24.dp, vertical = 24.dp),
+                .weight(1f)
+                .fillMaxWidth(),
             contentAlignment = Alignment.Center
         ) {
             Column(
+                modifier = Modifier
+                    .fillMaxWidth(0.88f)
+                    .verticalScroll(rememberScrollState())
+                    .clip(RoundedCornerShape(28.dp))
+                    .background(Color(0xFF040842))
+                    .border(2.dp, Color(0xFF16248C), RoundedCornerShape(28.dp))
+                    .padding(horizontal = 24.dp, vertical = 24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -101,13 +100,16 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
                     letterSpacing = 1.5.sp
                 )
 
+                Spacer(modifier = Modifier.height(6.dp))
+
                 // Angka skor besar
                 Text(
                     text = "${result.score}",
-                    modifier = Modifier.offset(y = (-15).dp),
+                    maxLines = 1,
                     style = TextStyle(
                         fontFamily = mPlus1p,
-                        fontSize = 160.sp,
+                        fontSize = 128.sp,
+                        lineHeight = 132.sp,
                         fontWeight = FontWeight.Bold,
                         brush = Brush.verticalGradient(
                             colors = listOf(
@@ -118,28 +120,28 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
                     )
                 )
 
+                Spacer(modifier = Modifier.height(6.dp))
+
                 // Teks info lokasi & soal
                 Text(
                     text = "$islandName : ${result.totalQuestions} Soal",
-                    modifier = Modifier.offset(y = (-20).dp),
                     fontFamily = mPlus1p,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFFA6FF00)
                 )
 
-                Spacer(modifier = Modifier.height(2.dp))
+                Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
                     text = if (result.score >= 60) "MEMENANGKAN PERMAINAN" else "COBA LAGI",
-                    modifier = Modifier.offset(y = (-18).dp),
                     fontFamily = mPlus1p,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFFA6FF00)
                 )
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
                 // LANJUTKAN Button
                 Button(

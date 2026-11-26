@@ -80,27 +80,24 @@ fun ChapterSelectScreen(
         chapters.count { bestScoresMap.containsKey(it.id.lowercase()) }
     }
 
-    Box(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 30.dp)
-        ) {
-            Header(
-                title = "Pulau ${currentIsland.displayName}",
-                countCoin = currentIsland.coin,
-                pfp = R.drawable.avatar1png
-            )
-        }
+        Header(
+            title = "Pulau ${currentIsland.displayName}",
+            countCoin = currentIsland.coin,
+            pfp = R.drawable.avatar1png
+        )
+
+        Spacer(modifier = Modifier.height(18.dp))
 
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .offset(y = 10.dp)
-                .padding(top = 90.dp, start = 20.dp, end = 20.dp),
+                .fillMaxWidth(0.88f)
+                .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(

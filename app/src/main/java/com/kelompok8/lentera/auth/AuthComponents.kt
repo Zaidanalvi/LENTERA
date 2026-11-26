@@ -49,6 +49,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
@@ -77,7 +78,7 @@ val provinceOptions = listOf(
 )
 
 private val fieldShape = RoundedCornerShape(10.dp)
-private val fieldTextStyle = TextStyle(fontSize = 18.sp, fontWeight = FontWeight.SemiBold)
+private val fieldTextStyle = TextStyle(fontFamily = mPlus1p, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
 
 @Composable
 fun AuthLayout(heading: String, content: @Composable ColumnScope.() -> Unit) {
@@ -91,7 +92,14 @@ fun AuthLayout(heading: String, content: @Composable ColumnScope.() -> Unit) {
     ) {
         LenteraLogo()
         Spacer(Modifier.height(20.dp))
-        Text(heading, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = TextLight)
+        Text(
+            text = heading,
+            fontFamily = mPlus1p,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = TextLight,
+            textAlign = TextAlign.Center
+        )
         content()
     }
 }

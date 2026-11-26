@@ -41,7 +41,7 @@ import kotlinx.coroutines.launch
 import kotlin.math.hypot
 
 private val StartRadius = 80.dp
-private val LogoSize = 240.dp
+private val LogoSize = 220.dp
 
 @Composable
 fun SplashScreen(onFinished: () -> Unit) {
@@ -79,7 +79,7 @@ fun SplashScreen(onFinished: () -> Unit) {
         )
         LenteraLogo(
             modifier = Modifier
-                .offset(y = 150.dp)
+                .offset(y = 155.dp)
                 .alpha(textAlpha.value)
         )
     }
