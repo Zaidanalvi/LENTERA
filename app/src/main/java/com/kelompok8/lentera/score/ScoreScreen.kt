@@ -51,6 +51,7 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
         val uid = currentUser?.uid
         if (!uid.isNullOrBlank()) {
             AppContainer.scoreRepository.saveResult(uid, result)
+            runCatching { AppContainer.leaderboardRepository.syncPlayer(uid) }
         }
     }
 

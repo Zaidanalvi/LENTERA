@@ -75,7 +75,9 @@ fun LenteraApp() {
 
     // Muat profil sekali saat aplikasi dibuka, dipakai header di semua halaman
     LaunchedEffect(Unit) {
-        if (AppContainer.authRepository.currentUser() != null) UserSession.refresh()
+        val uid = AppContainer.authRepository.currentUser()?.uid ?: return@LaunchedEffect
+        UserSession.refresh()
+        runCatching { AppContainer.leaderboardRepository.syncPlayer(uid) }
     }
 
     var showSplash by rememberSaveable { mutableStateOf(true) }

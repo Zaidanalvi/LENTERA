@@ -52,6 +52,7 @@ data class LeaderboardResult(
 // PJ: Hilal
 interface LeaderboardRepository {
     suspend fun getOverallLeaderboard(page: Int = 1, pageSize: Int = 10): LeaderboardResult
+    suspend fun syncPlayer(uid: String) {}
 }
 
 // PJ: Noya
