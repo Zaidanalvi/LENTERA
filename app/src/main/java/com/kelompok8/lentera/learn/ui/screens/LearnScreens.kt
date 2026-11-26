@@ -1,6 +1,17 @@
 package com.kelompok8.lentera.learn.ui.screens
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,7 +25,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -49,20 +59,64 @@ import com.kelompok8.lentera.core.model.GlossaryItem
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.model.User
 import com.kelompok8.lentera.learn.data.ProvinceInfo
-import com.kelompok8.lentera.learn.ui.CardBrush
 import com.kelompok8.lentera.learn.ui.LearnBackground
-import com.kelompok8.lentera.learn.ui.LearnColors
 import com.kelompok8.lentera.learn.ui.LearnFonts
 import com.kelompok8.lentera.learn.ui.LearnTopBar
 import com.kelompok8.lentera.learn.ui.categoryEmoji
 import com.kelompok8.lentera.learn.ui.rememberDrawableId
 
-private val ProvinceRowHeight = 42.dp
+// Palet warna diambil langsung dari desain Figma
+private object Figma {
+    val Neon = Color(0xFFDDFF00)
+    val CardTop = Color(0xFF8419D4)
+    val CardBottom = Color(0xFF5E139A)
+    val CardBorder = Color(0x40FFFFFF)
+    val ChipStart = Color(0xFF9B4FD0)
+    val ChipEnd = Color(0xFF6E1FAE)
+    val DropTop = Color(0xFF51167D)
+    val DropBottom = Color(0xFF340B53)
+    val Row = Color(0x14FFFFFF)
+    val RowShadow = Color(0x26000000)
+    val ProvinceText = Color(0xFFD9D6FF)
+    val Green = Color(0xFF1BAB14)
+    val PageDark = Color(0xFF050938)
+    val Subtitle = Color(0xFFCFA8EE)
+    val Chevron = Color(0xFFB23BF0)
+    val DetailCard = Color(0xFF101B39)
+    val DetailBorder = Color(0xFF2B3550)
+}
+
+private val CardGradient = Brush.verticalGradient(listOf(Figma.CardTop, Figma.CardBottom))
+
+private val ProvinceRowHeight = 46.dp
+private val ProvinceRowGap = 15.dp
 private const val VisibleProvinceRows = 6
 
-private fun islandTitle(island: Island): String = when (island) {
-    Island.SUMATRA -> "Pulau Sumatera"
-    else -> "Pulau ${island.displayName}"
+// Hanya tiga pulau, urutan provinsi mengikuti daftar gambar
+private val IslandOrder = listOf("sumatra", "jawa", "kalimantan")
+
+private val ProvinceOrder = listOf(
+    "Aceh", "Sumatera Utara", "Sumatera Barat", "Riau", "Kepulauan Riau", "Jambi",
+    "Sumatera Selatan", "Kepulauan Bangka Belitung", "Bengkulu", "Lampung",
+    "DKI Jakarta", "Jawa Barat", "Banten", "Jawa Tengah", "DI Yogyakarta", "Jawa Timur",
+    "Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur",
+    "Kalimantan Utara",
+)
+
+private fun islandKey(island: Island): String? {
+    val name = island.displayName.lowercase()
+    return when {
+        "sumat" in name -> "sumatra"
+        "jaw" in name -> "jawa"
+        "kalimantan" in name -> "kalimantan"
+        else -> null
+    }
+}
+
+private fun islandTitle(island: Island): String = when (islandKey(island)) {
+    "sumatra" -> "Pulau Sumatera"
+    "jawa" -> "Pulau Jawa"
+    else -> "Pulau Kalimantan"
 }
 
 @Composable
@@ -72,29 +126,38 @@ fun IslandListScreen(
     onProvinceClick: (String) -> Unit,
 ) {
     var expandedIsland by rememberSaveable { mutableStateOf<String?>(null) }
+    val islands = provincesByIsland.entries
+        .filter { islandKey(it.key) != null }
+        .sortedBy { IslandOrder.indexOf(islandKey(it.key)) }
+    // Seperti Figma: saat satu pulau dibuka, pulau lain disembunyikan
+    val shownIslands = islands.filter { expandedIsland == null || it.key.name == expandedIsland }
+
+    BackHandler(enabled = expandedIsland != null) { expandedIsland = null }
 
     LearnBackground {
         Column(Modifier.fillMaxSize()) {
-            LearnTopBar(title = "Belajar", user = user)
+            LearnTopBar(title = if (expandedIsland == null) "Belajar" else null, user = user)
             LazyColumn(
-                contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 8.dp, bottom = 24.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
+                contentPadding = PaddingValues(start = 32.dp, end = 32.dp, top = 24.dp, bottom = 24.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp),
             ) {
                 item(key = "heading") {
                     Text(
                         text = "Pelajari Budaya,\nTambah Wawasan",
-                        color = LearnColors.Neon,
+                        color = Figma.Neon,
                         fontFamily = LearnFonts.Heading,
                         fontSize = 26.sp,
                         lineHeight = 32.sp,
                         fontWeight = FontWeight.ExtraBold,
-                        modifier = Modifier.padding(bottom = 8.dp),
+                        modifier = Modifier.padding(bottom = 22.dp),
                     )
                 }
-                items(provincesByIsland.entries.toList(), key = { it.key.name }) { (island, provinces) ->
+                items(shownIslands, key = { it.key.name }) { (island, provinces) ->
                     IslandCard(
                         island = island,
-                        provinces = provinces,
+                        provinces = provinces.sortedBy { name ->
+                            ProvinceOrder.indexOf(name).let { if (it < 0) Int.MAX_VALUE else it }
+                        },
                         expanded = expandedIsland == island.name,
                         onToggle = {
                             expandedIsland = if (expandedIsland == island.name) null else island.name
@@ -115,25 +178,27 @@ private fun IslandCard(
     onToggle: () -> Unit,
     onProvinceClick: (String) -> Unit,
 ) {
-    val shape = RoundedCornerShape(14.dp)
+    val shape = RoundedCornerShape(12.dp)
     Column(
         Modifier
             .fillMaxWidth()
             .clip(shape)
-            .border(1.dp, LearnColors.CardBorder, shape),
+            .background(Brush.verticalGradient(listOf(Figma.DropTop, Figma.DropBottom))),
     ) {
         Box(
             Modifier
                 .fillMaxWidth()
-                .background(CardBrush)
-                .clickable(onClick = onToggle)
-                .padding(horizontal = 16.dp, vertical = 14.dp),
+                .height(78.dp)
+                .clip(shape)
+                .background(CardGradient)
+                .border(1.dp, Figma.CardBorder, shape)
+                .clickable(onClick = onToggle),
         ) {
-            Column(Modifier.align(Alignment.CenterStart)) {
+            Column(Modifier.align(Alignment.CenterStart).padding(start = 10.dp)) {
                 Text(
                     text = islandTitle(island),
                     color = Color.White,
-                    fontSize = 17.sp,
+                    fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                 )
                 Spacer(Modifier.height(8.dp))
@@ -141,19 +206,28 @@ private fun IslandCard(
             }
             IslandImage(
                 island = island,
-                modifier = Modifier.align(Alignment.CenterEnd).size(width = 78.dp, height = 52.dp),
+                modifier = Modifier
+                    .align(Alignment.CenterEnd)
+                    .padding(end = 14.dp)
+                    .size(width = 99.dp, height = 66.dp),
             )
         }
         AnimatedVisibility(visible = expanded) {
-            Column(
-                Modifier
-                    .fillMaxWidth()
-                    .background(LearnColors.ProvinceList)
-                    .heightIn(max = ProvinceRowHeight * VisibleProvinceRows)
-                    .verticalScroll(rememberScrollState()),
-            ) {
-                provinces.forEach { province ->
-                    ProvinceRow(province) { onProvinceClick(province) }
+            Column(Modifier.fillMaxWidth().padding(top = 32.dp, bottom = 28.dp)) {
+                Column(
+                    Modifier
+                        .fillMaxWidth()
+                        .height(
+                            minOf(provinces.size, VisibleProvinceRows).let { rows ->
+                                ProvinceRowHeight * rows + ProvinceRowGap * maxOf(rows - 1, 0)
+                            },
+                        )
+                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(ProvinceRowGap),
+                ) {
+                    provinces.forEach { province ->
+                        ProvinceRow(province) { onProvinceClick(province) }
+                    }
                 }
             }
         }
@@ -164,25 +238,30 @@ private fun IslandCard(
 private fun LearnChip() {
     Row(
         Modifier
-            .clip(RoundedCornerShape(6.dp))
-            .background(LearnColors.Chip)
-            .padding(horizontal = 8.dp, vertical = 3.dp),
+            .size(width = 82.dp, height = 22.dp)
+            .clip(RoundedCornerShape(4.dp))
+            .background(Brush.horizontalGradient(listOf(Figma.ChipStart, Figma.ChipEnd)))
+            .padding(horizontal = 7.dp),
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        Text(
-            text = "Belajar",
-            color = LearnColors.ChipText,
-            fontSize = 10.sp,
-            fontWeight = FontWeight.SemiBold,
-        )
-        Spacer(Modifier.width(4.dp))
-        Text(text = "📖", fontSize = 10.sp)
+        Text(text = "Belajar", color = Color.White, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+        BookIcon(Modifier.padding(end = 3.dp).size(width = 16.dp, height = 11.dp))
+    }
+}
+
+@Composable
+private fun BookIcon(modifier: Modifier) {
+    Canvas(modifier) {
+        val page = Size(size.width * 0.45f, size.height)
+        drawRoundRect(Color.White, size = page)
+        drawRoundRect(Color.White, topLeft = Offset(size.width * 0.55f, 0f), size = page)
     }
 }
 
 @Composable
 private fun IslandImage(island: Island, modifier: Modifier = Modifier) {
-    val resId = rememberDrawableId("island_${island.name.lowercase()}")
+    val resId = rememberDrawableId("island_${islandKey(island)}")
     if (resId != 0) {
         Image(
             painter = painterResource(resId),
@@ -194,45 +273,62 @@ private fun IslandImage(island: Island, modifier: Modifier = Modifier) {
         Box(
             modifier
                 .clip(RoundedCornerShape(50))
-                .background(LearnColors.Green.copy(alpha = 0.6f)),
+                .background(Figma.Green.copy(alpha = 0.6f)),
         )
     }
 }
 
 @Composable
 private fun ProvinceRow(province: String, onClick: () -> Unit) {
-    Column(Modifier.fillMaxWidth().clickable(onClick = onClick)) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .height(ProvinceRowHeight)
+            .background(Figma.Row)
+            .clickable(onClick = onClick),
+    ) {
         Row(
             Modifier
                 .fillMaxWidth()
-                .height(ProvinceRowHeight - 1.dp)
-                .padding(horizontal = 14.dp),
+                .weight(1f)
+                .padding(start = 15.dp, end = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
                 text = province.uppercase(),
-                color = Color.White,
+                color = Figma.ProvinceText,
                 fontFamily = LearnFonts.Mono,
-                fontSize = 13.sp,
+                fontSize = 17.sp,
                 fontWeight = FontWeight.Bold,
-                letterSpacing = 0.5.sp,
+                letterSpacing = 1.sp,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.weight(1f),
             )
             Box(
-                Modifier.size(22.dp).clip(CircleShape).background(LearnColors.Green),
+                Modifier.size(26.dp).clip(CircleShape).background(Figma.Green),
                 contentAlignment = Alignment.Center,
             ) {
-                Text(
-                    text = "›",
-                    color = Color.White,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                )
+                Chevron(Color.White, 3f, Modifier.size(width = 6.dp, height = 11.dp))
             }
         }
-        Box(Modifier.fillMaxWidth().height(1.dp).background(LearnColors.Divider))
+        Box(Modifier.fillMaxWidth().height(3.dp).background(Figma.RowShadow))
+    }
+}
+
+@Composable
+private fun Chevron(color: Color, strokeDp: Float, modifier: Modifier) {
+    Canvas(modifier) {
+        val path = Path().apply {
+            moveTo(0f, 0f)
+            lineTo(size.width, size.height / 2f)
+            lineTo(0f, size.height)
+        }
+        drawPath(
+            path,
+            color,
+            style = Stroke(width = strokeDp.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round),
+        )
     }
 }
 
@@ -245,15 +341,20 @@ fun ProvinceScreen(
     onCategoryClick: (GlossaryCategory) -> Unit,
 ) {
     LearnBackground {
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
-            Box(Modifier.fillMaxWidth().height(230.dp)) {
+        Column(
+            Modifier
+                .fillMaxSize()
+                .background(Figma.PageDark)
+                .verticalScroll(rememberScrollState()),
+        ) {
+            Box(Modifier.fillMaxWidth().height(302.dp)) {
                 ProvinceBanner(info?.imageName, Modifier.matchParentSize())
                 Box(
                     Modifier
                         .matchParentSize()
                         .background(
                             Brush.verticalGradient(
-                                listOf(Color(0x66000000), Color.Transparent, Color(0xCC000000)),
+                                listOf(Color(0x99070B4A), Color.Transparent, Color(0x80000000)),
                             ),
                         ),
                 )
@@ -265,24 +366,24 @@ fun ProvinceScreen(
                 Column(
                     Modifier
                         .align(Alignment.BottomStart)
-                        .padding(horizontal = 20.dp, vertical = 16.dp),
+                        .padding(start = 26.dp, end = 26.dp, bottom = 26.dp),
                 ) {
                     Text(
                         text = "Provinsi $province",
-                        color = LearnColors.Neon,
+                        color = Figma.Neon,
                         fontFamily = LearnFonts.Heading,
-                        fontSize = 22.sp,
+                        fontSize = 28.sp,
                         fontWeight = FontWeight.ExtraBold,
                     )
                     val description = info?.description.orEmpty()
                     if (description.isNotEmpty()) {
-                        Spacer(Modifier.height(4.dp))
+                        Spacer(Modifier.height(14.dp))
                         Text(
                             text = description,
                             color = Color.White,
-                            fontSize = 11.sp,
-                            lineHeight = 15.sp,
-                            modifier = Modifier.fillMaxWidth(0.8f),
+                            fontSize = 12.sp,
+                            lineHeight = 16.sp,
+                            fontWeight = FontWeight.Medium,
                         )
                     }
                 }
@@ -290,13 +391,13 @@ fun ProvinceScreen(
             Text(
                 text = "Kategori Budaya",
                 color = Color.White,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.Medium,
-                modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 22.dp, bottom = 12.dp),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 26.dp, end = 26.dp, top = 28.dp, bottom = 18.dp),
             )
             Column(
-                Modifier.padding(start = 20.dp, end = 20.dp, bottom = 24.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp),
+                Modifier.padding(start = 12.dp, end = 12.dp, bottom = 24.dp),
+                verticalArrangement = Arrangement.spacedBy(17.dp),
             ) {
                 GlossaryCategory.entries.forEach { category ->
                     CategoryRow(
@@ -323,7 +424,7 @@ private fun ProvinceBanner(imageName: String?, modifier: Modifier = Modifier) {
     } else {
         Box(
             modifier.background(
-                Brush.verticalGradient(listOf(Color(0xFF2F6B3A), LearnColors.Background)),
+                Brush.verticalGradient(listOf(Color(0xFF2F6B3A), Figma.PageDark)),
             ),
         )
     }
@@ -335,37 +436,38 @@ private fun CategoryRow(
     subtitle: String?,
     onClick: () -> Unit,
 ) {
+    val shape = RoundedCornerShape(12.dp)
     Row(
         Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(8.dp))
-            .background(CardBrush)
+            .height(59.dp)
+            .clip(shape)
+            .background(CardGradient)
+            .border(1.dp, Figma.CardBorder, shape)
             .clickable(onClick = onClick)
-            .padding(horizontal = 14.dp, vertical = 10.dp),
+            .padding(start = 18.dp, end = 21.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(Modifier.weight(1f)) {
             Text(
                 text = category.displayName,
                 color = Color.White,
-                fontSize = 14.sp,
-                fontWeight = FontWeight.SemiBold,
+                fontSize = 17.sp,
+                lineHeight = 21.sp,
+                fontWeight = FontWeight.Bold,
             )
             if (!subtitle.isNullOrEmpty()) {
                 Text(
                     text = subtitle,
-                    color = Color.White,
-                    fontSize = 11.sp,
+                    color = Figma.Subtitle,
+                    fontSize = 12.sp,
+                    lineHeight = 15.sp,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
             }
         }
-        Text(
-            text = "›",
-            color = LearnColors.Chevron,
-            fontSize = 30.sp,
-        )
+        Chevron(Figma.Chevron, 2f, Modifier.size(width = 12.dp, height = 22.dp))
     }
 }
 
@@ -381,33 +483,32 @@ fun CategoryDetailScreen(
         Column(Modifier.fillMaxSize()) {
             LearnTopBar(title = province, user = user)
             Row(
-                Modifier.fillMaxWidth().padding(horizontal = 12.dp),
+                Modifier.fillMaxWidth().padding(start = 23.dp, end = 39.dp, top = 22.dp, bottom = 12.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                IconButton(onClick = onBack) {
-                    Text(
-                        text = "←",
-                        color = Color.White,
-                        fontSize = 24.sp,
-                    )
+                IconButton(
+                    onClick = onBack,
+                    modifier = Modifier.semantics { contentDescription = "Kembali" },
+                ) {
+                    BackArrow(Modifier.size(width = 22.dp, height = 18.dp))
                 }
                 Text(
                     text = category.displayName,
-                    color = LearnColors.Neon,
+                    color = Figma.Neon,
                     fontFamily = LearnFonts.Heading,
-                    fontSize = 22.sp,
+                    fontSize = 28.sp,
                     fontWeight = FontWeight.ExtraBold,
                     textAlign = TextAlign.End,
-                    modifier = Modifier.weight(1f).padding(end = 8.dp),
+                    modifier = Modifier.weight(1f),
                 )
             }
             if (items == null) {
                 Box(Modifier.fillMaxWidth().weight(1f), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator(color = LearnColors.Neon)
+                    CircularProgressIndicator(color = Figma.Neon)
                 }
             } else {
                 LazyColumn(
-                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 24.dp),
+                    contentPadding = PaddingValues(start = 32.dp, end = 32.dp, top = 10.dp, bottom = 24.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     items(items, key = { it.id }) { item -> ItemCard(item) }
@@ -418,37 +519,48 @@ fun CategoryDetailScreen(
 }
 
 @Composable
+private fun BackArrow(modifier: Modifier) {
+    Canvas(modifier) {
+        val w = size.width
+        val h = size.height
+        val stroke = 2.5.dp.toPx()
+        drawLine(Color.White, Offset(0f, h / 2), Offset(w, h / 2), stroke, StrokeCap.Round)
+        drawLine(Color.White, Offset(0f, h / 2), Offset(h / 2, 0f), stroke, StrokeCap.Round)
+        drawLine(Color.White, Offset(0f, h / 2), Offset(h / 2, h), stroke, StrokeCap.Round)
+    }
+}
+
+@Composable
 private fun ItemCard(item: GlossaryItem) {
-    val shape = RoundedCornerShape(16.dp)
+    val shape = RoundedCornerShape(14.dp)
     Column(
         Modifier
             .fillMaxWidth()
             .clip(shape)
-            .background(LearnColors.DetailCard)
-            .border(1.dp, LearnColors.DetailBorder, shape)
-            .padding(14.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+            .background(Figma.DetailCard)
+            .border(1.dp, Figma.DetailBorder, shape)
+            .padding(start = 16.dp, end = 14.dp, top = 17.dp, bottom = 34.dp),
     ) {
         ItemImage(
             item = item,
-            modifier = Modifier.fillMaxWidth().height(120.dp).clip(RoundedCornerShape(6.dp)),
+            modifier = Modifier.fillMaxWidth().aspectRatio(2.1f).clip(RoundedCornerShape(8.dp)),
         )
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(20.dp))
         Text(
             text = item.name,
             color = Color.White,
-            fontSize = 22.sp,
+            fontSize = 26.sp,
+            lineHeight = 31.sp,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(start = 8.dp),
         )
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(18.dp))
         Text(
             text = item.description,
             color = Color.White,
             fontSize = 11.sp,
-            lineHeight = 16.sp,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier.fillMaxWidth(),
+            lineHeight = 14.6.sp,
+            fontWeight = FontWeight.SemiBold,
         )
     }
 }
