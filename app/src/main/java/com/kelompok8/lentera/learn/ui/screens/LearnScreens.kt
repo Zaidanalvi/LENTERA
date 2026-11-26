@@ -46,6 +46,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.foundation.layout.offset
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -68,14 +70,18 @@ import com.kelompok8.lentera.learn.ui.rememberDrawableId
 // Palet warna diambil langsung dari desain Figma
 private object Figma {
     val Neon = Color(0xFFDDFF00)
-    val CardTop = Color(0xFF8419D4)
-    val CardBottom = Color(0xFF5E139A)
-    val CardBorder = Color(0x40FFFFFF)
-    val ChipStart = Color(0xFF9B4FD0)
-    val ChipEnd = Color(0xFF6E1FAE)
+    val CardLight = Color(0xFF7F1BCB)
+    val CardDark = Color(0xFF5F139A)
+    val CardEdgeTop = Color(0x80D9A8FF)
+    val CardEdgeBottom = Color(0x1AFFFFFF)
+    val ChipTop = Color(0xFFA358DB)
+    val ChipBottom = Color(0xFF8B40C6)
+    val ChipShadow = Color(0xFF430E6B)
+    val IslandSide = Color(0xFF035606)
     val DropTop = Color(0xFF51167D)
     val DropBottom = Color(0xFF340B53)
     val Row = Color(0x14FFFFFF)
+    val RowHighlight = Color(0x1FFFFFFF)
     val RowShadow = Color(0x26000000)
     val ProvinceText = Color(0xFFD9D6FF)
     val Green = Color(0xFF1BAB14)
@@ -86,7 +92,8 @@ private object Figma {
     val DetailBorder = Color(0xFF2B3550)
 }
 
-private val CardGradient = Brush.verticalGradient(listOf(Figma.CardTop, Figma.CardBottom))
+private val CardGradient = Brush.linearGradient(listOf(Figma.CardLight, Figma.CardDark))
+private val CardEdge = Brush.verticalGradient(listOf(Figma.CardEdgeTop, Figma.CardEdgeBottom))
 
 private val ProvinceRowHeight = 46.dp
 private val ProvinceRowGap = 15.dp
@@ -191,7 +198,7 @@ private fun IslandCard(
                 .height(78.dp)
                 .clip(shape)
                 .background(CardGradient)
-                .border(1.dp, Figma.CardBorder, shape)
+                .border(1.dp, CardEdge, shape)
                 .clickable(onClick = onToggle),
         ) {
             Column(Modifier.align(Alignment.CenterStart).padding(start = 10.dp)) {
@@ -237,17 +244,25 @@ private fun IslandCard(
 
 @Composable
 private fun LearnChip() {
-    Row(
+    val shape = RoundedCornerShape(4.dp)
+    Box(
         Modifier
-            .size(width = 82.dp, height = 22.dp)
-            .clip(RoundedCornerShape(4.dp))
-            .background(Brush.horizontalGradient(listOf(Figma.ChipStart, Figma.ChipEnd)))
-            .padding(horizontal = 7.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
+            .size(width = 82.dp, height = 24.dp)
+            .background(Figma.ChipShadow, shape),
     ) {
-        Text(text = "Belajar", color = Color.White, fontFamily = LearnFonts.Heading, fontSize = 10.sp, fontWeight = FontWeight.Bold)
-        BookIcon(Modifier.padding(end = 3.dp).size(width = 16.dp, height = 11.dp))
+        Row(
+            Modifier
+                .size(width = 82.dp, height = 22.dp)
+                .clip(shape)
+                .background(Brush.verticalGradient(listOf(Figma.ChipTop, Figma.ChipBottom)))
+                .border(1.dp, Brush.verticalGradient(listOf(Color(0x40FFFFFF), Color.Transparent)), shape)
+                .padding(horizontal = 7.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            Text(text = "Belajar", color = Color.White, fontFamily = LearnFonts.Heading, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+            BookIcon(Modifier.padding(end = 3.dp).size(width = 16.dp, height = 11.dp))
+        }
     }
 }
 
@@ -264,12 +279,22 @@ private fun BookIcon(modifier: Modifier) {
 private fun IslandImage(island: Island, modifier: Modifier = Modifier) {
     val resId = rememberDrawableId("island_${islandKey(island)}")
     if (resId != 0) {
-        Image(
-            painter = painterResource(resId),
-            contentDescription = island.displayName,
-            contentScale = ContentScale.Fit,
-            modifier = modifier,
-        )
+        val painter = painterResource(resId)
+        Box(modifier) {
+            Image(
+                painter = painter,
+                contentDescription = null,
+                contentScale = ContentScale.Fit,
+                colorFilter = ColorFilter.tint(Figma.IslandSide),
+                modifier = Modifier.matchParentSize().offset(y = 4.dp),
+            )
+            Image(
+                painter = painter,
+                contentDescription = island.displayName,
+                contentScale = ContentScale.Fit,
+                modifier = Modifier.matchParentSize(),
+            )
+        }
     } else {
         Box(
             modifier
@@ -288,6 +313,7 @@ private fun ProvinceRow(province: String, onClick: () -> Unit) {
             .background(Figma.Row)
             .clickable(onClick = onClick),
     ) {
+        Box(Modifier.fillMaxWidth().height(1.dp).background(Figma.RowHighlight))
         Row(
             Modifier
                 .fillMaxWidth()
@@ -446,7 +472,7 @@ private fun CategoryRow(
             .height(59.dp)
             .clip(shape)
             .background(CardGradient)
-            .border(1.dp, Figma.CardBorder, shape)
+            .border(1.dp, CardEdge, shape)
             .clickable(onClick = onClick)
             .padding(start = 18.dp, end = 21.dp),
         verticalAlignment = Alignment.CenterVertically,
