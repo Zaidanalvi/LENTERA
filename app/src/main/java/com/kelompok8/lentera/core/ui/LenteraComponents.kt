@@ -128,15 +128,17 @@ fun LenteraLogo(modifier: Modifier = Modifier) {
             fontSize = 60.sp,
             fontFamily = museoModerno,
             fontWeight = FontWeight.Bold,
-            letterSpacing = 1.sp
+            letterSpacing = 1.sp,
+            maxLines = 1
         )
         Text(
-            modifier = Modifier.offset(y = (-20).dp),
+            modifier = Modifier.offset(y = (-4).dp),
             text = "Lestarikan Budaya Nusantara!",
             color = TextLight,
             fontSize = 15.sp,
             fontWeight = FontWeight.SemiBold,
-            fontFamily = mPlus1p
+            fontFamily = mPlus1p,
+            maxLines = 1
         )
     }
 }
@@ -169,7 +171,15 @@ fun PinkButton(
                 modifier = Modifier.size(24.dp)
             )
         } else {
-            Text(text.uppercase(), fontSize = 22.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
+            Text(
+                text = text.uppercase(),
+                fontFamily = mPlus1p,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 1.sp,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
         }
     }
 }
@@ -250,9 +260,28 @@ fun Header(
         ) {
             MedalIcon(Modifier.size(20.dp))
             Spacer(Modifier.width(8.dp))
-            Text(text = "$medalCount/${Island.entries.size}", color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 16.sp)
+            Text(
+                text = "$medalCount/${Island.entries.size}",
+                color = Color(0xFFFFFFFF),
+                fontFamily = mPlus1p,
+                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp,
+                maxLines = 1
+            )
         }
-        Text(text = title, color = Color(0xFFFFFFFF), fontFamily = mPlus1p, fontSize = 20.sp)
+        Text(
+            text = title,
+            color = Color(0xFFFFFFFF),
+            fontFamily = mPlus1p,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .weight(1f)
+                .padding(horizontal = 8.dp)
+        )
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -298,7 +327,7 @@ fun IslandCard(
             .clip(RoundedCornerShape(16.dp))
             .border(1.dp, borderColor, RoundedCornerShape(16.dp))
             .background(cardBackground)
-            .padding(horizontal = 12.dp, vertical = 14.dp)
+            .padding(horizontal = 10.dp, vertical = 14.dp)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -308,7 +337,7 @@ fun IslandCard(
             Text(
                 text = "Pulau $islandName",
                 fontFamily = mPlus1p,
-                fontSize = 15.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,

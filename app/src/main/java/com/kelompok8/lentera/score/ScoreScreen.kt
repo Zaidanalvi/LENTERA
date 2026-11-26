@@ -17,10 +17,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -28,7 +25,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,7 +32,6 @@ import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.data.AppContainer
 import com.kelompok8.lentera.core.data.UserSession
 import com.kelompok8.lentera.core.model.ChapterResult
-import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import com.kelompok8.lentera.ui.theme.LENTERATheme
@@ -45,14 +40,8 @@ import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // PJ: Panji — tampilkan skor, simpan hasil, update nilai terbaik dan medali
 @Composable
-fun ScoreScreen(
-    chapterId: String,
-    correctCount: Int,
-    onDone: () -> Unit,
-    onRetry: () -> Unit = onDone
-) {
+fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
     val result = ChapterResult(chapterId = chapterId, correctCount = correctCount)
-    var newlyUnlockedMedal by remember { mutableStateOf<Island?>(null) }
 
     val currentUser = remember {
         runCatching { AppContainer.authRepository.currentUser() }.getOrNull()
@@ -62,10 +51,7 @@ fun ScoreScreen(
     LaunchedEffect(chapterId, correctCount, currentUser?.uid) {
         val uid = currentUser?.uid
         if (!uid.isNullOrBlank()) {
-            val earnedMedal = AppContainer.scoreRepository.saveResult(uid, result)
-            if (earnedMedal != null) {
-                newlyUnlockedMedal = earnedMedal
-            }
+            AppContainer.scoreRepository.saveResult(uid, result)
             UserSession.refresh()
             runCatching { AppContainer.leaderboardRepository.syncPlayer(uid) }
         }
@@ -153,30 +139,6 @@ fun ScoreScreen(
                     color = Color(0xFFA6FF00)
                 )
 
-                // --- BANNER UCAPAN MEDALI BARU ---
-                if (newlyUnlockedMedal != null) {
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(Color(0xFF1B5E20))
-                            .border(1.5.dp, Color(0xFF4CAF50), RoundedCornerShape(16.dp))
-                            .padding(12.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = "🏅 " +
-                                    "MEDALI ${newlyUnlockedMedal?.displayName?.uppercase()}! DIDAPATKAN 🏅",
-                            fontFamily = mPlus1p,
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color(0xFFFFD700),
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-
                 Spacer(modifier = Modifier.height(8.dp))
 
                 // LANJUTKAN Button
@@ -205,7 +167,7 @@ fun ScoreScreen(
 
                 // ULANGI Button
                 Button(
-                    onClick = onRetry,
+                    onClick = onDone,
                     shape = RoundedCornerShape(16.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFFA2B000),
@@ -228,8 +190,8 @@ fun ScoreScreen(
     }
 }
 
-
-@Preview(showBackground = true, showSystemUi = true, name = "Skor Standar")
+// --- COMPOSE PREVIEW ---
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ScoreScreenPreview() {
     LENTERATheme {

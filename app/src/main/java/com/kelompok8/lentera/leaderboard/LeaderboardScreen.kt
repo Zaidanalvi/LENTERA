@@ -58,90 +58,83 @@ fun LeaderboardScreen(
     onNextPage: () -> Unit,
     onBack: () -> Unit,
 ) {
-    Box(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 24.dp, bottom = 20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(y = 30.dp)
-        ) {
-            Header("Papan Peringkat", 50, R.drawable.avatar1png)
-        }
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxSize()
-        ) {
-            Column(
-                verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .width(350.dp)
-                    .height(620.dp)
-                    .offset(y = (-8).dp)
-                    .clip(RoundedCornerShape(8.dp))
-                    .border(width = 1.dp, color = Color(0xFF68749E), shape = RoundedCornerShape(8.dp))
-                    .background(color = Color(0xFF060D25))
-            ) {
-                LeaderBoardHeader()
+        Header("Papan Peringkat", 50, R.drawable.avatar1png)
 
-                if (isLoading) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .weight(1f),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(color = Color(0xFF00D0FF))
-                    }
-                } else if (entries.isEmpty()) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .weight(1f),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = "Tidak ada data",
-                            color = Color.White,
-                            fontFamily = mPlus1p,
-                            fontSize = 16.sp
-                        )
-                    }
-                } else {
-                    LazyColumn(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .weight(1f)
-                    ) {
-                        items(entries) { entry ->
-                            LeaderboardRow(entry = entry)
-                        }
+        Spacer(Modifier.height(16.dp))
+
+        Column(
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxWidth(0.88f)
+                .weight(1f)
+                .clip(RoundedCornerShape(8.dp))
+                .border(width = 1.dp, color = Color(0xFF68749E), shape = RoundedCornerShape(8.dp))
+                .background(color = Color(0xFF060D25))
+        ) {
+            LeaderBoardHeader()
+
+            if (isLoading) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(color = Color(0xFF00D0FF))
+                }
+            } else if (entries.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Tidak ada data",
+                        color = Color.White,
+                        fontFamily = mPlus1p,
+                        fontSize = 16.sp
+                    )
+                }
+            } else {
+                LazyColumn(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                ) {
+                    items(entries) { entry ->
+                        LeaderboardRow(entry = entry)
                     }
                 }
+            }
 
-                PaginationBar(
-                    page = currentPage,
-                    canGoPrev = canGoPrev,
-                    canGoNext = canGoNext,
-                    onPrev = onPrevPage,
-                    onNext = onNextPage
-                )
-            }
-            Box(
+            PaginationBar(
+                page = currentPage,
+                canGoPrev = canGoPrev,
+                canGoNext = canGoNext,
+                onPrev = onPrevPage,
+                onNext = onNextPage
+            )
+        }
+
+        Spacer(Modifier.height(16.dp))
+
+        Box(
             modifier = Modifier
-                .width(180.dp)
-                .size(50.dp)
-                .offset(y = (-35).dp)
-                .align(Alignment.BottomCenter)
-            ) {
-                PinkButton(
-                    text = "Kembali",
-                    onClick = onBack,
-                )
-            }
+                .width(190.dp)
+                .height(50.dp)
+        ) {
+            PinkButton(
+                text = "Kembali",
+                onClick = onBack,
+            )
         }
     }
 }
@@ -161,12 +154,14 @@ private fun LeaderBoardHeader() {
             color = Color(0xFF00D0FF),
             fontSize = 14.sp,
             fontFamily = mPlus1p,
+            fontWeight = FontWeight.Bold,
         )
         Text(
             text = "Nama Pemain",
             color = Color(0xFF00D0FF),
             fontSize = 14.sp,
             fontFamily = mPlus1p,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.offset(x = (-10).dp)
         )
         Text(
@@ -180,6 +175,7 @@ private fun LeaderBoardHeader() {
             color = Color(0xFF00D0FF),
             fontSize = 14.sp,
             fontFamily = mPlus1p,
+            fontWeight = FontWeight.Bold,
         )
     }
 }
@@ -195,6 +191,7 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
         Text(
             text = entry.rank.toString(),
             color = Color.White,
+            fontFamily = mPlus1p,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
@@ -226,6 +223,7 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
             Text(
                 text = entry.name,
                 color = Color.White,
+                fontFamily = mPlus1p,
                 fontSize = 17.sp,
                 fontWeight = FontWeight.Bold,
                 maxLines = 1,
@@ -236,6 +234,7 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
         Text(
             text = entry.points.toString(),
             color = Color.White,
+            fontFamily = mPlus1p,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.End,
@@ -287,6 +286,7 @@ private fun PaginationBar(
             Text(
                 text = page.toString(),
                 color = Color.White,
+                fontFamily = mPlus1p,
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(horizontal = 14.dp, vertical = 4.dp)

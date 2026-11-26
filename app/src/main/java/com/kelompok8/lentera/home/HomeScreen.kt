@@ -9,10 +9,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -163,7 +163,7 @@ fun WelcomeBanner(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(210.dp)
+            .heightIn(min = 204.dp)
             .clip(RoundedCornerShape(16.dp))
             .border(1.dp, Color(0xFFA568E3), RoundedCornerShape(16.dp))
             .background(Brush.linearGradient(listOf(Color(0xFFC21AFF), Color(0xFF102999))))
@@ -181,22 +181,23 @@ fun WelcomeBanner(
         )
 
         Column(
-            modifier = Modifier
-                .fillMaxHeight()
-                .fillMaxWidth(0.65f),
-            verticalArrangement = Arrangement.SpaceBetween
+            modifier = Modifier.fillMaxWidth(0.68f),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Text("Selamat Datang di LENTERA",
+            Text(
+                text = "Selamat Datang di LENTERA",
                 fontFamily = mPlus1p,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 13.sp,
+                lineHeight = 17.sp,
                 color = Color(0xFFFFFFFF),
             )
-            Text("Mari belajar\n" +
-                    "Budaya Nusantara\n" +
-                    "dengan cara yang\n" +
-                    "asik!",
+            Text(
+                text = "Mari belajar\nBudaya Nusantara\ndengan cara yang\nasik!",
                 fontFamily = mPlus1p,
-                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                fontSize = 19.sp,
+                lineHeight = 24.sp,
                 color = Color(0xFFEEFF00)
             )
 
