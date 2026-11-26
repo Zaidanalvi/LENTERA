@@ -5,9 +5,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kelompok8.lentera.core.ui.LenteraBackground
 import androidx.navigation.NavHostController
@@ -26,7 +28,9 @@ import com.kelompok8.lentera.game.GameScreen
 import com.kelompok8.lentera.home.HomeScreen
 import com.kelompok8.lentera.leaderboard.LeaderboardScreen
 import com.kelompok8.lentera.leaderboard.LeaderboardViewModel
-import com.kelompok8.lentera.learn.LearnScreen
+import com.kelompok8.lentera.learn.data.GlossaryRepositoryImpl
+import com.kelompok8.lentera.learn.ui.LearnRoute
+import com.kelompok8.lentera.learn.ui.LearnViewModel
 import com.kelompok8.lentera.map.ChapterSelectScreen
 import com.kelompok8.lentera.map.PlayScreen
 import com.kelompok8.lentera.score.ScoreScreen
@@ -131,7 +135,16 @@ private fun LenteraNavHost(
                 onLeaderboardClick = { navController.navigate(Routes.LEADERBOARD) }
             )
         }
-        composable(Routes.LEARN) { LearnScreen() }
+        composable(Routes.LEARN) {
+            val context = LocalContext.current
+            val learnViewModel: LearnViewModel = viewModel(
+                factory = LearnViewModel.factory(GlossaryRepositoryImpl(context.applicationContext))
+            )
+            val user by produceState(initialValue = AppContainer.authRepository.currentUser()) {
+                value = runCatching { AppContainer.authRepository.getProfile() }.getOrNull() ?: value
+            }
+            LearnRoute(viewModel = learnViewModel, user = user)
+        }
         composable(Routes.SETTINGS) {
             SettingsScreen(
                 onAbout = { navController.navigate(Routes.ABOUT) },

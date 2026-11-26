@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.Canvas
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -25,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -36,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.model.GlossaryCategory
 import com.kelompok8.lentera.core.model.User
+import com.kelompok8.lentera.core.ui.LenteraBackground
 import kotlin.math.abs
 
 internal object LearnColors {
@@ -73,29 +72,7 @@ internal fun LearnBackground(
     modifier: Modifier = Modifier,
     content: @Composable BoxScope.() -> Unit,
 ) {
-    Box(modifier.fillMaxSize().background(LearnColors.Background)) {
-        Canvas(Modifier.fillMaxSize()) {
-            val w = size.width
-            val h = size.height
-            val light = Path().apply {
-                moveTo(0f, h * 0.20f)
-                cubicTo(w * 0.30f, h * 0.10f, w * 0.70f, h * 0.32f, w, h * 0.18f)
-                lineTo(w, h)
-                lineTo(0f, h)
-                close()
-            }
-            drawPath(light, LearnColors.WaveLight)
-            val dark = Path().apply {
-                moveTo(0f, h * 0.48f)
-                cubicTo(w * 0.35f, h * 0.38f, w * 0.65f, h * 0.62f, w, h * 0.44f)
-                lineTo(w, h)
-                lineTo(0f, h)
-                close()
-            }
-            drawPath(dark, LearnColors.WaveDark)
-        }
-        content()
-    }
+    LenteraBackground(modifier = modifier, content = content)
 }
 
 @DrawableRes
