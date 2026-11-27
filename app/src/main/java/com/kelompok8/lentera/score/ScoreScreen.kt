@@ -40,14 +40,18 @@ import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // PJ: Panji — tampilkan skor, simpan hasil, update nilai terbaik dan medali
 @Composable
-fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
+fun ScoreScreen(
+    chapterId: String,
+    correctCount: Int,
+    onDone: () -> Unit,
+    onRetry: () -> Unit = onDone
+) {
     val result = ChapterResult(chapterId = chapterId, correctCount = correctCount)
 
     val currentUser = remember {
         runCatching { AppContainer.authRepository.currentUser() }.getOrNull()
     }
 
-    // Simpan skor otomatis ke Firestore saat halaman dibuka
     LaunchedEffect(chapterId, correctCount, currentUser?.uid) {
         val uid = currentUser?.uid
         if (!uid.isNullOrBlank()) {
@@ -67,7 +71,7 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        // --- TOP BAR ---
+
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -77,7 +81,6 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
             Header("Skor Akhir", 50, R.drawable.avatar1png)
         }
 
-        // --- CENTER CARD ---
         Box(
             modifier = Modifier
                 .align(Alignment.Center)
@@ -101,7 +104,6 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
                     letterSpacing = 1.5.sp
                 )
 
-                // Angka skor besar
                 Text(
                     text = "${result.score}",
                     modifier = Modifier.offset(y = (-15).dp),
@@ -118,7 +120,7 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
                     )
                 )
 
-                // Teks info lokasi & soal
+
                 Text(
                     text = "$islandName : ${result.totalQuestions} Soal",
                     modifier = Modifier.offset(y = (-20).dp),
@@ -141,7 +143,7 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // LANJUTKAN Button
+
                 Button(
                     onClick = onDone,
                     shape = RoundedCornerShape(16.dp),
@@ -165,9 +167,9 @@ fun ScoreScreen(chapterId: String, correctCount: Int, onDone: () -> Unit) {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // ULANGI Button
+
                 Button(
-                    onClick = onDone,
+                    onClick = onRetry,
                     shape = RoundedCornerShape(16.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFFA2B000),
