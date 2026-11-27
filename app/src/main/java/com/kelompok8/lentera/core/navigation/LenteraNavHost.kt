@@ -259,6 +259,9 @@ private fun LenteraNavHost(
                 currentPage = leaderBoardUiState.currentPage,
                 canGoPrev = leaderBoardUiState.canGoPrev,
                 canGoNext = leaderBoardUiState.canGoNext,
+                selectedFilter = leaderBoardUiState.selectedFilter,
+                userProvince = leaderBoardUiState.userProvince,
+                onSelectFilter = { leaderBoardViewModel.selectFilter(it) },
                 onPrevPage = { leaderBoardViewModel.prevPage() },
                 onNextPage = { leaderBoardViewModel.nextPage() },
                 onBack = { navController.popBackStack() }

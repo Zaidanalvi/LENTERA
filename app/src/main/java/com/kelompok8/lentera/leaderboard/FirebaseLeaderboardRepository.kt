@@ -9,6 +9,11 @@ import com.google.firebase.firestore.SetOptions
 import com.kelompok8.lentera.core.data.LeaderboardRepository
 import com.kelompok8.lentera.core.data.LeaderboardResult
 import com.kelompok8.lentera.core.model.LeaderboardEntry
+import com.kelompok8.lentera.core.model.LeaderboardFilter
+import com.kelompok8.lentera.core.model.originRegionOf
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.tasks.await
 
 class FirebaseLeaderboardRepository(
@@ -17,19 +22,51 @@ class FirebaseLeaderboardRepository(
 
     private val board get() = db.collection(COLLECTION)
 
-    override suspend fun getOverallLeaderboard(page: Int, pageSize: Int): LeaderboardResult {
+    override suspend fun getOverallLeaderboard(
+        page: Int,
+        pageSize: Int,
+        filter: LeaderboardFilter
+    ): LeaderboardResult = coroutineScope {
         val skip = (page - 1).coerceAtLeast(0) * pageSize
+        val fetchLimit = if (filter == LeaderboardFilter.Global) (skip + pageSize).coerceAtLeast(50) else 200
         val docs = board
             .orderBy(FIELD_TOTAL, Query.Direction.DESCENDING)
-            .limit((skip + pageSize).toLong())
+            .limit(fetchLimit.toLong())
             .get()
             .await()
             .documents
-        val ranked = rankByScore(docs.map { it.toEntry() })
-        val total = runCatching {
-            board.count().get(AggregateSource.SERVER).await().count.toInt()
-        }.getOrDefault(docs.size)
-        return LeaderboardResult(entries = ranked.drop(skip), totalCount = maxOf(total, docs.size))
+
+        val rawEntries = docs.map { it.toEntry() }
+        // Akun lama yang belum punya field location di koleksi leaderboard dilengkapi otomatis dari users/{uid}
+        val hydratedEntries = rawEntries.map { entry ->
+            async {
+                if (entry.location.isNotBlank()) return@async entry
+                val profileLocation = runCatching {
+                    db.collection("users").document(entry.uid).get().await().getString("location").orEmpty()
+                }.getOrDefault("")
+                if (profileLocation.isNotBlank()) {
+                    runCatching {
+                        board.document(entry.uid).set(mapOf("location" to profileLocation), SetOptions.merge()).await()
+                    }
+                    entry.copy(location = profileLocation)
+                } else {
+                    entry
+                }
+            }
+        }.awaitAll()
+
+        val ranked = filterAndRankEntries(hydratedEntries, filter)
+        val total = if (filter == LeaderboardFilter.Global) {
+            runCatching {
+                board.count().get(AggregateSource.SERVER).await().count.toInt()
+            }.getOrDefault(ranked.size)
+        } else {
+            ranked.size
+        }
+        LeaderboardResult(
+            entries = ranked.drop(skip).take(pageSize),
+            totalCount = maxOf(total, ranked.size)
+        )
     }
 
     override suspend fun syncPlayer(uid: String) {
@@ -45,6 +82,7 @@ class FirebaseLeaderboardRepository(
                 "uid" to uid,
                 "name" to (profile.getString("name") ?: "Pemain"),
                 "avatarId" to (profile.getLong("avatarId") ?: 0L),
+                "location" to profile.getString("location").orEmpty(),
                 FIELD_TOTAL to totalScore,
                 "updatedAt" to FieldValue.serverTimestamp()
             ),
@@ -57,13 +95,32 @@ class FirebaseLeaderboardRepository(
         rank = 0,
         name = getString("name") ?: "Pemain",
         totalScore = getLong(FIELD_TOTAL)?.toInt() ?: 0,
-        avatarId = getLong("avatarId")?.toInt() ?: 0
+        avatarId = getLong("avatarId")?.toInt() ?: 0,
+        location = getString("location").orEmpty()
     )
 
     companion object {
         const val COLLECTION = "leaderboard"
         const val FIELD_TOTAL = "totalScore"
     }
+}
+
+internal fun filterAndRankEntries(
+    sortedEntries: List<LeaderboardEntry>,
+    filter: LeaderboardFilter
+): List<LeaderboardEntry> {
+    val filtered = when (filter) {
+        LeaderboardFilter.Global -> sortedEntries
+        is LeaderboardFilter.MyProvince -> {
+            val target = filter.province.trim()
+            if (target.isEmpty()) emptyList()
+            else sortedEntries.filter { it.location.trim().equals(target, ignoreCase = true) }
+        }
+        is LeaderboardFilter.ByRegion -> {
+            sortedEntries.filter { originRegionOf(it.location) == filter.region }
+        }
+    }
+    return rankByScore(filtered)
 }
 
 internal fun rankByScore(sorted: List<LeaderboardEntry>): List<LeaderboardEntry> {

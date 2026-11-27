@@ -6,6 +6,7 @@ import com.kelompok8.lentera.core.model.GlossaryCategory
 import com.kelompok8.lentera.core.model.GlossaryItem
 import com.kelompok8.lentera.core.model.Island
 import com.kelompok8.lentera.core.model.LeaderboardEntry
+import com.kelompok8.lentera.core.model.LeaderboardFilter
 import com.kelompok8.lentera.core.model.Question
 import com.kelompok8.lentera.core.model.User
 
@@ -51,7 +52,11 @@ data class LeaderboardResult(
 
 // PJ: Hilal
 interface LeaderboardRepository {
-    suspend fun getOverallLeaderboard(page: Int = 1, pageSize: Int = 10): LeaderboardResult
+    suspend fun getOverallLeaderboard(
+        page: Int = 1,
+        pageSize: Int = 10,
+        filter: LeaderboardFilter = LeaderboardFilter.Global
+    ): LeaderboardResult
     suspend fun syncPlayer(uid: String) {}
 }
 

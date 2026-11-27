@@ -107,6 +107,7 @@ class EditProfileViewModel(
             auth.updateProfile(name.trim(), gender, location, avatarId)
                 .onSuccess { user ->
                     UserSession.set(user)
+                    launch { runCatching { AppContainer.leaderboardRepository.syncPlayer(user.uid) } }
                     _uiState.update { it.copy(isSaving = false, saved = true) }
                 }
                 .onFailure {

@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +20,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
@@ -42,8 +45,11 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kelompok8.lentera.R
 import com.kelompok8.lentera.core.model.LeaderboardEntry
+import com.kelompok8.lentera.core.model.LeaderboardFilter
+import com.kelompok8.lentera.core.model.OriginRegion
 import com.kelompok8.lentera.core.ui.Header
 import com.kelompok8.lentera.core.ui.PinkButton
+import com.kelompok8.lentera.ui.theme.LenteraLime
 import com.kelompok8.lentera.ui.theme.mPlus1p
 
 // PJ: Hilal — leaderboard keseluruhan
@@ -54,6 +60,9 @@ fun LeaderboardScreen(
     currentPage: Int = 1,
     canGoPrev: Boolean = false,
     canGoNext: Boolean = false,
+    selectedFilter: LeaderboardFilter = LeaderboardFilter.Global,
+    userProvince: String = "",
+    onSelectFilter: (LeaderboardFilter) -> Unit = {},
     onPrevPage: () -> Unit,
     onNextPage: () -> Unit,
     onBack: () -> Unit,
@@ -66,7 +75,15 @@ fun LeaderboardScreen(
     ) {
         Header("Papan Peringkat", 50, R.drawable.avatar1png)
 
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(12.dp))
+
+        LeaderboardFilterRow(
+            selectedFilter = selectedFilter,
+            userProvince = userProvince,
+            onSelectFilter = onSelectFilter
+        )
+
+        Spacer(Modifier.height(12.dp))
 
         Column(
             verticalArrangement = Arrangement.Top,
@@ -97,10 +114,16 @@ fun LeaderboardScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "Tidak ada data",
+                        text = if (selectedFilter != LeaderboardFilter.Global) {
+                            "Belum ada pemain dari wilayah ini"
+                        } else {
+                            "Tidak ada data"
+                        },
                         color = Color.White,
                         fontFamily = mPlus1p,
-                        fontSize = 16.sp
+                        fontSize = 15.sp,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(horizontal = 16.dp)
                     )
                 }
             } else {
@@ -135,6 +158,58 @@ fun LeaderboardScreen(
                 text = "Kembali",
                 onClick = onBack,
             )
+        }
+    }
+}
+
+@Composable
+private fun LeaderboardFilterRow(
+    selectedFilter: LeaderboardFilter,
+    userProvince: String,
+    onSelectFilter: (LeaderboardFilter) -> Unit
+) {
+    val options = buildList<Pair<String, LeaderboardFilter>> {
+        add("Global" to LeaderboardFilter.Global)
+        if (userProvince.isNotBlank()) {
+            add("Daerahku ($userProvince)" to LeaderboardFilter.MyProvince(userProvince))
+        }
+        OriginRegion.entries.forEach { region ->
+            val label = if (region == OriginRegion.LAINNYA) "Lainnya" else region.displayName
+            add(label to LeaderboardFilter.ByRegion(region))
+        }
+    }
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth(0.88f)
+            .horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        options.forEach { (label, filter) ->
+            val selected = selectedFilter == filter
+            val shape = RoundedCornerShape(50)
+            Box(
+                modifier = Modifier
+                    .clip(shape)
+                    .background(if (selected) Color(0xFF281B78) else Color(0xFF0A1248))
+                    .border(
+                        width = if (selected) 1.5.dp else 1.dp,
+                        color = if (selected) LenteraLime else Color(0x55FFFFFF),
+                        shape = shape
+                    )
+                    .clickable { onSelectFilter(filter) }
+                    .padding(horizontal = 13.dp, vertical = 7.dp)
+            ) {
+                Text(
+                    text = label,
+                    color = if (selected) LenteraLime else Color(0xFFD6DCF5),
+                    fontFamily = mPlus1p,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1
+                )
+            }
         }
     }
 }
@@ -200,9 +275,8 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
 
         Row(
             modifier = Modifier
-                .weight(0.44f)
-                .padding(start = 6.dp)
-                .offset(x = 11.dp),
+                .weight(1f)
+                .padding(start = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Box(modifier = Modifier.size(44.dp)) {
@@ -220,15 +294,28 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
 
             Spacer(modifier = Modifier.width(10.dp))
 
-            Text(
-                text = entry.name,
-                color = Color.White,
-                fontFamily = mPlus1p,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = entry.name,
+                    color = Color.White,
+                    fontFamily = mPlus1p,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                if (entry.location.isNotBlank()) {
+                    Text(
+                        text = entry.location,
+                        color = Color(0xFF8CA5E8),
+                        fontFamily = mPlus1p,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
+            }
         }
 
         Text(
@@ -238,9 +325,7 @@ private fun LeaderboardRow(entry: LeaderboardEntry) {
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.End,
-            modifier = Modifier
-                .weight(0.22f)
-                .padding(end = 8.dp)
+            modifier = Modifier.padding(start = 8.dp, end = 10.dp)
         )
     }
 }
