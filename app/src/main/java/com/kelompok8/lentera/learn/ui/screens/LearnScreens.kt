@@ -5,6 +5,7 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.isSpecified
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
@@ -98,6 +99,9 @@ private object Figma {
 
 private val CardGradient = Brush.linearGradient(listOf(Figma.CardLight, Figma.CardDark))
 private val CardEdge = Brush.verticalGradient(listOf(Figma.CardEdgeTop, Figma.CardEdgeBottom))
+
+private const val MinImageRatio = 0.75f
+private const val MaxImageRatio = 2.1f
 
 private val ProvinceRowHeight = 46.dp
 private val ProvinceRowGap = 15.dp
@@ -644,7 +648,7 @@ private fun ItemCard(
         ItemImage(
             item = item,
             isPlayingSong = isPlayingSong,
-            modifier = Modifier.fillMaxWidth().aspectRatio(2.1f).clip(RoundedCornerShape(8.dp)),
+            modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(8.dp)),
         )
         Spacer(Modifier.height(18.dp))
         Text(
@@ -680,11 +684,15 @@ private fun ItemImage(
 ) {
     val resId = rememberDrawableId(item.imageName)
     if (resId != 0) {
-        Box(modifier) {
+        val painter = painterResource(resId)
+        val size = painter.intrinsicSize
+        val naturalRatio = if (size.isSpecified && size.height > 0f) size.width / size.height else MaxImageRatio
+        val tooTall = naturalRatio < MinImageRatio
+        Box(modifier.aspectRatio(naturalRatio.coerceIn(MinImageRatio, MaxImageRatio)).background(Figma.PageDark)) {
             Image(
-                painter = painterResource(resId),
+                painter = painter,
                 contentDescription = item.name,
-                contentScale = ContentScale.Crop,
+                contentScale = if (tooTall) ContentScale.Fit else ContentScale.Crop,
                 modifier = Modifier.matchParentSize(),
             )
             if (isPlayingSong) {
@@ -697,7 +705,7 @@ private fun ItemImage(
         }
     } else if (item.category == GlossaryCategory.LAGU) {
         Box(
-            modifier.background(
+            modifier.aspectRatio(MaxImageRatio).background(
                 Brush.linearGradient(listOf(Color(0xFF281978), Color(0xFF131D5E), Color(0xFF0B1344))),
             ),
             contentAlignment = Alignment.Center,
@@ -716,7 +724,7 @@ private fun ItemImage(
         }
     } else {
         Box(
-            modifier.background(
+            modifier.aspectRatio(MaxImageRatio).background(
                 Brush.verticalGradient(listOf(Color(0xFF1E2A78), Color(0xFF0B1344))),
             ),
             contentAlignment = Alignment.Center,
