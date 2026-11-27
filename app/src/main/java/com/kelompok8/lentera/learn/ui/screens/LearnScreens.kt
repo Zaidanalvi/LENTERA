@@ -100,7 +100,7 @@ private object Figma {
 private val CardGradient = Brush.linearGradient(listOf(Figma.CardLight, Figma.CardDark))
 private val CardEdge = Brush.verticalGradient(listOf(Figma.CardEdgeTop, Figma.CardEdgeBottom))
 
-private const val MinImageRatio = 0.75f
+private const val MinImageRatio = 0.9f
 private const val MaxImageRatio = 2.1f
 
 private val ProvinceRowHeight = 46.dp
@@ -687,12 +687,11 @@ private fun ItemImage(
         val painter = painterResource(resId)
         val size = painter.intrinsicSize
         val naturalRatio = if (size.isSpecified && size.height > 0f) size.width / size.height else MaxImageRatio
-        val tooTall = naturalRatio < MinImageRatio
-        Box(modifier.aspectRatio(naturalRatio.coerceIn(MinImageRatio, MaxImageRatio)).background(Figma.PageDark)) {
+        Box(modifier.aspectRatio(naturalRatio.coerceIn(MinImageRatio, MaxImageRatio))) {
             Image(
                 painter = painter,
                 contentDescription = item.name,
-                contentScale = if (tooTall) ContentScale.Fit else ContentScale.Crop,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier.matchParentSize(),
             )
             if (isPlayingSong) {
