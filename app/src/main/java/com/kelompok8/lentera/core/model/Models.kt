@@ -85,7 +85,8 @@ data class LeaderboardEntry(
     val rank: Int,
     val name: String,
     val totalScore: Int,
-    val avatarId: Int = 0
+    val avatarId: Int = 0,
+    val location: String = ""
 ) {
     val points: Int get() = totalScore
     val avatarRes: Int get() = when (Math.abs(avatarId) % 4) {
@@ -96,6 +97,41 @@ data class LeaderboardEntry(
     }
     val flagRes: Int get() = com.kelompok8.lentera.R.drawable.avatar1png
     val badgeRes: Int get() = com.kelompok8.lentera.R.drawable.coin
+}
+
+enum class OriginRegion(val displayName: String) {
+    JAWA("Pulau Jawa"),
+    SUMATRA("Pulau Sumatra"),
+    KALIMANTAN("Pulau Kalimantan"),
+    LAINNYA("Pulau Lainnya")
+}
+
+sealed interface LeaderboardFilter {
+    data object Global : LeaderboardFilter
+    data class MyProvince(val province: String) : LeaderboardFilter
+    data class ByRegion(val region: OriginRegion) : LeaderboardFilter
+}
+
+private val jawaProvinces = setOf(
+    "dki jakarta", "jawa barat", "banten", "jawa tengah", "di yogyakarta", "jawa timur"
+)
+private val sumatraProvinces = setOf(
+    "aceh", "sumatera utara", "sumatera barat", "riau", "kepulauan riau",
+    "jambi", "sumatera selatan", "kepulauan bangka belitung", "bengkulu", "lampung"
+)
+private val kalimantanProvinces = setOf(
+    "kalimantan barat", "kalimantan tengah", "kalimantan selatan", "kalimantan timur", "kalimantan utara"
+)
+
+fun originRegionOf(province: String): OriginRegion? {
+    val key = province.trim().lowercase()
+    if (key.isEmpty()) return null
+    return when (key) {
+        in jawaProvinces -> OriginRegion.JAWA
+        in sumatraProvinces -> OriginRegion.SUMATRA
+        in kalimantanProvinces -> OriginRegion.KALIMANTAN
+        else -> OriginRegion.LAINNYA
+    }
 }
 
 enum class GlossaryCategory(val displayName: String) {
